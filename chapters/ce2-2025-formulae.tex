@@ -1,0 +1,477 @@
+\begin{enumerate}[label=\thesubsection.\arabic*, ref=\thesubsection.\theenumi,itemsep=0pt]
+
+\item Exponential Series
+\begin{itemize}
+\item Taylor and Maclaurin Series Foundations:
+Let $f\brak{x}$ be an infinitely differentiable function in a neighborhood of $x = x_0$. The Taylor series expansion of $f\brak{x}$ centered at $x_0$ is defined as:
+\begin{align}
+f\brak{x} = \sum_{n=0}^{\infty} \frac{f^{\brak{n}}\brak{x_0}}{n!} \brak{x - x_0}^n \label{eq:taylor_series_def}
+\end{align}
+where $f^{\brak{n}}\brak{x_0}$ denotes the $n$-th order derivative evaluated at $x = x_0$, with $f^{\brak{0}}\brak{x_0} = f\brak{x_0}$ and $0! = 1$.
+
+When the series is centered specifically about the origin ($x_0 = 0$), it is referred to as the Maclaurin series:
+\begin{align}
+f\brak{x} = \sum_{n=0}^{\infty} \frac{f^{\brak{n}}\brak{0}}{n!} x^n = f\brak{0} + \frac{f'\brak{0}}{1!} x + \frac{f''\brak{0}}{2!} x^2 + \frac{f'''\brak{0}}{3!} x^3 + \cdots \label{eq:maclaurin_series_def}
+\end{align}
+
+\item Derivation of the Exponential Expansion:
+Consider the exponential function $f\brak{x} = e^x$. The successive derivatives of $e^x$ with respect to $x$ are invariant:
+\begin{align}
+f'\brak{x} &= \frac{d}{dx}\brak{e^x} = e^x \\
+f''\brak{x} &= \frac{d^2}{dx^2}\brak{e^x} = e^x \\
+&\;\;\vdots \nonumber \\
+f^{\brak{n}}\brak{x} &= \frac{d^n}{dx^n}\brak{e^x} = e^x, \quad n \ge 0
+\end{align}
+
+Evaluating each derivative at $x = 0$:
+\begin{align}
+f^{\brak{n}}\brak{0} = e^0 = 1, \quad n \ge 0
+\end{align}
+
+Substituting $f^{\brak{n}}\brak{0} = 1$ directly into the Maclaurin series formulation \eqref{eq:maclaurin_series_def} yields the power series expansion for $e^x$:
+\begin{align}
+e^x = \sum_{n=0}^{\infty} \frac{1}{n!} x^n = 1 + \frac{x}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots \label{eq:exp_maclaurin}
+\end{align}
+
+\item Absolute Convergence via Ratio Test:
+Let $a_n = \frac{x^n}{n!}$. The interval of convergence is determined using the ratio test:
+\begin{align}
+L = \lim_{n \to \infty} \abs{\frac{a_{n+1}}{a_n}} = \lim_{n \to \infty} \abs{\frac{x^{n+1}}{\brak{n+1}!} \cdot \frac{n!}{x^n}} = \lim_{n \to \infty} \frac{\abs{x}}{n+1} = 0
+\end{align}
+Since $L = 0 < 1$ for all finite $x \in \mathbb{R}$, the series converges absolutely on $\brak{-\infty, \infty}$ with an infinite radius of convergence ($R = \infty$).
+\end{itemize}
+
+\item Intersection of Conics and Common Chord
+\begin{itemize}
+\item {Line-Conic Intersection:} The points of intersection of a line $L: \vec{x} = \vec{h} + \kappa \vec{m}$ ($\kappa \in \mathbb{R}$) with a conic section $\vec{x}^\top \vec{V} \vec{x} + 2\vec{u}^\top \vec{x} + f = 0$ are given by:
+\begin{align}
+\vec{x}_i = \vec{h} + \kappa_i \vec{m} \label{eq:conic_line_intersect}
+\end{align}
+where the parameter values $\kappa_i$ are:
+\begin{align}
+\kappa_i = \frac{-\vec{m}^\top \brak{\vec{V}\vec{h} + \vec{u}} \pm \sqrt{\sbrak{\vec{m}^\top \brak{\vec{V}\vec{h} + \vec{u}}}^2 - g\brak{\vec{h}}\brak{\vec{m}^\top \vec{V} \vec{m}}}}{\vec{m}^\top \vec{V} \vec{m}} \label{eq:conic_kappa_roots}
+\end{align}
+with $g\brak{\vec{h}} = \vec{h}^\top \vec{V} \vec{h} + 2\vec{u}^\top \vec{h} + f$.
+
+\item {Matrix Formulation of Intersection Points:} The intersection coordinates can be written in matrix form as:
+\begin{align}
+\vec{X} = \myvec{\vec{h} & \vec{m}} \myvec{1 & 1 \\ \kappa_1 & \kappa_2} \label{eq:conic_sol_matrix}
+\end{align}
+
+\item {Degenerate Conic Condition:} A quadratic form $\vec{x}^\top \vec{V} \vec{x} + 2\vec{u}^\top \vec{x} + f = 0$ represents a pair of straight lines if and only if the augmented matrix is singular:
+\begin{align}
+\mydet{\vec{V} & \vec{u} \\ \vec{u}^\top & f} = 0 \label{eq:conic_singularity}
+\end{align}
+
+\item {Pencil of Conics and Common Chord:} The intersection of two conics with parameters $\brak{\vec{V}_1, \vec{u}_1, f_1}$ and $\brak{\vec{V}_2, \vec{u}_2, f_2}$ is given by the pencil:
+\begin{align}
+\vec{x}^\top \brak{\vec{V}_1 + \mu \vec{V}_2}\vec{x} + 2\brak{\vec{u}_1 + \mu \vec{u}_2}^\top \vec{x} + \brak{f_1 + \mu f_2} = 0 \label{eq:pencil_conics}
+\end{align}
+The value of $\mu$ corresponding to the degenerate conic (the radical axis / common chord line) is found from:
+\begin{align}
+\mydet{\vec{V}_1 + \mu \vec{V}_2 & \vec{u}_1 + \mu \vec{u}_2 \\ \brak{\vec{u}_1 + \mu \vec{u}_2}^\top & f_1 + \mu f_2} = 0 \label{eq:pencil_det_zero}
+\end{align}
+\end{itemize}
+
+\item Laplace Transform
+\begin{itemize}
+\item Bilateral Definition:
+For an arbitrary continuous-time signal $g\brak{t}$, the bilateral Laplace transform is defined as:
+\begin{align}
+G\brak{s} = \mathcal{L}\cbrak{g\brak{t}} = \int_{-\infty}^{\infty} g\brak{t} e^{-st} \, dt
+\end{align}
+
+\item Unilateral Definition:
+For causal signals and differential equations with initial conditions at $t = 0$:
+\begin{align}
+G\brak{s} = \mathcal{L}\cbrak{g\brak{t}} = \int_{0}^{\infty} g\brak{t} e^{-st} \, dt \label{eq:laplace_def}
+\end{align}
+
+\item Derivation of Derivative Properties:
+Applying integration by parts to $\mathcal{L}\cbrak{y'\brak{t}}$ with $u = e^{-st}$ and $dv = y'\brak{t} \, dt \implies du = -s e^{-st} \, dt, \; v = y\brak{t}$:
+\begin{align}
+\mathcal{L}\cbrak{y'\brak{t}} &= \int_{0}^{\infty} y'\brak{t} e^{-st} \, dt \\
+&= \sbrak{y\brak{t} e^{-st}}_0^\infty - \int_{0}^{\infty} y\brak{t}\brak{-s e^{-st}} \, dt \\
+&= \brak{0 - y\brak{0}} + s \int_{0}^{\infty} y\brak{t} e^{-st} \, dt \\
+&= s Y\brak{s} - y\brak{0}
+\end{align}
+Thus, the first derivative transform is:
+\begin{align}
+y'\brak{t} \system{L} sY\brak{s} - y\brak{0} \label{eq:laplace_first_deriv}
+\end{align}
+
+Applying the first derivative property recursively to the second derivative $y''\brak{t} = \frac{d}{dt}\brak{y'\brak{t}}$:
+\begin{align}
+\mathcal{L}\cbrak{y''\brak{t}} &= s \mathcal{L}\cbrak{y'\brak{t}} - y'\brak{0} \\
+&= s \sbrak{s Y\brak{s} - y\brak{0}} - y'\brak{0} \\
+&= s^2 Y\brak{s} - s y\brak{0} - y'\brak{0} \label{eq:laplace_second_deriv}
+\end{align}
+Under zero initial conditions ($y\brak{0} = 0, \; y'\brak{0} = 0$), the operational transforms simplify to:
+\begin{align}
+y\brak{t} &\system{L} Y\brak{s} \\
+y'\brak{t} &\system{L} s Y\brak{s} \\
+y''\brak{t} &\system{L} s^2 Y\brak{s}
+\end{align}
+
+\item Transform of the Unit Step Function:
+The Laplace transform of an unconstrained constant $f\brak{t} = 1$ over $\brak{-\infty, \infty}$ is undefined because the integral diverges as $t \to -\infty$. For causal systems, a constant input starting at $t = 0$ is defined through the unit step function $u\brak{t}$:
+\begin{align}
+u\brak{t} = \begin{cases}
+1, & t \ge 0 \\
+0, & t < 0
+\end{cases}
+\end{align}
+Evaluating the unilateral Laplace transform of $u\brak{t}$:
+\begin{align}
+\mathcal{L}\cbrak{u\brak{t}} = \int_{0}^{\infty} 1 \cdot e^{-st} \, dt = \sbrak{-\frac{e^{-st}}{s}}_0^\infty = \frac{1}{s}, \quad \text{Re}\brak{s} > 0 \label{eq:laplace_const}
+\end{align}
+Hence:
+\begin{align}
+u\brak{t} \system{L} \frac{1}{s}
+\end{align}
+
+\item Transform of $e^{at}$:
+\begin{align}
+e^{at} u\brak{t} &\system{L} \frac{1}{s - a}, \quad \text{Re}\brak{s} > a \label{eq:laplace_exp_inv} \\
+\end{align}
+\end{itemize}
+
+\item Euler's Method of Forward Differences
+\begin{itemize}
+\item For a first-order differential equation $\frac{dy}{dt} = f\brak{t, y}$ with step size $h$:
+\begin{align}
+y_{n+1} = y_n + h f\brak{t_n, y_n} \label{eq:euler_recurrence}
+\end{align}
+\end{itemize}
+
+\item Gradient Descent Optimization
+\begin{itemize}
+\item First-Order Parameter Update:
+For a differentiable function $f\brak{x}$, the iterative parameter update with learning rate $\eta > 0$ is given by:
+\begin{align}
+x_{k+1} = x_k - \eta f'\brak{x_k} \label{eq:grad_descent_update}
+\end{align}
+\item Second Derivative Test for Convexity:
+\begin{align}
+f''\brak{x} > 0 \quad \forall x \in \brak{0, \infty} \implies f\brak{x} \text{ is strictly convex} \label{eq:convexity_check}
+\end{align}
+A strictly convex function on an open interval possesses at most one local minimum, which is also its unique global minimum.
+\end{itemize}
+
+\item Minimization via Completing the Square
+\begin{itemize}
+\item For any $x > 0$ and constant $a > 0$, expanding the squared difference gives:
+\begin{align}
+\brak{\sqrt{x} - \frac{a}{\sqrt{x}}}^2 = x - 2a + \frac{a^2}{x}
+\end{align}
+Because the square of any real term is non-negative $\brak{\sqrt{x} - \frac{a}{\sqrt{x}}}^2 \ge 0$, rearranging yields the lower bound:
+\begin{align}
+x + \frac{a^2}{x} = \brak{\sqrt{x} - \frac{a}{\sqrt{x}}}^2 + 2a \ge 2a \label{eq:completing_square_min}
+\end{align}
+The equality holds if and only if the squared term vanishes:
+\begin{align}
+\sqrt{x} - \frac{a}{\sqrt{x}} = 0 \implies x = a
+\end{align}
+attaining the unique minimum value $2a$.
+\end{itemize}
+
+\item Newton-Raphson Method
+\begin{itemize}
+\item First-Order Recurrence (Difference Equation):
+For a real-valued differentiable function $f\brak{x}$, the root is iteratively approximated using its first-order Taylor series expansion about the current estimate $x_n$:
+\begin{align}
+x_{n+1} = x_n - \frac{f\brak{x_n}}{f'\brak{x_n}} \label{eq:newton_raphson}
+\end{align}
+\end{itemize}
+
+\item System of Linear Equations and Rouch\'{e}--Capelli Theorem
+\begin{itemize}
+\item A system of $m$ linear equations in $n$ variables can be represented in matrix form as:
+\begin{align}
+\vec{A}\vec{x} = \vec{b} \label{eq:linear_sys}
+\end{align}
+where $\vec{A} \in \mathbb{R}^{m \times n}$ is the coefficient matrix, $\vec{x} \in \mathbb{R}^{n \times 1}$ is the vector of unknowns, and $\vec{b} \in \mathbb{R}^{m \times 1}$ is the constant vector.
+\item The solvability of the system is governed by the ranks of the coefficient matrix $\vec{A}$ and the augmented matrix $\sbrak{\vec{A} \mid \vec{b}}$:
+\begin{enumerate}
+    \item {Inconsistent System (No Solution):} A linear system has no solution if and only if:
+    \begin{align}
+    \text{rank}\brak{\vec{A}} < \text{rank}\brak{\sbrak{\vec{A} \mid \vec{b}}} \label{eq:inconsistent_rank}
+    \end{align}
+    Geometrically, this corresponds to distinct parallel lines that do not intersect.
+    \item {Consistent System (At Least One Solution):} A linear system has at least one solution if and only if:
+    \begin{align}
+    \text{rank}\brak{\vec{A}} = \text{rank}\brak{\sbrak{\vec{A} \mid \vec{b}}} = r \label{eq:consistent_rank}
+    \end{align}
+    \begin{itemize}
+        \item If $r = n$ (where $n$ is the number of variables), there exists a unique solution.
+        \item If $r < n$, there exist infinitely many solutions with $n - r$ free variables (coincident lines).
+    \end{itemize}
+\end{enumerate}
+\end{itemize}
+
+\item Sum of Independent Discrete Random Variables (Two Dice Roll)
+\begin{itemize}
+\item Let $X_1, X_2 \in \{1, 2, 3, 4, 5, 6\}$ be independent discrete uniform random variables representing the outcomes of two fair dice, each having probability mass function (PMF):
+\begin{align}
+p_{X_1}\brak{n} = p_{X_2}\brak{n} = \begin{cases} 
+\frac{1}{6}, & 1 \le n \le 6 \\ 
+0, & \text{otherwise} 
+\end{cases} \label{eq:dice_uniform_pmf}
+\end{align}
+
+\item Let $X = X_1 + X_2$ denote their sum. The PMF of $X$ is given by the discrete convolution of $p_{X_1}\brak{n}$ and $p_{X_2}\brak{n}$:
+\begin{align}
+p_X\brak{n} &= \Pr\brak{X_1 + X_2 = n} = \sum_{k} \Pr\brak{X_1 = n - k \mid X_2 = k} p_{X_2}\brak{k} \\
+&= \sum_{k} p_{X_1}\brak{n - k} p_{X_2}\brak{k} = p_{X_1}\brak{n} * p_{X_2}\brak{n} \label{eq:dice_convolution}
+\end{align}
+
+\item Substituting \eqref{eq:dice_uniform_pmf} into \eqref{eq:dice_convolution} yields the triangular PMF:
+\begin{align}
+p_X\brak{n} = \begin{cases} 
+0, & n < 2 \\ 
+\frac{n - 1}{36}, & 2 \le n \le 7 \\ 
+\frac{13 - n}{36}, & 7 < n \le 12 \\ 
+0, & n > 12 
+\end{cases} \label{eq:triangular_pmf}
+\end{align}
+\end{itemize}
+
+\item Unit Step Response of an $RC$ Circuit and $s$-Domain Analysis
+\begin{itemize}
+\item {Time-Domain Circuit Equation:}
+Consider a series $RC$ circuit excited by a step input $v_i\brak{t} = V_{dc} u\brak{t}$ where $V_{dc}$ is a constant DC voltage source, and $u\brak{t}$ is step input function defined as: 
+\begin{align}
+u\brak{t} = \begin{cases}
+1, & t \ge 0 \\
+0, & t < 0
+\end{cases} 
+\end{align}
+Starting at $t = 0$, the current through the capacitor is:
+\begin{align}
+i\brak{t} = \frac{dq}{dt} = C \frac{dV_{out}}{dt}
+\end{align}
+Applying Kirchhoff's Voltage Law (KVL) around the loop:
+\begin{align}
+R i\brak{t} + V_{out}\brak{t} = V_{dc} \implies RC \frac{dV_{out}}{dt} + V_{out}\brak{t} = V_{dc} \label{eq:rc_circuit_ode}
+\end{align}
+
+\item {$s$-Domain Representation:}
+Transforming the circuit to the Laplace domain, the step source becomes $V_{in}\brak{s} = \frac{V_{dc}}{s}$, the resistor impedance is $R$, and the capacitor impedance is $\frac{1}{sC}$. The equivalent impedance is:
+\begin{align}
+R_{eq}\brak{s} = R + \frac{1}{sC} = \frac{RsC + 1}{sC}
+\end{align}
+The loop current in the $s$-domain is:
+\begin{align}
+I\brak{s} = \frac{V_{in}\brak{s}}{R_{eq}\brak{s}} = \frac{\frac{V_{dc}}{s}}{\frac{RsC + 1}{sC}} = \frac{V_{dc} C}{RsC + 1}
+\end{align}
+The output voltage across the capacitor is obtained as:
+\begin{align}
+V_{out}\brak{s} &= I\brak{s} \brak{\frac{1}{sC}} = \frac{V_{dc}}{s\brak{RCs + 1}} \\
+&= \frac{V_{dc}}{RC} \sbrak{\frac{1}{s\brak{s + \frac{1}{RC}}}} = V_{dc} \sbrak{\frac{1}{s} - \frac{1}{s + \frac{1}{RC}}} \label{eq:rc_s_domain_vout}
+\end{align}
+Taking the inverse Laplace transform yields:
+\begin{align}
+V_{out}\brak{t} = V_{dc}\brak{1 - e^{-\frac{t}{RC}}} u\brak{t} \label{eq:rc_time_response}
+\end{align}
+\end{itemize}
+
+\item Standard First-Order Differential Equation Comparison
+\begin{itemize}
+\item A general first-order dynamic system with time constant $\tau$ subjected to a unit step input is described by:
+\begin{align}
+\tau \frac{dy}{dt} + y\brak{t} = y_{ss} \label{eq:first_order_ode_std}
+\end{align}
+where $\tau$ is the time constant and $y_{ss}$ is the steady-state response.
+
+\item Comparing \eqref{eq:first_order_ode_std} with the $RC$ circuit in \eqref{eq:rc_circuit_ode}:
+\begin{align}
+y\brak{t} \longleftrightarrow V_{out}\brak{t}, \quad \tau \longleftrightarrow RC, \quad y_{ss} \longleftrightarrow V_{dc}
+\end{align}
+Transforming \eqref{eq:first_order_ode_std} into the $s$-domain with zero initial conditions $y\brak{0} = 0$:
+\begin{align}
+\tau s Y\brak{s} + Y\brak{s} = \frac{y_{ss}}{s} \implies Y\brak{s} = \frac{y_{ss}}{s\brak{\tau s + 1}} = y_{ss} \sbrak{\frac{1}{s} - \frac{1}{s + \frac{1}{\tau}}}
+\end{align}
+Taking the inverse Laplace transform directly gives:
+\begin{align}
+y\brak{t} = y_{ss}\brak{1 - e^{-\frac{t}{\tau}}} u\brak{t} \label{eq:first_order_step_sol}
+\end{align}
+\end{itemize}
+
+\item Transfer Function of a First-Order Process
+\begin{itemize}
+\item In continuous-time signals and linear time-invariant (LTI) systems, the transfer function $H\brak{s}$ is defined as the ratio of the Laplace transform of the output signal $Y\brak{s}$ to the Laplace transform of the input signal $X\brak{s}$, under the condition that all initial conditions are zero:
+\begin{align}
+H\brak{s} = \frac{Y\brak{s}}{X\brak{s}}
+\end{align}
+
+\item For a process driven by an input forcing function $g\brak{t}$ with Laplace transform $G\brak{s}$, the transfer function is written as:
+\begin{align}
+H\brak{s} = \frac{Y\brak{s}}{G\brak{s}}
+\end{align}
+where $G\brak{s}$ denotes the input function and $Y\brak{s}$ is the process output response evaluated under relaxed (zero) initial conditions.
+
+\item In the time domain, this corresponds to the convolution of the input signal with the system impulse response $h\brak{t} = \mathcal{L}^{-1}\cbrak{H\brak{s}}$:
+\begin{align}
+y\brak{t} = h\brak{t} * g\brak{t}
+\end{align}
+\end{itemize}
+
+\item Identity Condition for Linear Combinations
+\begin{itemize}
+\item For any independent variables or functions $x$ and $y$, if the relation
+\begin{align}
+ax + by = 0 \label{eq:linear_identity}
+\end{align}
+holds identically for all $x$ and $y$, then the coefficients must vanish simultaneously:
+\begin{align}
+a = 0 \quad \text{and} \quad b = 0 \label{eq:linear_coeffs_zero}
+\end{align}
+\item Similarly, if an expression $C_1 f_1\brak{t} + C_2 f_2\brak{t} = 0$ holds for arbitrary constants $C_1$ and $C_2$, each coefficient must vanish independently:
+\begin{align}
+f_1\brak{t} = 0 \quad \text{and} \quad f_2\brak{t} = 0 \label{eq:arbitrary_coeffs_zero}
+\end{align}
+For distinct exponential functions $e^{r_1 t}$ and $e^{r_2 t}$ ($r_1 \ne r_2$), this implies linear independence across all $t$.
+\end{itemize}
+
+\item Continuity and Differentiability in Functions
+\begin{itemize}
+\item Continuity at a Point:
+A real-valued function $f\brak{x}$ is continuous at $x = x_0$ if and only if the left-hand limit, the right-hand limit, and the value of the function coincide:
+\begin{align}
+\lim_{x \to x_0^-} f\brak{x} = \lim_{x \to x_0^+} f\brak{x} = f\brak{x_0} \label{eq:continuity_cond}
+\end{align}
+
+\item Differentiability and Slope Matching:
+A function $f\brak{x}$ is differentiable at $x = x_0$ if the left-hand derivative equals the right-hand derivative:
+\begin{align}
+f'\brak{x_0^-} = \lim_{h \to 0^-} \frac{f\brak{x_0 + h} - f\brak{x_0}}{h} = \lim_{h \to 0^+} \frac{f\brak{x_0 + h} - f\brak{x_0}}{h} = f'\brak{x_0^+} \label{eq:deriv_equality}
+\end{align}
+For piecewise functions defined by differentiable curves on each side of the boundary $x_0$, this requires matching boundary slopes:
+\begin{align}
+f'\brak{x_0^-} = f'\brak{x_0^+} \label{eq:slope_matching}
+\end{align}
+
+\item Differentiability Implies Continuity:
+If $f\brak{x}$ is differentiable at $x = x_0$, it must necessarily be continuous at $x = x_0$:
+\begin{align}
+\lim_{x \to x_0} \sbrak{f\brak{x} - f\brak{x_0}} = \lim_{x \to x_0} \sbrak{\frac{f\brak{x} - f\brak{x_0}}{x - x_0} \brak{x - x_0}} = f'\brak{x_0} \cdot 0 = 0 \label{eq:diff_implies_cont}
+\end{align}
+Hence, continuity at $x = x_0$ is a necessary prerequisite for differentiability.
+\end{itemize}
+
+\item Piecewise Boundary Conditions at $x = a$
+\begin{itemize}
+\item Consider a function $f\brak{x}$ defined by differentiable branches $f_1\brak{x}$ and $f_2\brak{x}$ across a boundary point $x = a$:
+\begin{align}
+f\brak{x} = \begin{cases}
+f_1\brak{x}, & x \le a \\
+f_2\brak{x}, & x > a
+\end{cases} \label{eq:piecewise_branches}
+\end{align}
+For $f\brak{x}$ to be continuous at $x = a$, the one-sided limits must equal the boundary value:
+\begin{align}
+\lim_{x \to a^-} f_1\brak{x} = \lim_{x \to a^+} f_2\brak{x} \implies f_1\brak{a} = f_2\brak{a} \label{eq:piecewise_cont_cond}
+\end{align}
+For $f\brak{x}$ to be differentiable at $x = a$, the one-sided derivatives at the boundary must coincide:
+\begin{align}
+f_1'\brak{a} = f_2'\brak{a} \label{eq:piecewise_diff_cond}
+\end{align}
+\end{itemize}
+
+\item Representation of Linear Balance Systems as Matrix Equations
+\begin{itemize}
+\item A general system of $m$ linear equations in $n$ variables $x_1, x_2, \dots, x_n$:
+\begin{align}
+a_{i1} x_1 + a_{i2} x_2 + \dots + a_{in} x_n = b_i, \quad i = 1, 2, \dots, m
+\end{align}
+can be expressed in matrix-vector form:
+\begin{align}
+\vec{A}\vec{x} = \vec{b} \label{eq:matrix_system_linear}
+\end{align}
+where $\vec{A} \in \mathbb{R}^{m \times n}$ is the coefficient matrix, $\vec{x} \in \mathbb{R}^n$ is the state vector, and $\vec{b} \in \mathbb{R}^m$ is the constant vector:
+\begin{align}
+\vec{A} = \myvec{
+a_{11} & a_{12} & \dots & a_{1n} \\
+a_{21} & a_{22} & \dots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m1} & a_{m2} & \dots & a_{mn}
+}, \quad
+\vec{x} = \myvec{x_1 \\ x_2 \\ \vdots \\ x_n}, \quad
+\vec{b} = \myvec{b_1 \\ b_2 \\ \vdots \\ b_m}
+\end{align}
+
+\item In multi-component conservation and stoichiometric balances, the conservation of elemental species across reactant and product streams is represented by:
+\begin{align}
+\vec{A}_{\text{reactants}} \vec{x}_{\text{reactants}} = \vec{A}_{\text{products}} \vec{x}_{\text{products}}
+\end{align}
+Combining both sides into a single stoichiometric matrix yields the homogeneous system:
+\begin{align}
+\sbrak{\vec{A}_{\text{reactants}} \quad -\vec{A}_{\text{products}}} \vec{x} = \vec{0} \label{eq:stoich_matrix_homo}
+\end{align}
+When boundary parameters or specific yields fix certain degrees of freedom (such as basis mole values and yield coefficients), the homogeneous system reduces to a deterministic non-homogeneous matrix equation $\vec{A}\vec{x} = \vec{b}$ that can be solved directly via row operations or symbolic matrix inversion.
+\end{itemize}
+\item Solution of First-Order Recurrence Relations via Z-Transform
+\begin{itemize}
+\item The bilateral Z-transform of a discrete-time sequence $x\brak{n}$ is defined as:
+\begin{align}
+X\brak{z} = \mathcal{Z}\brak{x\brak{n}} = \sum_{n=-\infty}^{\infty} x\brak{n} z^{-n} \label{eq:z_transform_def}
+\end{align}
+over the Region of Convergence (ROC) where the series converges absolutely.
+
+\item Discrete Unit Step Sequence:
+The discrete unit step function $u\brak{n}$ is defined as:
+\begin{align}
+u\brak{n} = \begin{cases}
+1, & n \ge 0 \\
+0, & n < 0
+\end{cases} \label{eq:discrete_unit_step}
+\end{align}
+Its forward Z-transform is given by:
+\begin{align}
+\mathcal{Z}\brak{u\brak{n}} = \sum_{n=0}^{\infty} z^{-n} = \frac{1}{1 - z^{-1}}, \quad \abs{z} > 1 \label{eq:z_step_transform}
+\end{align}
+
+\item Time-Shift Property:
+Shifting a sequence by an integer delay $k$ corresponds to multiplication by $z^{-k}$ in the Z-domain:
+\begin{align}
+\mathcal{Z}\brak{x\brak{n - k}} = z^{-k} X\brak{z} \label{eq:z_shift_property}
+\end{align}
+Consequently, delaying the discrete unit step by one sample yields:
+\begin{align}
+\mathcal{Z}\brak{u\brak{n - 1}} = \frac{z^{-1}}{1 - z^{-1}}, \quad \abs{z} > 1 \label{eq:z_delayed_step}
+\end{align}
+
+\item Standard Inverse Transform Pair:
+For any scalar constant $\alpha$:
+\begin{align}
+\mathcal{Z}^{-1}\brak{\frac{1}{1 - \alpha z^{-1}}} = \alpha^n u\brak{n}, \quad \abs{z} > \abs{\alpha} \label{eq:z_inv_exponential}
+\end{align}
+\end{itemize}
+
+\item Relation Between Eigenvalues and Trace of a Matrix
+\begin{itemize}
+\item Let $\vec{A} \in \mathbb{R}^{n \times n}$ be a square matrix with eigenvalues $\lambda_1, \lambda_2, \dots, \lambda_n$. The characteristic polynomial of $\vec{A}$ is defined by:
+\begin{align}
+P\brak{\lambda} = \mydet{\lambda \vec{I} - \vec{A}} \label{eq:char_poly_det}
+\end{align}
+
+\item Factoring the polynomial in terms of its $n$ characteristic roots:
+\begin{align}
+P\brak{\lambda} = \prod_{i=1}^n \brak{\lambda - \lambda_i} = \lambda^n - \brak{\sum_{i=1}^n \lambda_i} \lambda^{n-1} + \dots + \brak{-1}^n \prod_{i=1}^n \lambda_i \label{eq:char_poly_factored}
+\end{align}
+
+\item Evaluating the determinant $\mydet{\lambda \vec{I} - \vec{A}}$ using cofactor expansion, the only term that contributes to $\lambda^n$ and $\lambda^{n-1}$ is the product of the principal diagonal entries:
+\begin{align}
+\prod_{i=1}^n \brak{\lambda - a_{ii}} = \lambda^n - \brak{\sum_{i=1}^n a_{ii}} \lambda^{n-1} + \dots \label{eq:diagonal_expansion}
+\end{align}
+where $a_{ii}$ denotes the diagonal elements of $\vec{A}$.
+
+\item Equating the coefficient of $\lambda^{n-1}$ from \eqref{eq:char_poly_factored} and \eqref{eq:diagonal_expansion}:
+\begin{align}
+\sum_{i=1}^n \lambda_i = \sum_{i=1}^n a_{ii} = \operatorname{tr}\brak{\vec{A}} \label{eq:sum_eigenvalues_trace}
+\end{align}
+Hence, the sum of all eigenvalues of a square matrix is always equal to its trace.
+\end{itemize}
+
+\end{enumerate}
+

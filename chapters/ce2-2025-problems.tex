@@ -1,0 +1,1803 @@
+% ============================================================
+% GATE CE2 2025 — Problems and Solutions
+% Reformatted to follow the reference BT problem-book style.
+% ============================================================
+
+\small
+
+% ------------------------------------------------------------
+% Local formatting helpers
+% ------------------------------------------------------------
+
+\newcommand{\CodeRef}[1]{%
+    \vspace{0.25em}
+    \begin{center}
+        \fbox{%
+            \begin{minipage}{0.90\columnwidth}
+                \centering
+                \texttt{#1}
+            \end{minipage}%
+        }
+    \end{center}
+}
+
+\newcommand{\Solution}{\par\noindent\textbf{Solution:}\ }
+
+\begin{enumerate}[label=\thesubsection.\arabic*, ref=\thesubsection.\theenumi]
+
+% ============================================================
+% Question 3 — Energy consumption
+% ============================================================
+
+\item
+An electricity utility company charges \rupee 7 per kWh
+(kilo watt-hour). If a 40-watt desk light is left on for 10 hours
+ each night for 180 days, what would be the cost of energy
+consumption? If the desk light is on for 2 more hours each night
+for the 180 days, what would be the percentage-increase in the
+cost of energy consumption?
+
+\hfill (GATE~CE2~2025)
+
+\begin{enumerate}[label=\alph*)]
+    \item \rupee 604.8; 10\%
+    \item \rupee 504; 20\%
+    \item \rupee 604.8; 12\%
+    \item \rupee 720; 15\%
+\end{enumerate}
+
+\Solution
+The initial energy consumption is
+\begin{align}
+    E_1
+    &= P \times t_1 \times N \\
+    &= 0.04\,\text{kW}\times10\,\text{hours/night}
+       \times180\,\text{days} \\
+    &= 72\,\text{kWh}
+\end{align}
+
+The initial cost at \rupee 7 per kWh is
+\begin{align}
+    \text{Initial Cost}
+    &= 72\,\text{kWh}\times\text{\rupee }7/\text{kWh} \\
+    &= \text{\rupee }504
+\end{align}
+
+With $t_2=12$ hours/night, the new energy consumption and cost are
+\begin{align}
+    E_2
+    &= 0.04\,\text{kW}\times12\,\text{hours/night}
+       \times180\,\text{days} \\
+    &= 86.4\,\text{kWh}, \\
+    \text{New Cost}
+    &= 86.4\,\text{kWh}\times\text{\rupee }7/\text{kWh} \\
+    &= \text{\rupee }604.8
+\end{align}
+
+Therefore, the percentage increase is
+\begin{align}
+    \text{Percentage Increase}
+    &= \frac{604.8-504}{504}\times100 \\
+    &= 20\%.
+\end{align}
+
+Thus, option (B) is correct.
+
+\CodeRef{codes/ce2q3/ce2q3.py}
+
+% ============================================================
+% Question 5 — Ball distribution
+% ============================================================
+
+\item
+A bag contains Violet ($V$), Yellow ($Y$), Red ($R$), and Green
+($G$) balls. On counting them, the following results are obtained:
+
+\begin{enumerate}[label=(\roman*)]
+    \item The sum of Yellow balls and twice the number of Violet
+          balls is 50.
+    \item The sum of Violet and Green balls is 50.
+    \item The sum of Yellow and Red balls is 50.
+    \item The sum of Violet and twice the number of Red balls is 50.
+\end{enumerate}
+
+Which one of the following correctly represents the balls in the bag?
+
+\hfill (GATE~CE2~2025)
+
+\begin{enumerate}[label=\alph*)]
+    \item $V=10\%$, $R=20\%$, $Y=30\%$, $G=40\%$
+    \item $V=40\%$, $R=10\%$, $Y=20\%$, $G=30\%$
+    \item $V=30\%$, $R=40\%$, $Y=10\%$, $G=10\%$
+    \item $V=20\%$, $R=30\%$, $Y=40\%$, $G=10\%$
+\end{enumerate}
+
+\Solution
+Representing the ball counts as
+$\vec{x}=\myvec{V\;Y\;R\;G}^{\top}$, the given conditions form the
+matrix equation $\mathbf{A}\vec{x}=\vec{b}$:
+\begin{align}
+\myvec{
+    2 & 1 & 0 & 0 \\
+    1 & 0 & 0 & 1 \\
+    0 & 1 & 1 & 0 \\
+    1 & 0 & 2 & 0
+}
+\myvec{V\\Y\\R\\G}
+&=
+\myvec{50\\50\\50\\50}
+\end{align}
+
+Solving the system gives
+$V=10$, $Y=30$, $R=20$, and $G=40$.
+The total number of balls is $T=100$, so
+\begin{align}
+    V&=10\%, & Y&=30\%, & R&=20\%, & G&=40\%.
+\end{align}
+
+Thus, option (A) is correct.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\columnwidth]{figs/piechart.png}
+    \caption{Pie chart representing ball distribution.}
+    \label{fig:ce2q5}
+\end{figure}
+
+\CodeRef{codes/ce2q5/ce2q5.py}
+
+% ============================================================
+% Question 8 — Five-digit number
+% ============================================================
+
+\item
+Consider a five-digit number PQRST that has distinct digits
+$P$, $Q$, $R$, $S$, and $T$, and satisfies the following conditions:
+$P<Q$, $S>P>T$, and $R<T$. If integers 1 through 5 are used to
+construct such a number, the value of $P$ is:
+
+\hfill (GATE~CE2~2025)
+
+\begin{enumerate}[label=\alph*)]
+    \item 1
+    \item 2
+    \item 3
+    \item 4
+\end{enumerate}
+
+\Solution
+Combining the inequalities gives
+\begin{align}
+    R<T<P<Q, \qquad T<P<S.
+\end{align}
+
+Since $R<T<P$, the digit $P$ must be greater than at least two
+other distinct digits, namely 1 and 2. Hence $P\neq1,2$.
+
+Also, $P<Q$ and $P<S$, so $P$ cannot be the maximum digit 5.
+Therefore, the only remaining possibility is $P=3$.
+
+For $P=3$, the smaller digits $\{1,2\}$ can be assigned to
+$R$ and $T$, while the larger digits $\{4,5\}$ can be assigned
+to $Q$ and $S$. Hence all the inequalities are satisfied.
+
+Thus, option (C) is correct.
+
+\CodeRef{codes/ce2q8/ce2q8.py}
+
+% ============================================================
+% Question 9 — Mixture and alligation
+% ============================================================
+
+\item
+A business person buys potatoes of two different varieties $P$ and
+$Q$, mixes them in a certain ratio and sells them at \rupee 192 per kg.
+The cost of variety $P$ is \rupee 800 for $5$ kg. The cost of variety
+$Q$ is \rupee 800 for $4$ kg. If the person gets $8\%$ profit, what is
+the $P:Q$ ratio (by weight)?
+
+\hfill (GATE~CE2~2025)
+
+\begin{enumerate}[label=\alph*)]
+    \item $5:4$
+    \item $3:4$
+    \item $3:2$
+    \item $1:1$
+\end{enumerate}
+
+\Solution
+Let the profit percentage be $p=0.08$. Since
+$\text{SP}=\text{CP}(1+p)$, the cost price of the mixture is
+\begin{align}
+    \text{CP}
+    &= \frac{\text{SP}}{1+p} \\
+    &= \frac{192}{1.08}
+     = \frac{1600}{9}\,\text{\rupee/kg}.
+\end{align}
+
+The unit costs of the two varieties are
+\begin{align}
+    C_P &= \frac{800}{5}=160\,\text{\rupee/kg}, \\
+    C_Q &= \frac{800}{4}=200\,\text{\rupee/kg}.
+\end{align}
+
+Let the weights mixed be $W_P$ and $W_Q$. Equating the total cost
+of the mixture to the component costs gives
+\begin{align}
+    W_P C_P+W_Q C_Q
+    &= (W_P+W_Q)\text{CP} \\
+    W_P(\text{CP}-C_P)
+    &= W_Q(C_Q-\text{CP}).
+\end{align}
+
+Hence,
+\begin{align}
+    \frac{W_P}{W_Q}
+    &= \frac{C_Q-\text{CP}}{\text{CP}-C_P} \\
+    &= \frac{200-\frac{1600}{9}}
+            {\frac{1600}{9}-160} \\
+    &= \frac{\frac{200}{9}}{\frac{160}{9}}
+     = \frac54.
+\end{align}
+
+Thus, the required ratio is $5:4$, making option (A) correct.
+
+\CodeRef{codes/ce2q9/ce2q9.py}
+
+% ============================================================
+% Question 10 — Triangle geometry
+% ============================================================
+
+\item
+Three villages $P$, $Q$, and $R$ are located in such a way that the
+distance $PQ=13$ km, $QR=14$ km, and $RP=15$ km. A straight road
+joins $Q$ and $R$. It is proposed to connect $P$ to this road $QR$
+by constructing another road. What is the minimum possible length
+(in km) of this connecting road?
+
+\hfill (GATE~CE2~2025)
+
+\begin{enumerate}[label=\alph*)]
+    \item 10.5
+    \item 11.0
+    \item 12.0
+    \item 12.5
+\end{enumerate}
+
+\Solution
+The minimum distance from vertex $P$ to line $QR$ is the altitude
+$h_a$. The semi-perimeter of triangle $PQR$ is
+\begin{align}
+    s=\frac{13+14+15}{2}=21.
+\end{align}
+
+Using Heron's formula, the area is
+\begin{align}
+    \Delta
+    &=\sqrt{21(21-14)(21-15)(21-13)} \\
+    &=\sqrt{21\times7\times6\times8} \\
+    &=84\,\text{km}^2.
+\end{align}
+
+Taking $QR=14$ km as the base,
+\begin{align}
+    h_a=\frac{2\Delta}{14}
+       =\frac{2\times84}{14}
+       =12\,\text{km}.
+\end{align}
+
+Thus, option (C) is correct.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\columnwidth]{figs/village_triangle.png}
+    \caption{Triangle $PQR$ geometry and altitude from $P$ to $QR$.}
+    \label{fig:ce2q10}
+\end{figure}
+
+\CodeRef{codes/ce2q10/ce2q10.py}
+
+% ============================================================
+% Question 11 — Matrix transpose
+% ============================================================
+
+\item
+For the matrix $[\vec{A}]$ given below, the transpose is:
+\begin{align}
+    [\vec{A}]
+    =\myvec{
+        2 & 3 & 4 \\
+        1 & 4 & 5 \\
+        4 & 3 & 2
+    }
+\end{align}
+
+\hfill (GATE~CE2~2025)
+
+\begin{enumerate}[label=\alph*)]
+    \item $\myvec{2&1&4\\3&4&3\\4&5&2}$
+    \item $\myvec{4&3&2\\5&4&1\\2&3&4}$
+    \item $\myvec{4&2&3\\5&1&4\\2&4&3}$
+    \item $\myvec{2&3&4\\1&4&5\\4&3&2}$
+\end{enumerate}
+
+\Solution
+The transpose operation interchanges rows and columns. Therefore,
+\begin{align}
+    [\vec{A}^{\top}]_{ij}
+    &= [\vec{A}]_{ji}, \\
+    \vec{A}^{\top}
+    &= \myvec{
+        2 & 1 & 4 \\
+        3 & 4 & 3 \\
+        4 & 5 & 2
+    }.
+\end{align}
+
+Thus, option (A) is correct.
+
+\CodeRef{codes/ce2q11/ce2q11.py}
+
+% ============================================================
+% Question 12 — Integration
+% ============================================================
+
+\item
+Integration of $\ln(x)$ with respect to $x$, i.e.,
+$\int\ln(x)\,dx=$\underline{\hspace{3cm}}
+
+\hfill (GATE~CE2~2025)
+
+\begin{enumerate}[label=\alph*)]
+    \item $x\ln(x)-x+C$
+    \item $x-\ln(x)+C$
+    \item $x\ln(x)+x+C$
+    \item $\ln(x)-x+C$
+\end{enumerate}
+
+\Solution
+Using integration by parts with $u=\ln(x)$ and $dv=dx$,
+\begin{align}
+    \int\ln(x)\,dx
+    &=x\ln(x)-\int x\cdot\frac1x\,dx \\
+    &=x\ln(x)-\int1\,dx \\
+    &=x\ln(x)-x+C.
+\end{align}
+
+Thus, option (A) is correct.
+
+\CodeRef{codes/ce2q12/ce2q12.py}
+
+% ============================================================
+% Question 14 — Influence line of a truss member
+% ============================================================
+
+\item
+Consider the pin-jointed truss shown in the figure. Influence line
+is drawn for the axial force in the member $G-I$, when a unit load
+travels on the bottom chord of the truss. Identify the CORRECT
+influence line from the options provided.
+
+\hfill (GATE~CE2~2025)
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\columnwidth]{figs/ce2q14.png}
+    \caption{Influence line diagram for axial force in member $G-I$.}
+    \label{fig:ce2q14}
+\end{figure}
+
+\Solution
+Passing a vertical section through the bottom chord member $G-I$
+and taking moments about node $H$, the influence-line ordinate
+reaches its peak at nodes $G$ and $I$. For a truss of height
+$h=3$ m and panel length $L=6$ m, the peak tensile ordinate is
+$1.33$. Thus, option (B) is correct.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\columnwidth]{figs/influence_line_gi.png}
+    \caption{Influence line diagram for axial force in member $G-I$.}
+    \label{fig:ce2q14}
+\end{figure}
+
+\CodeRef{codes/ce2q14/ce2q14.py}
+
+% ============================================================
+% Question 21 — Curl and divergence
+% ============================================================
+
+\item
+Consider a velocity vector $\vec{V}$ in $(x,y,z)$ coordinates given by
+$\vec{V}=u\vec{x}+v\vec{y}$. Pick one or more CORRECT statement(s)
+from the choices given below.
+
+\hfill (GATE~CE2~2025)
+
+\begin{enumerate}[label=\alph*)]
+    \item $z$-component of Curl of velocity:
+          $\nabla\times\vec{V}
+          =\left(\frac{\partial v}{\partial x}
+          -\frac{\partial u}{\partial y}\right)\vec{z}$
+    \item $z$-component of Curl of velocity:
+          $\nabla\times\vec{V}
+          =\left(\frac{\partial u}{\partial x}
+          -\frac{\partial v}{\partial y}\right)\vec{z}$
+    \item Divergence of velocity:
+          $\nabla\cdot\vec{V}
+          =\frac{\partial u}{\partial x}
+          +\frac{\partial v}{\partial y}$
+    \item Divergence of velocity:
+          $\nabla\cdot\vec{V}
+          =\frac{\partial u}{\partial y}
+          +\frac{\partial v}{\partial x}$
+\end{enumerate}
+
+\Solution
+For a two-dimensional velocity field
+$\vec{V}=u\vec{x}+v\vec{y}$, the $z$-component of curl is
+\begin{align}
+    (\nabla\times\vec{V})_z
+    =\frac{\partial v}{\partial x}
+     -\frac{\partial u}{\partial y}.
+\end{align}
+
+Thus, statement (A) is correct.
+
+The divergence is
+\begin{align}
+    \nabla\cdot\vec{V}
+    =\frac{\partial u}{\partial x}
+     +\frac{\partial v}{\partial y}.
+\end{align}
+
+Thus, statement (C) is correct.
+
+Therefore, the correct statements are (A) and (C).
+
+\CodeRef{codes/ce2q21/ce2q21.py}
+
+% ============================================================
+% Question 22 — Probability
+% ============================================================
+
+\item
+Given that $A$ and $B$ are not null sets, which of the following
+statements regarding probability is/are CORRECT?
+
+\hfill (GATE~CE2~2025)
+
+\begin{enumerate}[label=\alph*)]
+    \item $\Pr(A\cap B)=\Pr(A)\Pr(B)$ if $A$ and $B$ are mutually exclusive.
+    \item Conditional probability, $\Pr(A\mid B)=1$ if $B\subset A$.
+    \item $\Pr(A\cup B)=\Pr(A)+\Pr(B)$, if $A$ and $B$ are mutually exclusive.
+    \item $\Pr(A\cap B)=0$, if $A$ and $B$ are independent.
+\end{enumerate}
+
+\Solution
+Since $B\subset A$,
+\begin{align}
+    A\cap B &= B, \\
+    \Pr(A\mid B)
+    &=\frac{\Pr(A\cap B)}{\Pr(B)}
+     =\frac{\Pr(B)}{\Pr(B)}=1.
+\end{align}
+
+Hence, statement (B) is correct.
+
+For mutually exclusive events,
+\begin{align}
+    \Pr(A\cap B)&=0, \\
+    \Pr(A\cup B)&=\Pr(A)+\Pr(B).
+\end{align}
+
+Hence, statement (C) is correct. Statements (A) and (D) are
+incorrect for non-null sets.
+
+Therefore, the correct statements are (B) and (C).
+
+\CodeRef{codes/ce2q22/ce2q22.py}
+% ============================================================
+% Question 36 — Solution of differential equation using Laplace transform
+% ============================================================
+
+\item
+Pick the CORRECT solution for the following differential equation
+
+\[
+\frac{dy}{dx} = e^{x-y}
+\]
+
+\hfill (GATE~CE2~2025)
+
+\begin{enumerate}[label=\alph*)]
+    \item \(y=\ln(e^x+\text{Constant})\)
+    \item \(\ln(y)=x+\text{Constant}\)
+    \item \(\ln(y)=\ln(e^x)+\text{Constant}\)
+    \item \(y=x+\text{Constant}\)
+\end{enumerate}
+
+\Solution
+The given differential equation is nonlinear:
+
+\[
+\frac{dy}{dx}=e^{x-y}=e^x e^{-y}
+\]
+
+To use Laplace transformation, we first convert it into a linear differential equation
+by introducing the substitution
+
+\[
+u=e^y
+\]
+
+Then,
+
+\[
+\frac{du}{dx}=e^y\frac{dy}{dx}
+\]
+
+Using the given equation,
+
+\[
+\frac{du}{dx}=e^y \cdot e^{x-y}=e^x
+\]
+
+Thus, the transformed problem reduces to
+
+\[
+\frac{du}{dx}=e^x
+\]
+
+Now take Laplace transforms on both sides with respect to \(x\). Let
+
+\[
+\mathcal{L}\{u(x)\}=U(s)
+\]
+
+Then,
+
+\[
+\mathcal{L}\left\{\frac{du}{dx}\right\}=sU(s)-u(0)
+\]
+
+and
+
+\[
+\mathcal{L}\{e^x\}=\frac{1}{s-1}
+\]
+
+Hence,
+
+\[
+sU(s)-u(0)=\frac{1}{s-1}
+\]
+
+Therefore,
+
+\[
+U(s)=\frac{1}{s(s-1)}+\frac{u(0)}{s}
+\]
+
+Using partial fractions,
+
+\[
+\frac{1}{s(s-1)}=-\frac{1}{s}+\frac{1}{s-1}
+\]
+
+So,
+
+\[
+U(s)= -\frac{1}{s}+\frac{1}{s-1}+\frac{u(0)}{s}
+\]
+
+\[
+U(s)=\frac{u(0)-1}{s}+\frac{1}{s-1}
+\]
+
+Taking inverse Laplace transform,
+
+\[
+u(x)=u(0)-1+e^x
+\]
+
+Since \(u=e^y\), we get
+
+\[
+e^y=e^x+C
+\]
+
+where \(C=u(0)-1\) is an arbitrary constant.
+
+Taking natural logarithm,
+
+\[
+y=\ln(e^x+C)
+\]
+
+Hence, the correct solution is
+
+\[
+\boxed{y=\ln(e^x+\text{Constant})}
+\]
+
+Therefore, the correct option is
+
+\[
+\boxed{\text{(A)}}
+\]
+
+\CodeRef{codes/ce2q36/ce2q36.py}
+
+% ============================================================
+% Question 38 — Propped cantilever with support settlement
+% ============================================================
+
+\item
+The figure shows a propped cantilever with uniform flexural rigidity $$EI$$ (in N.m$$^2$$)
+and subjected to a moment $$M$$ (in N.m). Consider forces and displacements in the
+upward direction as positive.
+
+Find the upward reaction at the propped support $$B$$ (in N) when this support settles
+by $$(-\Delta)$$, given in metres.
+
+\hfill (GATE~CE2~2025)
+
+\begin{enumerate}[label=\alph*)]
+    \item $$\dfrac{3M}{2L}-\dfrac{6EI\Delta}{L^3}$$
+    \item $$\dfrac{8M}{3L}-\dfrac{2EI\Delta}{L^3}$$
+    \item $$\dfrac{3M}{2L}-\dfrac{3EI\Delta}{L^3}$$
+    \item $$\dfrac{M}{L}-\dfrac{8EI\Delta}{L^3}$$
+\end{enumerate}
+
+\Solution
+Treat the reaction at the prop $$B$$ as the redundant $$R_B$$. The basic determinate
+structure is a cantilever fixed at $$A$$ and free at $$B$$.
+
+Using compatibility, the net vertical deflection at $$B$$ must equal the imposed support
+settlement. Since upward displacement is taken positive and the support settles downward
+by $$(-\Delta)$$,
+
+$$
+\delta_B = -\Delta
+$$
+
+The end deflection at $$B$$ due to an end moment $$M$$ on a cantilever of length $$L$$ is
+
+$$
+\delta_M = -\frac{ML^2}{2EI}
+$$
+
+The end deflection at $$B$$ due to an upward redundant force $$R_B$$ applied at the free
+end of the cantilever is
+
+$$
+\delta_R = \frac{R_B L^3}{3EI}
+$$
+
+By superposition,
+
+$$
+\delta_M + \delta_R = -\Delta
+$$
+
+Hence,
+
+$$
+-\frac{ML^2}{2EI} + \frac{R_B L^3}{3EI} = -\Delta
+$$
+
+Multiplying throughout by $$3EI/L^3$$,
+
+$$
+-\frac{3M}{2L} + R_B = -\frac{3EI\Delta}{L^3}
+$$
+
+Therefore,
+
+$$
+R_B = \frac{3M}{2L} - \frac{3EI\Delta}{L^3}
+$$
+
+Thus, the upward reaction at support $$B$$ is
+
+$$
+\boxed{\frac{3M}{2L} - \frac{3EI\Delta}{L^3}}
+$$
+
+Hence, the correct option is
+
+$$
+\boxed{\text{(C)}}
+$$
+
+\CodeRef{codes/ce2q38/ce2q38.py}
+
+% ============================================================
+% Question 39 — Maximum compressive stress
+% ============================================================
+
+\item
+Let the state of stress at a point in a body be the difference of two plane states of
+stress shown in the figure. Consider all the possible planes perpendicular to the
+\(x\)-\(y\) plane and passing through that point. The magnitude of the maximum
+compressive stress on any such plane is \(k\sigma_0\), where \(k\) is equal to
+\underline{\hspace{2cm}} (round off to one decimal place).
+
+\hfill (GATE~CE2~2025)
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\columnwidth]{figs/ce2q39.png}
+    \label{fig:ce2q5}
+\end{figure}
+
+
+
+\Solution
+The required stress tensor is the difference of the two given plane stress states.
+
+For the first figure, the stress is a uniaxial tensile stress of magnitude \(3\sigma_0\)
+along the \(x\)-direction. Hence,
+
+\[
+[\sigma^{(1)}]
+=
+\begin{bmatrix}
+3\sigma_0 & 0\\
+0 & 0
+\end{bmatrix}
+\]
+
+For the second figure, the element is rotated by \(45^\circ\), and the uniaxial tensile
+stress \(3\sigma_0\) acts along that rotated axis. In its local principal coordinates,
+
+\[
+[\sigma']
+=
+\begin{bmatrix}
+3\sigma_0 & 0\\
+0 & 0
+\end{bmatrix}
+\]
+
+Transforming to the global \(x\)-\(y\) coordinates for \(\theta=45^\circ\),
+
+\[
+[\sigma^{(2)}]
+=
+\begin{bmatrix}
+3\sigma_0\cos^2 45^\circ & 3\sigma_0\sin45^\circ\cos45^\circ\\
+3\sigma_0\sin45^\circ\cos45^\circ & 3\sigma_0\sin^2 45^\circ
+\end{bmatrix}
+\]
+
+Using
+
+\[
+\cos^2 45^\circ=\sin^2 45^\circ=\frac{1}{2},
+\qquad
+\sin45^\circ\cos45^\circ=\frac{1}{2},
+\]
+
+we get
+
+\[
+[\sigma^{(2)}]
+=
+\begin{bmatrix}
+\frac{3\sigma_0}{2} & \frac{3\sigma_0}{2}\\
+\frac{3\sigma_0}{2} & \frac{3\sigma_0}{2}
+\end{bmatrix}
+\]
+
+Hence, the required resultant stress tensor is
+
+\[
+[\sigma]=[\sigma^{(1)}]-[\sigma^{(2)}]
+=
+\begin{bmatrix}
+\frac{3\sigma_0}{2} & -\frac{3\sigma_0}{2}\\
+-\frac{3\sigma_0}{2} & -\frac{3\sigma_0}{2}
+\end{bmatrix}
+\]
+
+The principal stresses are the eigenvalues of this matrix. Therefore,
+
+\[
+\det\left(
+\begin{bmatrix}
+\frac{3\sigma_0}{2}-\lambda & -\frac{3\sigma_0}{2}\\
+-\frac{3\sigma_0}{2} & -\frac{3\sigma_0}{2}-\lambda
+\end{bmatrix}
+\right)=0
+\]
+
+Expanding,
+
+\[
+\left(\frac{3\sigma_0}{2}-\lambda\right)
+\left(-\frac{3\sigma_0}{2}-\lambda\right)
+-
+\left(\frac{3\sigma_0}{2}\right)^2=0
+\]
+
+\[
+\lambda^2-\frac{9\sigma_0^2}{2}=0
+\]
+
+Hence,
+
+\[
+\lambda=\pm \frac{3\sigma_0}{\sqrt{2}}
+\]
+
+The maximum compressive stress magnitude is therefore
+
+\[
+\frac{3\sigma_0}{\sqrt{2}}=2.121\sigma_0
+\]
+
+Thus,
+
+\[
+k=2.1
+\]
+
+\[
+\boxed{2.1}
+\]
+
+\CodeRef{codes/ce2q39/ce2q39.py}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\columnwidth]{figs/stress_state_mohr.png}
+    \label{fig:ce2q5}
+\end{figure}
+
+
+% ============================================================
+% Question 44 — Local extrema of polynomial
+% ============================================================
+
+\item
+Consider the function given below and pick one or more CORRECT statement(s)
+from the following choices.
+
+\[
+f(x)=x^3-\frac{15}{2}x^2+18x+20
+\]
+
+\hfill (GATE~CE2~2025)
+
+\begin{enumerate}[label=\alph*)]
+    \item \(f(x)\) has a local minimum at \(x=3\).
+    \item \(f(x)\) has a local maximum at \(x=3\).
+    \item \(f(x)\) has a local minimum at \(x=2\).
+    \item \(f(x)\) has a local maximum at \(x=2\).
+\end{enumerate}
+
+\Solution
+To determine the local extrema, we differentiate the function.
+
+\[
+f'(x)=3x^2-15x+18
+\]
+
+Factorizing,
+
+\[
+f'(x)=3(x^2-5x+6)=3(x-2)(x-3)
+\]
+
+Thus, the critical points are
+
+\[
+x=2,\qquad x=3
+\]
+
+Now compute the second derivative:
+
+\[
+f''(x)=6x-15
+\]
+
+At \(x=2\),
+
+\[
+f''(2)=12-15=-3<0
+\]
+
+Hence, \(f(x)\) has a local maximum at \(x=2\).
+
+At \(x=3\),
+
+\[
+f''(3)=18-15=3>0
+\]
+
+Hence, \(f(x)\) has a local minimum at \(x=3\).
+
+Therefore, the correct statements are
+
+\[
+\boxed{\text{(A) and (D)}}
+\]
+
+\CodeRef{codes/ce2q44/ce2q44.py}
+
+
+% ============================================================
+% Question 45 — Eigenvalues of matrix
+% ============================================================
+
+\item
+Pick the CORRECT eigenvalue(s) of the matrix \([A]\) from the following choices.
+
+\[
+[A]=
+\begin{bmatrix}
+6 & 8\\
+4 & 2
+\end{bmatrix}
+\]
+
+\hfill (GATE~CE2~2025)
+
+\begin{enumerate}[label=\alph*)]
+    \item \(10\)
+    \item \(4\)
+    \item \(-2\)
+    \item \(-10\)
+\end{enumerate}
+
+\Solution
+The eigenvalues are obtained from the characteristic equation
+
+\[
+\det(A-\lambda I)=0
+\]
+
+Therefore,
+
+\[
+\det
+\begin{bmatrix}
+6-\lambda & 8\\
+4 & 2-\lambda
+\end{bmatrix}=0
+\]
+
+Expanding,
+
+\[
+(6-\lambda)(2-\lambda)-32=0
+\]
+
+\[
+12-8\lambda+\lambda^2-32=0
+\]
+
+\[
+\lambda^2-8\lambda-20=0
+\]
+
+Factoring,
+
+\[
+(\lambda-10)(\lambda+2)=0
+\]
+
+Hence, the eigenvalues are
+
+\[
+\lambda=10,\qquad \lambda=-2
+\]
+
+So, the correct options are
+
+\[
+\boxed{\text{(A) and (C)}}
+\]
+
+\CodeRef{codes/ce2q45/ce2q45.py}
+
+
+% ============================================================
+% Question 46 — Zero-force members in truss
+% ============================================================
+
+\item
+In the pin-jointed truss shown in the figure, the members that carry zero force are
+identified. Which of the following options is/are zero-force members?
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\columnwidth]{figs/ce2q46.png}
+    \label{fig:ce2q5}
+\end{figure}
+
+
+
+
+\hfill (GATE~CE2~2025)
+
+\begin{enumerate}[label=\alph*)]
+    \item \(BC\)
+    \item \(EG\)
+    \item \(FI\)
+    \item \(JK\)
+\end{enumerate}
+
+\Solution
+We apply the standard zero-force member rules.
+
+At joint \(H\), only two non-collinear members \(FH\) and \(HI\) meet, and there is no
+external load or support reaction at that joint. Therefore,
+
+\[
+FH=0,\qquad HI=0
+\]
+
+Now consider joint \(K\). Since \(HI=0\), the joint \(I\)-\(K\)-\(M\) vertical line does not
+transmit any force from above through \(HI\). At joint \(K\), three members meet:
+\(IK\) and \(KM\) are collinear, and \(JK\) is non-collinear. There is no external load at
+joint \(K\). Hence, by the zero-force member rule,
+
+\[
+JK=0
+\]
+
+Thus, among the listed options, \(JK\) is definitely a zero-force member.
+
+The other listed members \(BC\), \(EG\), and \(FI\) are connected to joints that are either
+loaded, connected to more than three members, or do not satisfy the zero-force member
+criterion directly. Hence they are not zero-force members.
+
+Therefore, the correct option is
+
+\[
+\boxed{\text{(D)}}
+\]
+
+\CodeRef{codes/ce2q46/ce2q46.py}
+
+% ============================================================
+% Question 49 — Empirical formula from TOC, COD and TKN
+% ============================================================
+
+\item
+A compound has a general formula \(C_aH_bO_cN_d\) and molecular weight 187.
+A \(935\) mg/l solution of the compound is prepared in distilled deionized water.
+The Total Organic Carbon (TOC) is measured as \(360\) mg/l (as C). The Chemical
+Oxygen Demand (COD) and the Total Kjeldahl Nitrogen (TKN) are determined as
+\(600\) mg/l (as \(O_2\)) and \(140\) mg/l (as N), respectively.
+
+As per the reaction
+\[
+C_aH_bO_cN_d + \left(\frac{4a+b-2c-3d}{4}\right)O_2
+\rightarrow aCO_2 + \frac{b-3d}{2}H_2O + dNH_3
+\]
+
+which of the following options is/are CORRECT?
+
+Atomic weights: \(C=12\), \(H=1\), \(O=16\), \(N=14\)
+
+\hfill (GATE~CE2~2025)
+
+\begin{enumerate}[label=\alph*)]
+    \item \(a=6\)
+    \item \(b=7\)
+    \item \(c=5\)
+    \item \(d=3\)
+\end{enumerate}
+
+\Solution
+The compound concentration is \(935\) mg/l and molecular weight is \(187\). Therefore,
+the molar concentration is
+
+\[
+\frac{935}{187}=5 \text{ mmol/l}
+\]
+
+So the solution contains \(5\times 10^{-3}\) mol/l of the compound.
+
+From TOC,
+
+\[
+(5\times 10^{-3})\times 12a = 360\times 10^{-3}
+\]
+
+\[
+0.06a = 0.36
+\]
+
+\[
+a=6
+\]
+
+From TKN,
+
+\[
+(5\times 10^{-3})\times 14d = 140\times 10^{-3}
+\]
+
+\[
+0.07d = 0.14
+\]
+
+\[
+d=2
+\]
+
+Hence option (D) is false.
+
+Now use molecular weight:
+
+\[
+12a+b+16c+14d=187
+\]
+
+Substituting \(a=6\) and \(d=2\),
+
+\[
+72+b+16c+28=187
+\]
+
+\[
+b+16c=87
+\]
+
+From COD data, oxygen required is \(600\) mg/l \(=0.6\) g/l.
+
+For \(5\times 10^{-3}\) mol/l of compound, oxygen consumed per mole of compound is
+
+\[
+\frac{0.6}{5\times 10^{-3}}=120 \text{ g/mol of } O_2
+\]
+
+Since molecular weight of \(O_2\) is \(32\),
+
+\[
+\text{moles of } O_2 = \frac{120}{32}=3.75
+\]
+
+From the given reaction,
+
+\[
+\frac{4a+b-2c-3d}{4}=3.75
+\]
+
+Substituting \(a=6\) and \(d=2\),
+
+\[
+\frac{24+b-2c-6}{4}=3.75
+\]
+
+\[
+18+b-2c=15
+\]
+
+\[
+b-2c=-3
+\]
+
+Now solve the simultaneous equations
+
+\[
+b+16c=87
+\]
+
+\[
+b-2c=-3
+\]
+
+Subtracting,
+
+\[
+18c=90
+\]
+
+\[
+c=5
+\]
+
+Then,
+
+\[
+b-2(5)=-3
+\]
+
+\[
+b=7
+\]
+
+Thus,
+
+\[
+a=6,\qquad b=7,\qquad c=5,\qquad d=2
+\]
+
+Therefore, the correct options are
+
+\[
+\boxed{\text{(A), (B) and (C)}}
+\]
+
+\CodeRef{codes/ce2q49/ce2q49.py}
+
+
+% ============================================================
+% Question 51 — Standard deviation of discrete random variable
+% ============================================================
+
+\item
+Consider a discrete random variable \(X\) whose probabilities are given below.
+The standard deviation of the random variable is \underline{\hspace{2cm}}
+(round off to one decimal place).
+
+\[
+\begin{array}{c|cccc}
+x_i & 1 & 2 & 4 & 8\\ \hline
+P(X=x_i) & 0.3 & 0.1 & 0.3 & 0.3
+\end{array}
+\]
+
+\hfill (GATE~CE2~2025)
+
+\Solution
+The mean is
+
+\[
+\mu = E[X] = \sum x_i p_i
+\]
+
+\[
+\mu = 1(0.3)+2(0.1)+4(0.3)+8(0.3)
+\]
+
+\[
+\mu = 0.3+0.2+1.2+2.4=4.1
+\]
+
+Now,
+
+\[
+E[X^2]=1^2(0.3)+2^2(0.1)+4^2(0.3)+8^2(0.3)
+\]
+
+\[
+E[X^2]=0.3+0.4+4.8+19.2=24.7
+\]
+
+Hence the variance is
+
+\[
+\sigma^2 = E[X^2]-\mu^2
+\]
+
+\[
+\sigma^2 = 24.7-(4.1)^2 = 24.7-16.81 = 7.89
+\]
+
+Therefore, the standard deviation is
+
+\[
+\sigma = \sqrt{7.89}=2.81
+\]
+
+Rounded off to one decimal place,
+
+\[
+\boxed{2.8}
+\]
+
+\CodeRef{codes/ce2q51/ce2q51.py}
+
+
+% ============================================================
+% Question 52 — Beam suspended by three steel rods
+% ============================================================
+
+\item
+A steel beam supported by three parallel pin-jointed steel rods is shown in the figure.
+The moment of inertia of the beam is \(8\times 10^7\) mm\(^4\). Take modulus of elasticity
+of steel as \(210\) GPa. The beam is subjected to uniformly distributed load of
+\(6.25\) kN/m, including its self-weight.
+
+The axial force (in kN) in the centre rod \(CD\) is \underline{\hspace{2cm}}
+(round off to one decimal place).
+
+\hfill (GATE~CE2~2025)
+
+\Solution
+The beam length is \(4\) m with three vertical steel rods at \(B\), \(D\), and \(F\).
+The load is symmetric, and the geometry as well as the support arrangement are also
+symmetric. Hence,
+
+\[
+R_B = R_F
+\]
+
+Total uniformly distributed load on the beam is
+
+\[
+wL = 6.25\times 4 = 25 \text{ kN}
+\]
+
+Therefore,
+
+\[
+R_B + R_D + R_F = 25
+\]
+
+or, by symmetry,
+
+\[
+2R_B + R_D = 25
+\]
+
+Let the stiffness of side rods \(AB\) and \(EF\) be \(k_s\), and that of the centre rod \(CD\)
+be \(k_c\).
+
+For an axially loaded rod,
+
+\[
+k=\frac{AE}{L}
+\]
+
+Since all rods have the same length and material, stiffness is proportional to area.
+Thus,
+
+\[
+k \propto d^2
+\]
+
+For side rods, diameter \(=12\) mm.  
+For centre rod, diameter \(=30\) mm.
+
+Hence,
+
+\[
+\frac{k_c}{k_s}=\left(\frac{30}{12}\right)^2 = 6.25
+\]
+
+Now, due to symmetry the beam remains horizontal, so vertical deflection at \(B\), \(D\),
+and \(F\) is the same. Therefore, rod forces are proportional to rod stiffness:
+
+\[
+\frac{R_D}{R_B}=6.25
+\]
+
+Thus,
+
+\[
+R_D = 6.25R_B
+\]
+
+Substituting into equilibrium:
+
+\[
+2R_B + 6.25R_B = 25
+\]
+
+\[
+8.25R_B = 25
+\]
+
+\[
+R_B = 3.03 \text{ kN}
+\]
+
+Therefore,
+
+\[
+R_D = 6.25\times 3.03 = 18.94 \text{ kN}
+\]
+
+Rounded off to one decimal place,
+
+\[
+\boxed{18.9}
+\]
+
+\CodeRef{codes/ce2q52/ce2q52.py}
+
+
+% ============================================================
+% Question 53 — Total float in network
+% ============================================================
+
+\item
+The figure shows a network diagram for a construction project. The activities
+A, B, C, D, E, and F are represented by arrows and their durations are shown in the
+figure.
+
+The total float available for the activity \(E\) in day(s) is equal to \underline{\hspace{2cm}}
+(round off to the nearest integer).
+
+\hfill (GATE~CE2~2025)
+
+\Solution
+From the network:
+
+\[
+A:1\to 2 = 3 \text{ days}
+\]
+\[
+B:2\to 4 = 5 \text{ days}
+\]
+\[
+C:1\to 3 = 5 \text{ days}
+\]
+\[
+D:3\to 4 = 2 \text{ days}
+\]
+\[
+E:4\to 5 = 4 \text{ days}
+\]
+\[
+F:3\to 5 = 8 \text{ days}
+\]
+
+\textbf{Forward pass:}
+
+Earliest event time at node \(1\):
+
+\[
+TE_1=0
+\]
+
+At node \(2\):
+
+\[
+TE_2=0+3=3
+\]
+
+At node \(3\):
+
+\[
+TE_3=0+5=5
+\]
+
+At node \(4\):
+
+\[
+TE_4=\max(TE_2+5,\;TE_3+2)=\max(3+5,\;5+2)=8
+\]
+
+At node \(5\):
+
+\[
+TE_5=\max(TE_4+4,\;TE_3+8)=\max(8+4,\;5+8)=13
+\]
+
+\textbf{Backward pass:}
+
+\[
+TL_5=13
+\]
+
+At node \(4\):
+
+\[
+TL_4 = TL_5-4 = 13-4 = 9
+\]
+
+At node \(3\):
+
+\[
+TL_3 = \min(TL_4-2,\;TL_5-8)=\min(9-2,\;13-8)=5
+\]
+
+At node \(2\):
+
+\[
+TL_2 = TL_4-5 = 9-5 = 4
+\]
+
+For activity \(E\) \((4\to 5)\), total float is
+
+\[
+TF_E = TL_5 - TE_4 - t_E
+\]
+
+\[
+TF_E = 13 - 8 - 4 = 1
+\]
+
+Therefore, the total float available for activity \(E\) is
+
+\[
+\boxed{1}
+\]
+
+\CodeRef{codes/ce2q53/ce2q53.py}
+
+
+% ============================================================
+% Question 60 — Maximum water depth for gate
+% ============================================================
+
+\item
+The shaft of a \(6\) m wide gate in the figure will fail at a moment of \(3924\) kN.m
+about the hinge \(P\). The maximum value of water depth \(h\) (in m) that the gate can
+hold is \underline{\hspace{2cm}} (round off to the nearest integer).
+
+Note: Density of water \(=1000\) kg/m\(^3\), acceleration due to gravity \(=9.81\) m/s\(^2\).
+
+\hfill (GATE~CE2~2025)
+
+\Solution
+The inclined gate spans \(3\) m horizontally and \(4\) m vertically, so its length is
+
+\[
+L=\sqrt{3^2+4^2}=5 \text{ m}
+\]
+
+The width of gate is \(b=6\) m. Hence, area of the inclined gate is
+
+\[
+A = 5\times 6 = 30 \text{ m}^2
+\]
+
+Let the water depth above hinge level be \(h\). The top end of the gate is \(4\) m above
+the hinge, so the centroid of the inclined rectangular gate is at \(2\) m above hinge level.
+Hence its depth below free surface is
+
+\[
+\bar{y}=h-2
+\]
+
+The hydrostatic force on the inclined plane is
+
+\[
+F=\rho g A \bar{y}
+\]
+
+\[
+F = 1000\times 9.81\times 30\times (h-2)
+\]
+
+\[
+F = 294300(h-2) \text{ N}
+\]
+
+Since pressure varies linearly from bottom to top, and the top edge is at shallower depth,
+the resultant acts at a distance from hinge obtained from moment integration along the
+gate.
+
+Take coordinate \(s\) along the gate from hinge upward. Vertical elevation of a point is
+
+\[
+y = \frac{4}{5}s
+\]
+
+Hence pressure intensity at that point is proportional to
+
+\[
+p(s)=\rho g \left(h-\frac{4}{5}s\right)
+\]
+
+Elemental force on strip \(ds\) is
+
+\[
+dF = p(s)\,b\,ds = \rho g b \left(h-\frac{4}{5}s\right)ds
+\]
+
+Moment about hinge:
+
+\[
+M_P = \int_0^5 s\,dF
+\]
+
+\[
+M_P = \rho g b \int_0^5 s\left(h-\frac{4}{5}s\right)ds
+\]
+
+\[
+M_P = \rho g b \left[h\int_0^5 s\,ds - \frac{4}{5}\int_0^5 s^2\,ds\right]
+\]
+
+Now,
+
+\[
+\int_0^5 s\,ds = \frac{25}{2}
+\qquad \text{and} \qquad
+\int_0^5 s^2\,ds = \frac{125}{3}
+\]
+
+Therefore,
+
+\[
+M_P = \rho g b \left(\frac{25h}{2} - \frac{4}{5}\cdot \frac{125}{3}\right)
+\]
+
+\[
+M_P = \rho g b \left(\frac{25h}{2} - \frac{100}{3}\right)
+\]
+
+Substituting \(\rho=1000\), \(g=9.81\), \(b=6\),
+
+\[
+M_P = 1000\times 9.81\times 6 \left(\frac{25h}{2}-\frac{100}{3}\right)
+\]
+
+Failure occurs at
+
+\[
+M_P = 3924 \text{ kN.m} = 3.924\times 10^6 \text{ N.m}
+\]
+
+Thus,
+
+\[
+1000\times 9.81\times 6 \left(\frac{25h}{2}-\frac{100}{3}\right)=3.924\times 10^6
+\]
+
+\[
+58860\left(\frac{25h}{2}-\frac{100}{3}\right)=3.924\times 10^6
+\]
+
+\[
+\frac{25h}{2}-\frac{100}{3}=66.6667
+\]
+
+\[
+\frac{25h}{2}=100
+\]
+
+\[
+25h=200
+\]
+
+\[
+h=8
+\]
+
+Therefore, the maximum water depth is
+
+\[
+\boxed{8}
+\]
+
+\CodeRef{codes/ce2q60/ce2q60.py}
+
+
+% ============================================================
+% Question 64 — Extra widening on horizontal curve
+% ============================================================
+
+\item
+On a two-lane highway, a horizontal curve of radius \(300\) m is provided. The design
+speed is \(80\) km/h.
+
+If the longest wheelbase of vehicle expected on this highway is \(7\) m, then the extra
+widening required (in m) is \underline{\hspace{2cm}} (round off to two decimal places).
+
+\hfill (GATE~CE2~2025)
+
+\Solution
+Extra widening on a horizontal curve is given by
+
+\[
+W_e = W_m + W_p
+\]
+
+where \(W_m\) is the mechanical widening and \(W_p\) is the psychological widening.
+
+For a two-lane road,
+
+\[
+W_m = \frac{n l^2}{2R}
+\]
+
+\[
+W_p = \frac{V}{9.5\sqrt{R}}
+\]
+
+Given:
+
+\[
+n=2,\qquad l=7 \text{ m},\qquad R=300 \text{ m},\qquad V=80 \text{ km/h}
+\]
+
+Now,
+
+\[
+W_m = \frac{2\times 7^2}{2\times 300}
+= \frac{49}{300}
+= 0.1633 \text{ m}
+\]
+
+Also,
+
+\[
+W_p = \frac{80}{9.5\sqrt{300}}
+\]
+
+\[
+\sqrt{300}=17.3205
+\]
+
+\[
+W_p = \frac{80}{9.5\times 17.3205}
+=0.4862 \text{ m}
+\]
+
+Hence,
+
+\[
+W_e = 0.1633+0.4862=0.6495 \text{ m}
+\]
+
+Rounded off to two decimal places,
+
+\[
+\boxed{0.65}
+\]
+
+\CodeRef{codes/ce2q64/ce2q64.py}
+
+
+% ============================================================
+% Question 65 — Interior angle from fore bearings
+% ============================================================
+
+\item
+If the Fore Bearing of the lines \(AB\) and \(BC\) are \(60^\circ\) and \(122^\circ\),
+respectively, then the interior angle \(\angle ABC\) (in degrees) is
+\underline{\hspace{2cm}} (round off to the nearest integer).
+
+\hfill (GATE~CE2~2025)
+
+\Solution
+The fore bearing of line \(AB\) is
+
+\[
+\text{FB}_{AB}=60^\circ
+\]
+
+Hence the back bearing of line \(BA\) is
+
+\[
+\text{BB}_{BA}=60^\circ+180^\circ=240^\circ
+\]
+
+The fore bearing of line \(BC\) is
+
+\[
+\text{FB}_{BC}=122^\circ
+\]
+
+The interior angle at \(B\), that is \(\angle ABC\), is the angle between the directions
+\(BA\) and \(BC\). Therefore,
+
+\[
+\angle ABC = |240^\circ-122^\circ|=118^\circ
+\]
+
+Hence,
+
+\[
+\boxed{118^\circ}
+\]
+
+\CodeRef{codes/ce2q65/ce2q65.py}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\columnwidth]{figs/interior_angle.png}
+    \label{fig:ce2q5}
+\end{figure}
+
+
+
+\end{enumerate}
+
