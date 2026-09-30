@@ -8,4 +8,4 @@ ddf = sp.diff(df, x)
 critical_points = sp.solve(df, x)
 for pt in critical_points:
     val = ddf.subs(x, pt)
-    print(f"x = {pt}, Second Derivative = {val} ({'Local Min' if val > 0 else 'Local Max'})")
+    print(f"x = {pt:.2f}, Second Derivative = {val:.3f} ({'Local Min' if val > 0 else 'Local Max'})")

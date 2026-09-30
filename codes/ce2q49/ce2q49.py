@@ -1,37 +1,41 @@
-import sympy as sp
+import numpy as np
 
-# Define symbols for molecular formula components and measurements
-a, b, c, d = sp.symbols('a b c d', integer=True, positive=True)
-MW = sp.symbols('MW', positive=True) # Molecular weight of CaHbOcNd
-C_atom_mass = 12.011                 # Atomic weight of Carbon (g/mol)
-H_atom_mass = 1.008                  # Atomic weight of Hydrogen (g/mol)
-O_atom_mass = 15.999                 # Atomic weight of Oxygen (g/mol)
-N_atom_mass = 14.007                 # Atomic weight of Nitrogen (g/mol)
+# ==============================================================================
+#   - Carbon (a) = 6  (from TOC data)
+#   - Nitrogen (d) = 2  (from TKN data)
+#
+# Total MW = 12(a) + 1(b) + 16(c) + 14(d) = 187
+# Substitute a = 6, d = 2:
+# 12(6) + b + 16c + 14(2) = 187
+# 72 + b + 16c + 28 = 187  -->  b + 16c = 87
 
-# Given problem parameters
-given_mw = 187.0                     # Total molecular weight (g/mol)
-measured_toc = 360.0                 # Measured TOC in mg/L
-solution_conc = 935.0                # Concentration of compound in mg/L
+# From COD data (0.6 g/L O2 consumed), O2 required = 3.75 moles O2 / mole compound.
+# Stoichiometric coefficient for O2: (4a + b - 2c - 3d) / 4 = 3.75
+# Substitute a = 6, d = 2:
+# (24 + b - 2c - 6) / 4 = 3.75
+# 18 + b - 2c = 15  -->  b - 2c = -3
 
-# Step 1: Define the theoretical mass fraction of Carbon (TOC fraction) in the compound
-# Total mass of carbon per mole = a * C_atom_mass
-# Molecular Weight MW = a*C_atom_mass + b*H_atom_mass + c*O_atom_mass + d*N_atom_mass
-mass_fraction_C = (a * C_atom_mass) / MW
+# ==============================================================================
+# MATRIX FORMULATION: Ax = y
+# [ 1   16 ] [ b ] = [ 87 ]
+# [ 1   -2 ] [ c ]   [ -3 ]
+# ==============================================================================
 
-# Step 2: Derive theoretical TOC contribution per unit mass of compound concentration (mg/L)
-# TOC_theoretical = Concentration * mass_fraction_C
-TOC_theo_expr = solution_conc * mass_fraction_C
+# Matrix of coefficients for variables [b, c]
+A = np.array([
+    [1, 16],  # Row 1: 1*b + 16*c
+    [1, -2]   # Row 2: 1*b -  2*c
+])
 
-# Step 3: Use the empirical data ratio to solve for stoichiometric coefficient 'a'
-# The ratio of measured TOC to solution concentration gives the experimental mass fraction of carbon
-experimental_C_fraction = measured_toc / solution_conc
+# Right-hand side values
+y = np.array([87, -3])
 
-# Equating theoretical fraction to experimental fraction and solving for 'a'
-# a * C_atom_mass / MW = experimental_C_fraction
-formula_a = (experimental_C_fraction * MW) / C_atom_mass
-calculated_a = formula_a.subs(MW, given_mw)
+# Solve for x = [b, c]
+x = np.linalg.solve(A, y)
 
-print(f"Formula derivation for carbon atom coefficient a:")
-print(f"a = (Measured_TOC / Concentration) * (MW / Atomic_Mass_C)")
-print(f"Calculated stoichiometric coefficient a = {float(calculated_a):.2f}")
-print(f"Rounded integer value: {round(float(calculated_a))}")
+b = x[0]
+c = x[1]
+
+# Display results
+print(f"Number of Hydrogen atoms (b): {b:.0f}")
+print(f"Number of Oxygen atoms   (c): {c:.0f}")

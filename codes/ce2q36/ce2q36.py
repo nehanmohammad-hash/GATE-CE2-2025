@@ -7,4 +7,5 @@ de = sp.Eq(y.diff(x), sp.exp(x - y))
 
 sol = sp.dsolve(de)
 # print(eq)
-print(f"Solution: {sol}")
+print(f"Solution: {sol}\n \n")
+sp.pprint(sol)

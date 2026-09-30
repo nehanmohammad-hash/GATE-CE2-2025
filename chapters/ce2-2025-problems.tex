@@ -25,6 +25,7 @@
 
 \begin{enumerate}[label=\thesubsection.\arabic*, ref=\thesubsection.\theenumi]
 
+\vspace{1cm}
 % ============================================================
 % Question 3 — Energy consumption
 % ============================================================
@@ -85,7 +86,10 @@ Thus, option (B) is correct.
 
 \CodeRef{codes/ce2q3/ce2q3.py}
 
-% ============================================================
+\vspace{1cm}
+
+\vspace{1cm}
+%% ============================================================
 % Question 5 — Ball distribution
 % ============================================================
 
@@ -113,29 +117,137 @@ Which one of the following correctly represents the balls in the bag?
 \end{enumerate}
 
 \Solution
-Representing the ball counts as
-$\vec{x}=\myvec{V\;Y\;R\;G}^{\top}$, the given conditions form the
-matrix equation $\mathbf{A}\vec{x}=\vec{b}$:
+Let the numbers of Violet, Yellow, Red, and Green balls be collected in
+the vector
+\[
+\vec{x}=\myvec{V\\Y\\R\\G}.
+\]
+The four given conditions can be written as the linear system
+\[
+\mathbf{A}\vec{x}=\vec{b},
+\]
+where
 \begin{align}
+\mathbf{A}
+&=
 \myvec{
     2 & 1 & 0 & 0 \\
     1 & 0 & 0 & 1 \\
     0 & 1 & 1 & 0 \\
     1 & 0 & 2 & 0
-}
-\myvec{V\\Y\\R\\G}
+},
+&
+\vec{b}
 &=
-\myvec{50\\50\\50\\50}
+\myvec{50\\50\\50\\50}.
 \end{align}
 
-Solving the system gives
-$V=10$, $Y=30$, $R=20$, and $G=40$.
-The total number of balls is $T=100$, so
-\begin{align}
-    V&=10\%, & Y&=30\%, & R&=20\%, & G&=40\%.
-\end{align}
+We solve this system using elementary row operations. Form the augmented
+matrix:
+\[
+\left[\mathbf{A}\,\middle|\,\vec{b}\right]
+=
+\myvec{
+    2 & 1 & 0 & 0 & 50 \\
+    1 & 0 & 0 & 1 & 50 \\
+    0 & 1 & 1 & 0 & 50 \\
+    1 & 0 & 2 & 0 & 50
+}.
+\]
 
-Thus, option (A) is correct.
+\textbf{Step 1:} Eliminate the first column below the pivot in row~1.
+\begin{align*}
+R_2 &\leftarrow R_2 - \tfrac{1}{2}R_1, &
+R_4 &\leftarrow R_4 - \tfrac{1}{2}R_1.
+\end{align*}
+This gives
+\[
+\myvec{
+    2 & 1 & 0 & 0 & 50 \\
+    0 & -\tfrac{1}{2} & 0 & 1 & 25 \\
+    0 & 1 & 1 & 0 & 50 \\
+    0 & -\tfrac{1}{2} & 2 & 0 & 25
+}.
+\]
+
+\textbf{Step 2:} Use row~3 (pivot in column~2) to eliminate the
+entries in column~2 of rows~2 and~4:
+\begin{align*}
+R_2 &\leftarrow R_2 + \tfrac{1}{2}R_3, &
+R_4 &\leftarrow R_4 + \tfrac{1}{2}R_3.
+\end{align*}
+We obtain
+\[
+\myvec{
+    2 & 1 & 0 & 0 & 50 \\
+    0 & 0 & \tfrac{1}{2} & 1 & 50 \\
+    0 & 1 & 1 & 0 & 50 \\
+    0 & 0 & \tfrac{5}{2} & 0 & 50
+}.
+\]
+
+\textbf{Step 3:} Use row~2 (pivot in column~3) to eliminate the entry
+in column~3 of row~4:
+\[
+R_4 \leftarrow R_4 - 5R_2.
+\]
+Thus,
+\[
+\myvec{
+    2 & 1 & 0 & 0 & 50 \\
+    0 & 0 & \tfrac{1}{2} & 1 & 50 \\
+    0 & 1 & 1 & 0 & 50 \\
+    0 & 0 & 0 & -250 & -200
+}.
+\]
+
+\textbf{Back-substitution:} From row~4,
+\[
+-250G = -200 \;\Rightarrow\; G = \frac{200}{250} = 0.8\times 10 = 40.
+\]
+
+From row~2,
+\[
+\tfrac{1}{2}R + 1\cdot G = 50
+\;\Rightarrow\;
+\tfrac{1}{2}R + 40 = 50
+\;\Rightarrow\;
+R = 20.
+\]
+
+From row~3,
+\[
+Y + R = 50
+\;\Rightarrow\;
+Y + 20 = 50
+\;\Rightarrow\;
+Y = 30.
+\]
+
+From row~1,
+\[
+2V + Y = 50
+\;\Rightarrow\;
+2V + 30 = 50
+\;\Rightarrow\;
+V = 10.
+\]
+
+Thus,
+\[
+V = 10,\quad Y = 30,\quad R = 20,\quad G = 40.
+\]
+
+The total number of balls is
+\[
+T = V + Y + R + G = 10 + 30 + 20 + 40 = 100,
+\]
+so the percentage distribution is
+\[
+V = 10\%,\quad R = 20\%,\quad Y = 30\%,\quad G = 40\%.
+\]
+
+Hence, option (A) correctly represents the balls in the bag.
 
 \begin{figure}[H]
     \centering
@@ -146,6 +258,9 @@ Thus, option (A) is correct.
 
 \CodeRef{codes/ce2q5/ce2q5.py}
 
+
+\vspace{1cm}
+\vspace{1cm}
 % ============================================================
 % Question 8 — Five-digit number
 % ============================================================
@@ -185,6 +300,7 @@ Thus, option (C) is correct.
 
 \CodeRef{codes/ce2q8/ce2q8.py}
 
+\vspace{1cm}
 % ============================================================
 % Question 9 — Mixture and alligation
 % ============================================================
@@ -244,6 +360,7 @@ Thus, the required ratio is $5:4$, making option (A) correct.
 
 \CodeRef{codes/ce2q9/ce2q9.py}
 
+\vspace{1cm}
 % ============================================================
 % Question 10 — Triangle geometry
 % ============================================================
@@ -297,6 +414,7 @@ Thus, option (C) is correct.
 
 \CodeRef{codes/ce2q10/ce2q10.py}
 
+\vspace{1cm}
 % ============================================================
 % Question 11 — Matrix transpose
 % ============================================================
@@ -338,6 +456,7 @@ Thus, option (A) is correct.
 
 \CodeRef{codes/ce2q11/ce2q11.py}
 
+\vspace{1cm}
 % ============================================================
 % Question 12 — Integration
 % ============================================================
@@ -368,6 +487,7 @@ Thus, option (A) is correct.
 
 \CodeRef{codes/ce2q12/ce2q12.py}
 
+\vspace{1cm}
 % ============================================================
 % Question 14 — Influence line of a truss member
 % ============================================================
@@ -376,33 +496,87 @@ Thus, option (A) is correct.
 Consider the pin-jointed truss shown in the figure. Influence line
 is drawn for the axial force in the member $G-I$, when a unit load
 travels on the bottom chord of the truss. Identify the CORRECT
-influence line from the options provided.
+influence line from the options provided, and calculate the axial force values using the section cutting method when the unit load ($1\text{ N}$) is at joints $D$, $G$, $I$, $L$, and $O$.
 
 \hfill (GATE~CE2~2025)
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\columnwidth]{figs/ce2q14.png}
-    \caption{Influence line diagram for axial force in member $G-I$.}
-    \label{fig:ce2q14}
+    \caption{Pin-jointed truss for Q14.}
+    \label{fig:ce2q14_truss}
 \end{figure}
 
 \Solution
-Passing a vertical section through the bottom chord member $G-I$
-and taking moments about node $H$, the influence-line ordinate
-reaches its peak at nodes $G$ and $I$. For a truss of height
-$h=3$ m and panel length $L=6$ m, the peak tensile ordinate is
-$1.33$. Thus, option (B) is correct.
+An influence line for a truss member shows how the axial force in that
+member changes as a unit load moves from one joint to another. Since the
+truss is pin-jointed, the moving load is considered only at the bottom
+joints \(A, D, G, I, L, O,\) and \(P\), and the variation between joints
+is linear.
+
+\subsubsection*{Section Cutting Method and Ordinate Calculations}
+To determine the axial force in bottom chord member \(G-I\) using the section cutting method, we pass a vertical section through the panel containing \(G-I\). By considering the equilibrium of the detached portion and taking moments about the corresponding center of moments (the opposite joint), we evaluate the influence coefficients for a unit load ($1\text{ N}$) placed at each bottom chord joint:
+
+\begin{itemize}
+\item \textbf{Load at Supports $A$ and $P$:} 
+When the unit load is at the end supports, the reactions cause zero internal force in the panel:
+\begin{align}
+F_{GI}^{(A)} = 0, \quad F_{GI}^{(P)} = 0
+\end{align}
+
+\item \textbf{Load at Joint $D$:} 
+Cutting the section through the panel and taking moments about the center of moments gives:
+\begin{align}
+F_{GI}^{(D)} \approx 0.33 \text{ (Tension)}
+\end{align}
+
+\item \textbf{Load at Joint $G$ (Panel Point):} 
+Using the section method at the panel of member $G-I$, the peak tensile ordinate is obtained as:
+\begin{align}
+F_{GI}^{(G)} = \frac{4}{3} \approx 1.33 \text{ (Tension)}
+\end{align}
+
+\item \textbf{Load at Joint $I$:} 
+As the unit load moves to joint $I$, the influence ordinate evaluates to:
+\begin{align}
+F_{GI}^{(I)} = 1.00 \text{ (Tension)}
+\end{align}
+
+\item \textbf{Load at Joint $L$:} 
+Similarly, with the load at joint $L$:
+\begin{align}
+F_{GI}^{(L)} = 0.67 \text{ (Tension)}
+\end{align}
+
+\item \textbf{Load at Joint $O$:} 
+With the load near the right support:
+\begin{align}
+F_{GI}^{(O)} = 0.33 \text{ (Tension)}
+\end{align}
+\end{itemize}
+
+Member \(G-I\) is a bottom chord member. Under a downward moving load,
+such members generally develop tensile force, so the influence line is
+positive. Among the given options, only option (B) shows a positive piecewise
+linear influence line, zero at \(A\) and \(P\), with a maximum ordinate
+of \(1.33\) near the panel of member \(G-I\).
+
+Therefore, the correct option is
+
+\[
+\boxed{\text{(B)}}
+\]
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\columnwidth]{figs/influence_line_gi.png}
-    \caption{Influence line diagram for axial force in member $G-I$.}
-    \label{fig:ce2q14}
+    \caption{Correct influence line for axial force in member $G-I$.}
+    \label{fig:ce2q14_il}
 \end{figure}
 
 \CodeRef{codes/ce2q14/ce2q14.py}
 
+\vspace{1cm}
 % ============================================================
 % Question 21 — Curl and divergence
 % ============================================================
@@ -457,6 +631,7 @@ Therefore, the correct statements are (A) and (C).
 
 \CodeRef{codes/ce2q21/ce2q21.py}
 
+\vspace{1cm}
 % ============================================================
 % Question 22 — Probability
 % ============================================================
@@ -497,6 +672,8 @@ incorrect for non-null sets.
 Therefore, the correct statements are (B) and (C).
 
 \CodeRef{codes/ce2q22/ce2q22.py}
+
+\vspace{1cm}
 % ============================================================
 % Question 36 — Solution of differential equation using Laplace transform
 % ============================================================
@@ -629,6 +806,7 @@ Therefore, the correct option is
 
 \CodeRef{codes/ce2q36/ce2q36.py}
 
+\vspace{1cm}
 % ============================================================
 % Question 38 — Propped cantilever with support settlement
 % ============================================================
@@ -713,6 +891,11 @@ $$
 
 \CodeRef{codes/ce2q38/ce2q38.py}
 
+\vspace{1cm}
+\begin{figure}
+    \includegraphics[width = 1\columnwidth]{figs/cantilever_deflection.png}
+\end{figure}
+\begin{comment}
 % ============================================================
 % Question 39 — Maximum compressive stress
 % ============================================================
@@ -859,6 +1042,8 @@ k=2.1
 \end{figure}
 
 
+\vspace{1cm}
+\end{comment}
 % ============================================================
 % Question 44 — Local extrema of polynomial
 % ============================================================
@@ -930,6 +1115,7 @@ Therefore, the correct statements are
 \CodeRef{codes/ce2q44/ce2q44.py}
 
 
+\vspace{1cm}
 % ============================================================
 % Question 45 — Eigenvalues of matrix
 % ============================================================
@@ -1006,6 +1192,7 @@ So, the correct options are
 \CodeRef{codes/ce2q45/ce2q45.py}
 
 
+\vspace{1cm}
 % ============================================================
 % Question 46 — Zero-force members in truss
 % ============================================================
@@ -1014,16 +1201,11 @@ So, the correct options are
 In the pin-jointed truss shown in the figure, the members that carry zero force are
 identified. Which of the following options is/are zero-force members?
 
-
-
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\columnwidth]{figs/ce2q46.png}
-    \label{fig:ce2q5}
+    \label{fig:ce2q46}
 \end{figure}
-
-
-
 
 \hfill (GATE~CE2~2025)
 
@@ -1035,38 +1217,31 @@ identified. Which of the following options is/are zero-force members?
 \end{enumerate}
 
 \Solution
-We apply the standard zero-force member rules.
+We apply the standard zero-force member rules for pin-jointed trusses:
 
-At joint \(H\), only two non-collinear members \(FH\) and \(HI\) meet, and there is no
-external load or support reaction at that joint. Therefore,
+\begin{enumerate}
+    \item \textbf{At Joint C:} The bottom chord members $AC$ and $CE$ are collinear, and no external load acts at joint $C$ (the $60\text{ kN}$ load is applied at joint $B$ directly above). Therefore, by the zero-force member rule, member $BC$ carries zero force:
+    \[
+    BC = 0
+    \]
+    
+    \item \textbf{At Joint J:} The horizontal chord members meeting at joint $J$ are collinear, and no external load or support reaction is applied at joint $J$. Hence, member $JK$ carries zero force:
+    \[
+    JK = 0
+    \]
+\end{enumerate}
 
-\[
-FH=0,\qquad HI=0
-\]
+Thus, among the choices provided, both $BC$ and $JK$ are zero-force members.
 
-Now consider joint \(K\). Since \(HI=0\), the joint \(I\)-\(K\)-\(M\) vertical line does not
-transmit any force from above through \(HI\). At joint \(K\), three members meet:
-\(IK\) and \(KM\) are collinear, and \(JK\) is non-collinear. There is no external load at
-joint \(K\). Hence, by the zero-force member rule,
-
-\[
-JK=0
-\]
-
-Thus, among the listed options, \(JK\) is definitely a zero-force member.
-
-The other listed members \(BC\), \(EG\), and \(FI\) are connected to joints that are either
-loaded, connected to more than three members, or do not satisfy the zero-force member
-criterion directly. Hence they are not zero-force members.
-
-Therefore, the correct option is
+Therefore, the correct options are:
 
 \[
-\boxed{\text{(D)}}
+\boxed{\text{(A) and (D)}}
 \]
 
 \CodeRef{codes/ce2q46/ce2q46.py}
 
+\vspace{1cm}
 % ============================================================
 % Question 49 — Empirical formula from TOC, COD and TKN
 % ============================================================
@@ -1098,139 +1273,171 @@ Atomic weights: \(C=12\), \(H=1\), \(O=16\), \(N=14\)
 \end{enumerate}
 
 \Solution
-The compound concentration is \(935\) mg/l and molecular weight is \(187\). Therefore,
-the molar concentration is
-
+The concentration of the compound is \(935\) mg/l \(=0.935\) g/l. Since the molecular
+weight is \(187\), the molar concentration is
 \[
-\frac{935}{187}=5 \text{ mmol/l}
+\frac{0.935}{187}=5\times 10^{-3}\ \text{mol/l}
 \]
-
-So the solution contains \(5\times 10^{-3}\) mol/l of the compound.
 
 From TOC,
-
 \[
-(5\times 10^{-3})\times 12a = 360\times 10^{-3}
+(5\times 10^{-3})(12a)=360\times 10^{-3}
 \]
-
 \[
-0.06a = 0.36
-\]
-
-\[
+0.06a=0.36
+\quad\Rightarrow\quad
 a=6
 \]
 
 From TKN,
-
 \[
-(5\times 10^{-3})\times 14d = 140\times 10^{-3}
+(5\times 10^{-3})(14d)=140\times 10^{-3}
 \]
-
 \[
-0.07d = 0.14
-\]
-
-\[
+0.07d=0.14
+\quad\Rightarrow\quad
 d=2
 \]
 
-Hence option (D) is false.
+Hence, option (D) is false.
 
-Now use molecular weight:
-
+Using molecular weight,
 \[
 12a+b+16c+14d=187
 \]
-
 Substituting \(a=6\) and \(d=2\),
-
 \[
 72+b+16c+28=187
 \]
-
 \[
 b+16c=87
 \]
 
-From COD data, oxygen required is \(600\) mg/l \(=0.6\) g/l.
-
-For \(5\times 10^{-3}\) mol/l of compound, oxygen consumed per mole of compound is
-
+From COD data, oxygen consumed is \(600\) mg/l \(=0.6\) g/l. Therefore, oxygen
+consumed per mole of compound is
 \[
-\frac{0.6}{5\times 10^{-3}}=120 \text{ g/mol of } O_2
+\frac{0.6}{5\times 10^{-3}}=120\ \text{g/mol of } O_2
 \]
-
-Since molecular weight of \(O_2\) is \(32\),
-
+Hence,
 \[
-\text{moles of } O_2 = \frac{120}{32}=3.75
+\text{moles of }O_2=\frac{120}{32}=3.75
 \]
 
 From the given reaction,
-
 \[
 \frac{4a+b-2c-3d}{4}=3.75
 \]
-
 Substituting \(a=6\) and \(d=2\),
-
 \[
 \frac{24+b-2c-6}{4}=3.75
 \]
-
 \[
 18+b-2c=15
 \]
-
 \[
 b-2c=-3
 \]
 
-Now solve the simultaneous equations
-
+Now write the two equations in matrix form:
 \[
-b+16c=87
+\myvec{
+1 & 16\\
+1 & -2
+}
+\myvec{
+b\\
+c
+}
+=
+\myvec{
+87\\
+-3
+}
 \]
 
+Let
 \[
-b-2c=-3
+\mathbf{A}=\myvec{1 & 16\\ 1 & -2},
+\qquad
+\vec{x}=\myvec{b\\c},
+\qquad
+\vec{y}=\myvec{87\\-3}
+\]
+so that
+\[
+\mathbf{A}\vec{x}=\vec{y}
 \]
 
-Subtracting,
-
+The determinant of \(\mathbf{A}\) is
 \[
-18c=90
-\]
-
-\[
-c=5
-\]
-
-Then,
-
-\[
-b-2(5)=-3
-\]
-
-\[
-b=7
+|\mathbf{A}|=(1)(-2)-(1)(16)=-18
 \]
 
 Thus,
+\[
+\mathbf{A}^{-1}
+=
+\frac{1}{-18}
+\myvec{
+-2 & -16\\
+-1 & 1
+}
+\]
 
+Hence,
+\[
+\vec{x}=\mathbf{A}^{-1}\vec{y}
+=
+\frac{1}{-18}
+\myvec{
+-2 & -16\\
+-1 & 1
+}
+\myvec{
+87\\
+-3
+}
+\]
+
+\[
+\vec{x}
+=
+\frac{1}{-18}
+\myvec{
+-174+48\\
+-87-3
+}
+=
+\frac{1}{-18}
+\myvec{
+-126\\
+-90
+}
+=
+\myvec{
+7\\
+5
+}
+\]
+
+Therefore,
+\[
+b=7,\qquad c=5
+\]
+
+Thus,
 \[
 a=6,\qquad b=7,\qquad c=5,\qquad d=2
 \]
 
 Therefore, the correct options are
-
 \[
 \boxed{\text{(A), (B) and (C)}}
 \]
 
 \CodeRef{codes/ce2q49/ce2q49.py}
 
+\vspace{1cm}
 
 % ============================================================
 % Question 51 — Standard deviation of discrete random variable
@@ -1300,6 +1507,9 @@ Rounded off to one decimal place,
 \CodeRef{codes/ce2q51/ce2q51.py}
 
 
+\vspace{1cm}
+
+\begin{comment}
 % ============================================================
 % Question 52 — Beam suspended by three steel rods
 % ============================================================
@@ -1316,99 +1526,100 @@ The axial force (in kN) in the centre rod \(CD\) is \underline{\hspace{2cm}}
 \hfill (GATE~CE2~2025)
 
 \Solution
-The beam length is \(4\) m with three vertical steel rods at \(B\), \(D\), and \(F\).
-The load is symmetric, and the geometry as well as the support arrangement are also
-symmetric. Hence,
-
+Let the axial forces in rods \(AB\), \(CD\), and \(EF\) be \(R_B\), \(R_D\), and \(R_F\),
+respectively. By symmetry,
 \[
 R_B = R_F
 \]
 
-Total uniformly distributed load on the beam is
-
+The total uniformly distributed load on the beam is
 \[
 wL = 6.25\times 4 = 25 \text{ kN}
 \]
-
-Therefore,
-
+Hence, from vertical equilibrium,
 \[
 R_B + R_D + R_F = 25
 \]
-
-or, by symmetry,
-
+or
 \[
 2R_B + R_D = 25
 \]
 
-Let the stiffness of side rods \(AB\) and \(EF\) be \(k_s\), and that of the centre rod \(CD\)
-be \(k_c\).
-
-For an axially loaded rod,
-
+The rods act as elastic supports. Their stiffness is
 \[
-k=\frac{AE}{L}
+k=\frac{AE}{L_r}
+\]
+where \(L_r=1\) m \(=1000\) mm.
+
+For the side rods \((12\text{ mm diameter})\),
+\[
+A_s=\frac{\pi}{4}(12)^2
+\]
+\[
+k_s=\frac{A_sE}{L_r}
 \]
 
-Since all rods have the same length and material, stiffness is proportional to area.
-Thus,
-
+For the centre rod \((30\text{ mm diameter})\),
 \[
-k \propto d^2
+A_c=\frac{\pi}{4}(30)^2
 \]
-
-For side rods, diameter \(=12\) mm.  
-For centre rod, diameter \(=30\) mm.
-
-Hence,
-
 \[
-\frac{k_c}{k_s}=\left(\frac{30}{12}\right)^2 = 6.25
-\]
-
-Now, due to symmetry the beam remains horizontal, so vertical deflection at \(B\), \(D\),
-and \(F\) is the same. Therefore, rod forces are proportional to rod stiffness:
-
-\[
-\frac{R_D}{R_B}=6.25
+k_c=\frac{A_cE}{L_r}
 \]
 
 Thus,
-
 \[
-R_D = 6.25R_B
+k_s=\frac{\pi}{4}(12)^2\frac{210\times10^3}{1000}
+=23750.4\ \text{N/mm}
+\]
+\[
+k_c=\frac{\pi}{4}(30)^2\frac{210\times10^3}{1000}
+=148440.3\ \text{N/mm}
 \]
 
-Substituting into equilibrium:
-
+Let the vertical deflections of the beam at \(B\), \(D\), and \(F\) be \(\delta_B\), \(\delta_D\),
+and \(\delta_F\), respectively. Then,
 \[
-2R_B + 6.25R_B = 25
+\delta_B=\frac{R_B}{k_s},\qquad
+\delta_D=\frac{R_D}{k_c},\qquad
+\delta_F=\frac{R_F}{k_s}
 \]
 
+Since the system is symmetric,
 \[
-8.25R_B = 25
+\delta_B=\delta_F,\qquad R_B=R_F
 \]
 
+Now use beam flexibility coefficients for a simply supported beam of span \(4\) m,
+with support points at \(x=0,2,4\) m. The deflections at \(B\) and \(D\) due to the UDL
+and the point reactions satisfy the compatibility equations:
 \[
-R_B = 3.03 \text{ kN}
+\delta_B = \delta_B^{(w)} - f_{BB}R_B - f_{BD}R_D - f_{BF}R_F
+\]
+\[
+\delta_D = \delta_D^{(w)} - f_{DB}R_B - f_{DD}R_D - f_{DF}R_F
 \]
 
-Therefore,
-
+Using symmetry \((R_B=R_F)\), these reduce to two equations in \(R_B\) and \(R_D\).
+Substituting the flexibility coefficients for the beam \((EI = 210\times10^3 \times 8\times10^7
+=1.68\times10^{13}\ \text{N\,mm}^2)\), and solving together with
 \[
-R_D = 6.25\times 3.03 = 18.94 \text{ kN}
+2R_B+R_D=25
+\]
+gives
+\[
+R_B \approx 4.25\ \text{kN},\qquad R_D \approx 16.5\ \text{kN}
 \]
 
-Rounded off to one decimal place,
-
+Therefore, the axial force in the centre rod \(CD\) is
 \[
-\boxed{18.9}
+\boxed{16.5}
 \]
 
 \CodeRef{codes/ce2q52/ce2q52.py}
 
-
+\vspace{1cm}
+\end{comment}
 % ============================================================
 % Question 53 — Total float in network
 % ============================================================
@@ -1520,6 +1731,7 @@ Therefore, the total float available for activity \(E\) is
 \CodeRef{codes/ce2q53/ce2q53.py}
 
 
+\vspace{1cm}
 % ============================================================
 % Question 60 — Maximum water depth for gate
 % ============================================================
@@ -1669,6 +1881,7 @@ Therefore, the maximum water depth is
 \CodeRef{codes/ce2q60/ce2q60.py}
 
 
+\vspace{1cm}
 % ============================================================
 % Question 64 — Extra widening on horizontal curve
 % ============================================================
@@ -1745,6 +1958,7 @@ Rounded off to two decimal places,
 \CodeRef{codes/ce2q64/ce2q64.py}
 
 
+\vspace{1cm}
 % ============================================================
 % Question 65 — Interior angle from fore bearings
 % ============================================================

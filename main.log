@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.9.24)  28 SEP 2026 11:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.9.24)  30 SEP 2026 10:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1300,18 +1300,6 @@ Package translations Info: No language package found. I am going to use `englis
 h' as default language. on input line 26.
 (./main.aux
 
-LaTeX Warning: Label `fig:ce2q14' multiply defined.
-
-
-LaTeX Warning: Label `fig:ce2q5' multiply defined.
-
-
-LaTeX Warning: Label `fig:ce2q5' multiply defined.
-
-
-LaTeX Warning: Label `fig:ce2q5' multiply defined.
-
-
 LaTeX Warning: Label `fig:ce2q5' multiply defined.
 
 )
@@ -1447,205 +1435,160 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
  [2]
 (./chapters/ce2-2025-formulae.tex [3
 
-] [4] [5] [6] [7] [8] [9] [10] [11])
-[12] (./chapters/ce2-2025-problems.tex
+] [4] [5]) [6]
+(./chapters/ce2-2025-problems.tex
 pdfTeX warning (ext4): destination with the same identifier (name{equation.1.1}
 ) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.57 \end{align}
-                
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1.2}
-) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.57 \end{align}
-                
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1.3}
-) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.57 \end{align}
-                
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1.4}
-) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.64 \end{align}
-                
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1.5}
-) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.64 \end{align}
-                
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1.6}
-) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.75 \end{align}
-                
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1.7}
-) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.75 \end{align}
-                
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1.8}
-) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.75 \end{align}
+l.58 \end{align}
                 
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 8
-6.
+7.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
+[7]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.2.1}
 ) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.129 \end{align}
-                  [13]
-pdfTeX warning (ext4): destination with the same identifier (name{equation.2.2}
-) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.136 \end{align}
-                 
-<figs/piechart.png, id=259, 363.5181pt x 362.7954pt>
+l.143 \end{align}
+                  [8]
+<figs/piechart.png, id=179, 363.5181pt x 362.7954pt>
 File: figs/piechart.png Graphic file (type png)
 <use figs/piechart.png>
-Package pdftex.def Info: figs/piechart.png  used on input line 142.
+Package pdftex.def Info: figs/piechart.png  used on input line 254.
 (pdftex.def)             Requested size: 182.09764pt x 181.73492pt.
-
+ [9 <./figs/piechart.png>]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.1}
 ) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.172 \end{align}
-                  [14 <./figs/piechart.png>]
+l.287 \end{align}
+                 
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.1}
 ) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.216 \end{align}
+l.332 \end{align}
                  
+pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2}
+) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.332 \end{align}
+                  [10]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5.1}
 ) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.272 \end{align}
-                  [15]
+l.389 \end{align}
+                 
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5.2}
 ) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.280 \end{align}
+l.397 \end{align}
                  
-<figs/village_triangle.png, id=296, 399.6531pt x 324.4923pt>
+<figs/village_triangle.png, id=206, 378.6948pt x 324.4923pt>
 File: figs/village_triangle.png Graphic file (type png)
 <use figs/village_triangle.png>
-Package pdftex.def Info: figs/village_triangle.png  used on input line 293.
-(pdftex.def)             Requested size: 182.09764pt x 147.85217pt.
-
+Package pdftex.def Info: figs/village_triangle.png  used on input line 410.
+(pdftex.def)             Requested size: 182.09764pt x 156.0318pt.
+ [11]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.6.1}
 ) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.313 \end{align}
-                  [16 <./figs/village_triangle.png>]
+l.431 \end{align}
+                 
 pdfTeX warning (ext4): destination with the same identifier (name{equation.6.2}
 ) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.335 \end{align}
+l.453 \end{align}
                  
 pdfTeX warning (ext4): destination with the same identifier (name{equation.6.3}
 ) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.335 \end{align}
-                 
-pdfTeX warning (ext4): destination with the same identifier (name{equation.7.1}
+l.453 \end{align}
+                  [12 <./figs/village_triangle.png>]
+<figs/ce2q14.png, id=235, 677.53125pt x 277.035pt>
+File: figs/ce2q14.png Graphic file (type png)
+<use figs/ce2q14.png>
+Package pdftex.def Info: figs/ce2q14.png  used on input line 505.
+(pdftex.def)             Requested size: 182.09764pt x 74.45804pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{equation.8.1}
 ) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.365 \end{align}
+l.525 \end{align}
                  
-<figs/ce2q14.png, id=311, 677.53125pt x 277.035pt>
-File: figs/ce2q14.png Graphic file (type png)
-<use figs/ce2q14.png>
-Package pdftex.def Info: figs/ce2q14.png  used on input line 385.
-(pdftex.def)             Requested size: 182.09764pt x 74.45804pt.
-<figs/influence_line_gi.png, id=312, 443.0151pt x 226.9278pt>
+pdfTeX warning (ext4): destination with the same identifier (name{equation.8.2}
+) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.531 \end{align}
+                  [13 <./figs/ce2q14.png>]
+pdfTeX warning (ext4): destination with the same identifier (name{equation.8.3}
+) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.537 \end{align}
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{equation.8.4}
+) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.543 \end{align}
+                 
+<figs/influence_line_gi.png, id=252, 611.4042pt x 294.1389pt>
 File: figs/influence_line_gi.png Graphic file (type png)
 <use figs/influence_line_gi.png>
-Package pdftex.def Info: figs/influence_line_gi.png  used on input line 399.
-(pdftex.def)             Requested size: 182.09764pt x 93.27644pt.
- [17 <./figs/ce2q14.png>]
+Package pdftex.def Info: figs/influence_line_gi.png  used on input line 572.
+(pdftex.def)             Requested size: 182.09764pt x 87.60501pt.
+
 pdfTeX warning (ext4): destination with the same identifier (name{equation.9.1}
 ) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.443 \end{align}
-                 
+l.617 \end{align}
+                  [14 <./figs/influence_line_gi.png>]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.9.2}
 ) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.452 \end{align}
+l.626 \end{align}
                  
 pdfTeX warning (ext4): destination with the same identifier (name{equation.10.1
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.484 \end{align}
-                 
-pdfTeX warning (ext4): destination with the same identifier (name{equation.10.2
-}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.484 \end{align}
-                 
-pdfTeX warning (ext4): destination with the same identifier (name{equation.10.3
-}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.492 \end{align}
-                 
-pdfTeX warning (ext4): destination with the same identifier (name{equation.10.4
-}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.492 \end{align}
-                  [18 <./figs/influence_line_gi.png>] [19] [20] [21]
-<figs/ce2q39.png, id=367, 677.53125pt x 265.99374pt>
-File: figs/ce2q39.png Graphic file (type png)
-<use figs/ce2q39.png>
-Package pdftex.def Info: figs/ce2q39.png  used on input line 732.
-(pdftex.def)             Requested size: 182.09764pt x 71.49051pt.
- [22]
-[23 <./figs/ce2q39.png>]
-<figs/stress_state_mohr.png, id=377, 315.8199pt x 324.4923pt>
-File: figs/stress_state_mohr.png Graphic file (type png)
-<use figs/stress_state_mohr.png>
-Package pdftex.def Info: figs/stress_state_mohr.png  used on input line 857.
-(pdftex.def)             Requested size: 182.09764pt x 187.1015pt.
- [24 <./figs/stress_state_mohr.png>] [25]
-<figs/ce2q46.png, id=399, 684.5575pt x 356.33125pt>
+l.659 \end{align}
+                  [15] [16] [17] [18]
+<figs/cantilever_deflection.png, id=302, 401.8212pt x 226.9278pt>
+File: figs/cantilever_deflection.png Graphic file (type png)
+<use figs/cantilever_deflection.png>
+Package pdftex.def Info: figs/cantilever_deflection.png  used on input line 896
+.
+(pdftex.def)             Requested size: 364.1953pt x 205.6805pt.
+ [19 <./figs/cantilever_deflection.png>]
+[20]
+<figs/ce2q46.png, id=323, 684.5575pt x 356.33125pt>
 File: figs/ce2q46.png Graphic file (type png)
 <use figs/ce2q46.png>
-Package pdftex.def Info: figs/ce2q46.png  used on input line 1021.
+Package pdftex.def Info: figs/ce2q46.png  used on input line 1206.
 (pdftex.def)             Requested size: 182.09764pt x 94.78618pt.
- [26 <./figs/ce2q46.png>] [27] [28] [29] [30] [31] [32] [33] [34]
-<figs/interior_angle.png, id=454, 330.5148pt x 393.6306pt>
+ [21 <./figs/ce2q46.png>] [22] [23] [24] [25] [26] [27] [28]
+<figs/interior_angle.png, id=375, 373.1541pt x 380.1402pt>
 File: figs/interior_angle.png Graphic file (type png)
 <use figs/interior_angle.png>
-Package pdftex.def Info: figs/interior_angle.png  used on input line 1796.
-(pdftex.def)             Requested size: 182.09764pt x 216.87589pt.
-) [35 <./figs/interior_angle.png>] (./main.aux)
+Package pdftex.def Info: figs/interior_angle.png  used on input line 2010.
+(pdftex.def)             Requested size: 182.09764pt x 185.51045pt.
+) [29 <./figs/interior_angle.png>] (./main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
@@ -1658,43 +1601,39 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 2EE2393A477CABD51B51578E79DAB16C;313.
  ) 
 Here is how much of TeX's memory you used:
- 52503 strings out of 467533
- 1271330 string characters out of 5422138
- 1914128 words of memory out of 5000000
- 80387 multiletter control sequences out of 15000+600000
+ 52428 strings out of 467533
+ 1270203 string characters out of 5422138
+ 1914148 words of memory out of 5000000
+ 80358 multiletter control sequences out of 15000+600000
  672265 words of font info for 144 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 109i,16n,118p,1194b,1320s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 109i,14n,118p,1194b,1388s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/sy
-mbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/sym
-bols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/tfrupee/tfrup
-ee.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (35 pages, 705083 bytes).
+-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/tfrupee/tfrupee.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/co
+urier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (29 pages, 639158 bytes).
 PDF statistics:
- 634 PDF objects out of 1000 (max. 8388607)
- 506 compressed objects within 6 object streams
- 254 named destinations out of 1000 (max. 500000)
- 173 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 527 PDF objects out of 1000 (max. 8388607)
+ 415 compressed objects within 5 object streams
+ 208 named destinations out of 1000 (max. 500000)
+ 168 words of extra memory for PDF output out of 10000 (max. 10000000)
 
