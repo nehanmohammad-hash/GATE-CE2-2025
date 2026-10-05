@@ -1,9 +1,21 @@
+
 % ============================================================
 % GATE CE2 2025 — Problems and Solutions
-% Reformatted to follow the reference BT problem-book style.
+% Corrected formatting version
 % ============================================================
 
 \small
+
+% ------------------------------------------------------------
+% Local spacing
+% ------------------------------------------------------------
+% A small increase in paragraph spacing and equation-row spacing
+% keeps the A5 two-column layout readable without making it loose.
+\setlength{\parskip}{0.32cm}
+\setlength{\jot}{7pt}
+
+% Small, consistent separation between successive problems/blocks.
+\newcommand{\ProblemSpace}{\vspace{0.22cm}}
 
 % ------------------------------------------------------------
 % Local formatting helpers
@@ -25,7 +37,10 @@
 
 \begin{enumerate}[label=\thesubsection.\arabic*, ref=\thesubsection.\theenumi]
 
-\vspace{1cm}
+
+
+
+\ProblemSpace
 % ============================================================
 % Question 3 — Energy consumption
 % ============================================================
@@ -38,14 +53,14 @@ consumption? If the desk light is on for 2 more hours each night
 for the 180 days, what would be the percentage-increase in the
 cost of energy consumption?
 
-\hfill (GATE~CE2~2025)
+\hfill (CE2~2025)
 
-\begin{enumerate}[label=\alph*)]
+\begin{multicols}{4}\begin{enumerate}[label=\alph*)]
     \item \rupee 604.8; 10\%
     \item \rupee 504; 20\%
     \item \rupee 604.8; 12\%
     \item \rupee 720; 15\%
-\end{enumerate}
+\end{enumerate}\end{multicols}
 
 \Solution
 The initial energy consumption is
@@ -86,9 +101,7 @@ Thus, option (B) is correct.
 
 \CodeRef{codes/ce2q3/ce2q3.py}
 
-\vspace{1cm}
 
-\vspace{1cm}
 %% ============================================================
 % Question 5 — Ball distribution
 % ============================================================
@@ -107,7 +120,7 @@ A bag contains Violet ($V$), Yellow ($Y$), Red ($R$), and Green
 
 Which one of the following correctly represents the balls in the bag?
 
-\hfill (GATE~CE2~2025)
+\hfill (CE2~2025)
 
 \begin{enumerate}[label=\alph*)]
     \item $V=10\%$, $R=20\%$, $Y=30\%$, $G=40\%$
@@ -117,135 +130,96 @@ Which one of the following correctly represents the balls in the bag?
 \end{enumerate}
 
 \Solution
-Let the numbers of Violet, Yellow, Red, and Green balls be collected in
-the vector
-\[
-\vec{x}=\myvec{V\\Y\\R\\G}.
-\]
-The four given conditions can be written as the linear system
-\[
-\mathbf{A}\vec{x}=\vec{b},
-\]
+Let the numbers of Violet, Yellow, Red, and Green balls be represented by
+\(V,Y,R,G\), respectively. The four conditions give
+\begin{equation}
+\vec{A}\vec{x}=\vec{b},
+\end{equation}
 where
 \begin{align}
-\mathbf{A}
-&=
-\myvec{
-    2 & 1 & 0 & 0 \\
-    1 & 0 & 0 & 1 \\
-    0 & 1 & 1 & 0 \\
-    1 & 0 & 2 & 0
-},
-&
-\vec{b}
-&=
-\myvec{50\\50\\50\\50}.
+\vec{x}&=\myvec{V\\Y\\R\\G}, &
+\vec{A}&=\myvec{2&1&0&0\\1&0&0&1\\0&1&1&0\\1&0&2&0}, &
+\vec{b}&=\myvec{50\\50\\50\\50}.
 \end{align}
 
-We solve this system using elementary row operations. Form the augmented
-matrix:
-\[
-\left[\mathbf{A}\,\middle|\,\vec{b}\right]
-=
+The augmented matrix is reduced using elementary row operations. The
+operations are written directly on the transformation arrows:
+\begin{equation}
+\resizebox{0.90\linewidth}{!}{$\renewcommand{\arraystretch}{1.12}
 \myvec{
-    2 & 1 & 0 & 0 & 50 \\
-    1 & 0 & 0 & 1 & 50 \\
-    0 & 1 & 1 & 0 & 50 \\
-    1 & 0 & 2 & 0 & 50
-}.
-\]
-
-\textbf{Step 1:} Eliminate the first column below the pivot in row~1.
-\begin{align*}
-R_2 &\leftarrow R_2 - \tfrac{1}{2}R_1, &
-R_4 &\leftarrow R_4 - \tfrac{1}{2}R_1.
-\end{align*}
-This gives
-\[
+2&1&0&0&50\\
+1&0&0&1&50\\
+0&1&1&0&50\\
+1&0&2&0&50
+}
+\xrightarrow{\;R_1\leftrightarrow R_2\;}
 \myvec{
-    2 & 1 & 0 & 0 & 50 \\
-    0 & -\tfrac{1}{2} & 0 & 1 & 25 \\
-    0 & 1 & 1 & 0 & 50 \\
-    0 & -\tfrac{1}{2} & 2 & 0 & 25
-}.
-\]
-
-\textbf{Step 2:} Use row~3 (pivot in column~2) to eliminate the
-entries in column~2 of rows~2 and~4:
-\begin{align*}
-R_2 &\leftarrow R_2 + \tfrac{1}{2}R_3, &
-R_4 &\leftarrow R_4 + \tfrac{1}{2}R_3.
-\end{align*}
-We obtain
-\[
+1&0&0&1&50\\
+2&1&0&0&50\\
+0&1&1&0&50\\
+1&0&2&0&50
+}
+\xrightarrow{\substack{R_2\leftarrow R_2-2R_1\\R_4\leftarrow R_4-R_1}}
 \myvec{
-    2 & 1 & 0 & 0 & 50 \\
-    0 & 0 & \tfrac{1}{2} & 1 & 50 \\
-    0 & 1 & 1 & 0 & 50 \\
-    0 & 0 & \tfrac{5}{2} & 0 & 50
-}.
-\]
+1&0&0&1&50\\
+0&1&0&-2&-50\\
+0&1&1&0&50\\
+0&0&2&-1&0
+}$}
+\end{equation}
 
-\textbf{Step 3:} Use row~2 (pivot in column~3) to eliminate the entry
-in column~3 of row~4:
-\[
-R_4 \leftarrow R_4 - 5R_2.
-\]
-Thus,
-\[
+Next,
+\begin{equation}
+\resizebox{0.90\linewidth}{!}{$\renewcommand{\arraystretch}{1.12}
 \myvec{
-    2 & 1 & 0 & 0 & 50 \\
-    0 & 0 & \tfrac{1}{2} & 1 & 50 \\
-    0 & 1 & 1 & 0 & 50 \\
-    0 & 0 & 0 & -250 & -200
-}.
-\]
+1&0&0&1&50\\
+0&1&0&-2&-50\\
+0&1&1&0&50\\
+0&0&2&-1&0
+}
+\xrightarrow{\;R_3\leftarrow R_3-R_2\;}
+\myvec{
+1&0&0&1&50\\
+0&1&0&-2&-50\\
+0&0&1&2&100\\
+0&0&2&-1&0
+}
+\xrightarrow{\;R_4\leftarrow R_4-2R_3\;}
+\myvec{
+1&0&0&1&50\\
+0&1&0&-2&-50\\
+0&0&1&2&100\\
+0&0&0&-5&-200
+}$}
+\end{equation}
 
-\textbf{Back-substitution:} From row~4,
-\[
--250G = -200 \;\Rightarrow\; G = \frac{200}{250} = 0.8\times 10 = 40.
-\]
+Finally,
+\begin{equation}
+\resizebox{0.60\linewidth}{!}{$\renewcommand{\arraystretch}{1.12}
+\myvec{
+1&0&0&1&50\\
+0&1&0&-2&-50\\
+0&0&1&2&100\\
+0&0&0&-5&-200
+}
+\xrightarrow{\substack{R_4\leftarrow-\frac15R_4\\R_1\leftarrow R_1-R_4\\R_2\leftarrow R_2+2R_4\\R_3\leftarrow R_3-2R_4}}
+\myvec{
+1&0&0&0&10\\
+0&1&0&0&30\\
+0&0&1&0&20\\
+0&0&0&1&40
+}$}.
+\end{equation}
 
-From row~2,
-\[
-\tfrac{1}{2}R + 1\cdot G = 50
-\;\Rightarrow\;
-\tfrac{1}{2}R + 40 = 50
-\;\Rightarrow\;
-R = 20.
-\]
-
-From row~3,
-\[
-Y + R = 50
-\;\Rightarrow\;
-Y + 20 = 50
-\;\Rightarrow\;
-Y = 30.
-\]
-
-From row~1,
-\[
-2V + Y = 50
-\;\Rightarrow\;
-2V + 30 = 50
-\;\Rightarrow\;
-V = 10.
-\]
-
-Thus,
-\[
-V = 10,\quad Y = 30,\quad R = 20,\quad G = 40.
-\]
-
+Hence,
+\begin{align}
+V&=10, & Y&=30, & R&=20, & G&=40.
+\end{align}
 The total number of balls is
-\[
-T = V + Y + R + G = 10 + 30 + 20 + 40 = 100,
-\]
-so the percentage distribution is
-\[
-V = 10\%,\quad R = 20\%,\quad Y = 30\%,\quad G = 40\%.
-\]
+\begin{align}
+T&=V+Y+R+G=100,\\
+V&=10\%, & R&=20\%, & Y&=30\%, & G&=40\%.
+\end{align}
 
 Hence, option (A) correctly represents the balls in the bag.
 
@@ -253,14 +227,14 @@ Hence, option (A) correctly represents the balls in the bag.
     \centering
     \includegraphics[width=0.5\columnwidth]{figs/piechart.png}
     \caption{Pie chart representing ball distribution.}
-    \label{fig:ce2q5}
+    \label{fig:ce2q5_pie}
 \end{figure}
 
 \CodeRef{codes/ce2q5/ce2q5.py}
 
 
-\vspace{1cm}
-\vspace{1cm}
+
+\ProblemSpace
 % ============================================================
 % Question 8 — Five-digit number
 % ============================================================
@@ -271,14 +245,14 @@ $P$, $Q$, $R$, $S$, and $T$, and satisfies the following conditions:
 $P<Q$, $S>P>T$, and $R<T$. If integers 1 through 5 are used to
 construct such a number, the value of $P$ is:
 
-\hfill (GATE~CE2~2025)
+\hfill (CE2~2025)
 
-\begin{enumerate}[label=\alph*)]
+\begin{multicols}{4}\begin{enumerate}[label=\alph*)]
     \item 1
     \item 2
     \item 3
     \item 4
-\end{enumerate}
+\end{enumerate}\end{multicols}
 
 \Solution
 Combining the inequalities gives
@@ -300,7 +274,8 @@ Thus, option (C) is correct.
 
 \CodeRef{codes/ce2q8/ce2q8.py}
 
-\vspace{1cm}
+
+\ProblemSpace
 % ============================================================
 % Question 9 — Mixture and alligation
 % ============================================================
@@ -312,55 +287,40 @@ The cost of variety $P$ is \rupee 800 for $5$ kg. The cost of variety
 $Q$ is \rupee 800 for $4$ kg. If the person gets $8\%$ profit, what is
 the $P:Q$ ratio (by weight)?
 
-\hfill (GATE~CE2~2025)
+\hfill (CE2~2025)
 
-\begin{enumerate}[label=\alph*)]
+\begin{multicols}{4}\begin{enumerate}[label=\alph*)]
     \item $5:4$
     \item $3:4$
     \item $3:2$
     \item $1:1$
-\end{enumerate}
+\end{enumerate}\end{multicols}
 
 \Solution
-Let the profit percentage be $p=0.08$. Since
-$\text{SP}=\text{CP}(1+p)$, the cost price of the mixture is
+Let the profit percentage be $p=0.08$. Let the cost price of the
+mixture be $z$. Since $\text{SP}=z(1+p)$,
 \begin{align}
-    \text{CP}
-    &= \frac{\text{SP}}{1+p} \\
-    &= \frac{192}{1.08}
-     = \frac{1600}{9}\,\text{\rupee/kg}.
+    z&=\frac{192}{1.08}=\frac{1600}{9}\,\text{\rupee/kg},\\
+    c_P&=\frac{800}{5}=160\,\text{\rupee/kg}, &
+    c_Q&=\frac{800}{4}=200\,\text{\rupee/kg}.
 \end{align}
 
-The unit costs of the two varieties are
+Let $x$ kg of variety $P$ and $y$ kg of variety $Q$ be mixed. Equating
+the total cost to the cost of the mixture gives
 \begin{align}
-    C_P &= \frac{800}{5}=160\,\text{\rupee/kg}, \\
-    C_Q &= \frac{800}{4}=200\,\text{\rupee/kg}.
-\end{align}
-
-Let the weights mixed be $W_P$ and $W_Q$. Equating the total cost
-of the mixture to the component costs gives
-\begin{align}
-    W_P C_P+W_Q C_Q
-    &= (W_P+W_Q)\text{CP} \\
-    W_P(\text{CP}-C_P)
-    &= W_Q(C_Q-\text{CP}).
-\end{align}
-
-Hence,
-\begin{align}
-    \frac{W_P}{W_Q}
-    &= \frac{C_Q-\text{CP}}{\text{CP}-C_P} \\
-    &= \frac{200-\frac{1600}{9}}
-            {\frac{1600}{9}-160} \\
-    &= \frac{\frac{200}{9}}{\frac{160}{9}}
-     = \frac54.
+    xc_P+yc_Q&=(x+y)z,\\
+    x(z-c_P)&=y(c_Q-z),\\
+    \frac{x}{y}&=\frac{c_Q-z}{z-c_P}\\
+    &=\frac{200-\frac{1600}{9}}{\frac{1600}{9}-160}
+     =\frac54.
 \end{align}
 
 Thus, the required ratio is $5:4$, making option (A) correct.
 
 \CodeRef{codes/ce2q9/ce2q9.py}
 
-\vspace{1cm}
+
+\ProblemSpace
 % ============================================================
 % Question 10 — Triangle geometry
 % ============================================================
@@ -372,14 +332,14 @@ joins $Q$ and $R$. It is proposed to connect $P$ to this road $QR$
 by constructing another road. What is the minimum possible length
 (in km) of this connecting road?
 
-\hfill (GATE~CE2~2025)
+\hfill (CE2~2025)
 
-\begin{enumerate}[label=\alph*)]
+\begin{multicols}{4}\begin{enumerate}[label=\alph*)]
     \item 10.5
     \item 11.0
     \item 12.0
     \item 12.5
-\end{enumerate}
+\end{enumerate}\end{multicols}
 
 \Solution
 The minimum distance from vertex $P$ to line $QR$ is the altitude
@@ -407,14 +367,15 @@ Thus, option (C) is correct.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\columnwidth]{figs/village_triangle.png}
+    \includegraphics[width=0.8\columnwidth]{figs/village_triangle.png}
     \caption{Triangle $PQR$ geometry and altitude from $P$ to $QR$.}
     \label{fig:ce2q10}
 \end{figure}
 
 \CodeRef{codes/ce2q10/ce2q10.py}
 
-\vspace{1cm}
+
+\ProblemSpace
 % ============================================================
 % Question 11 — Matrix transpose
 % ============================================================
@@ -430,14 +391,14 @@ For the matrix $[\vec{A}]$ given below, the transpose is:
     }
 \end{align}
 
-\hfill (GATE~CE2~2025)
+\hfill (CE2~2025)
 
-\begin{enumerate}[label=\alph*)]
+\begin{multicols}{4}\begin{enumerate}[label=\alph*)]
     \item $\myvec{2&1&4\\3&4&3\\4&5&2}$
     \item $\myvec{4&3&2\\5&4&1\\2&3&4}$
     \item $\myvec{4&2&3\\5&1&4\\2&4&3}$
     \item $\myvec{2&3&4\\1&4&5\\4&3&2}$
-\end{enumerate}
+\end{enumerate}\end{multicols}
 
 \Solution
 The transpose operation interchanges rows and columns. Therefore,
@@ -456,7 +417,8 @@ Thus, option (A) is correct.
 
 \CodeRef{codes/ce2q11/ce2q11.py}
 
-\vspace{1cm}
+
+\ProblemSpace
 % ============================================================
 % Question 12 — Integration
 % ============================================================
@@ -465,14 +427,14 @@ Thus, option (A) is correct.
 Integration of $\ln(x)$ with respect to $x$, i.e.,
 $\int\ln(x)\,dx=$\underline{\hspace{3cm}}
 
-\hfill (GATE~CE2~2025)
+\hfill (CE2~2025)
 
-\begin{enumerate}[label=\alph*)]
+\begin{multicols}{4}\begin{enumerate}[label=\alph*)]
     \item $x\ln(x)-x+C$
     \item $x-\ln(x)+C$
     \item $x\ln(x)+x+C$
     \item $\ln(x)-x+C$
-\end{enumerate}
+\end{enumerate}\end{multicols}
 
 \Solution
 Using integration by parts with $u=\ln(x)$ and $dv=dx$,
@@ -487,7 +449,8 @@ Thus, option (A) is correct.
 
 \CodeRef{codes/ce2q12/ce2q12.py}
 
-\vspace{1cm}
+
+\ProblemSpace
 % ============================================================
 % Question 14 — Influence line of a truss member
 % ============================================================
@@ -498,11 +461,11 @@ is drawn for the axial force in the member $G-I$, when a unit load
 travels on the bottom chord of the truss. Identify the CORRECT
 influence line from the options provided, and calculate the axial force values using the section cutting method when the unit load ($1\text{ N}$) is at joints $D$, $G$, $I$, $L$, and $O$.
 
-\hfill (GATE~CE2~2025)
+\hfill (CE2~2025)
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\columnwidth]{figs/ce2q14.png}
+    \includegraphics[width=1\columnwidth]{figs/ce2q14.png}
     \caption{Pin-jointed truss for Q14.}
     \label{fig:ce2q14_truss}
 \end{figure}
@@ -563,20 +526,21 @@ of \(1.33\) near the panel of member \(G-I\).
 
 Therefore, the correct option is
 
-\[
-\boxed{\text{(B)}}
-\]
+\begin{equation}
+\text{(B)}
+\end{equation}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\columnwidth]{figs/influence_line_gi.png}
+    \includegraphics[width=1\columnwidth]{figs/influence_line_gi.png}
     \caption{Correct influence line for axial force in member $G-I$.}
     \label{fig:ce2q14_il}
 \end{figure}
 
 \CodeRef{codes/ce2q14/ce2q14.py}
 
-\vspace{1cm}
+
+\ProblemSpace
 % ============================================================
 % Question 21 — Curl and divergence
 % ============================================================
@@ -586,9 +550,9 @@ Consider a velocity vector $\vec{V}$ in $(x,y,z)$ coordinates given by
 $\vec{V}=u\vec{x}+v\vec{y}$. Pick one or more CORRECT statement(s)
 from the choices given below.
 
-\hfill (GATE~CE2~2025)
+\hfill (CE2~2025)
 
-\begin{enumerate}[label=\alph*)]
+\begin{multicols}{2}\begin{enumerate}[label=\alph*)]
     \item $z$-component of Curl of velocity:
           $\nabla\times\vec{V}
           =\left(\frac{\partial v}{\partial x}
@@ -605,7 +569,7 @@ from the choices given below.
           $\nabla\cdot\vec{V}
           =\frac{\partial u}{\partial y}
           +\frac{\partial v}{\partial x}$
-\end{enumerate}
+\end{enumerate}\end{multicols}
 
 \Solution
 For a two-dimensional velocity field
@@ -631,7 +595,8 @@ Therefore, the correct statements are (A) and (C).
 
 \CodeRef{codes/ce2q21/ce2q21.py}
 
-\vspace{1cm}
+
+\ProblemSpace
 % ============================================================
 % Question 22 — Probability
 % ============================================================
@@ -640,14 +605,14 @@ Therefore, the correct statements are (A) and (C).
 Given that $A$ and $B$ are not null sets, which of the following
 statements regarding probability is/are CORRECT?
 
-\hfill (GATE~CE2~2025)
+\hfill (CE2~2025)
 
-\begin{enumerate}[label=\alph*)]
+\begin{multicols}{2}\begin{enumerate}[label=\alph*)]
     \item $\Pr(A\cap B)=\Pr(A)\Pr(B)$ if $A$ and $B$ are mutually exclusive.
     \item Conditional probability, $\Pr(A\mid B)=1$ if $B\subset A$.
     \item $\Pr(A\cup B)=\Pr(A)+\Pr(B)$, if $A$ and $B$ are mutually exclusive.
     \item $\Pr(A\cap B)=0$, if $A$ and $B$ are independent.
-\end{enumerate}
+\end{enumerate}\end{multicols}
 
 \Solution
 Since $B\subset A$,
@@ -673,377 +638,148 @@ Therefore, the correct statements are (B) and (C).
 
 \CodeRef{codes/ce2q22/ce2q22.py}
 
-\vspace{1cm}
+
+\ProblemSpace
 % ============================================================
 % Question 36 — Solution of differential equation using Laplace transform
-% ============================================================
 
 \item
 Pick the CORRECT solution for the following differential equation
+\begin{equation}
+\frac{dy}{dx}=e^{x-y}.
+\end{equation}
 
-\[
-\frac{dy}{dx} = e^{x-y}
-\]
+\hfill (CE2~2025)
 
-\hfill (GATE~CE2~2025)
-
+\begin{multicols}{2}
 \begin{enumerate}[label=\alph*)]
-    \item \(y=\ln(e^x+\text{Constant})\)
-    \item \(\ln(y)=x+\text{Constant}\)
-    \item \(\ln(y)=\ln(e^x)+\text{Constant}\)
-    \item \(y=x+\text{Constant}\)
+    \item $y=\ln\brak{e^x+\text{Constant}}$
+    \item $\ln(y)=x+\text{Constant}$
+    \item $\ln(y)=\ln(e^x)+\text{Constant}$
+    \item $y=x+\text{Constant}$
 \end{enumerate}
+\end{multicols}
 
 \Solution
-The given differential equation is nonlinear:
-
-\[
-\frac{dy}{dx}=e^{x-y}=e^x e^{-y}
-\]
-
-To use Laplace transformation, we first convert it into a linear differential equation
-by introducing the substitution
-
-\[
-u=e^y
-\]
-
-Then,
-
-\[
-\frac{du}{dx}=e^y\frac{dy}{dx}
-\]
-
-Using the given equation,
-
-\[
-\frac{du}{dx}=e^y \cdot e^{x-y}=e^x
-\]
-
-Thus, the transformed problem reduces to
-
-\[
-\frac{du}{dx}=e^x
-\]
-
-Now take Laplace transforms on both sides with respect to \(x\). Let
-
-\[
-\mathcal{L}\{u(x)\}=U(s)
-\]
-
-Then,
-
-\[
-\mathcal{L}\left\{\frac{du}{dx}\right\}=sU(s)-u(0)
-\]
-
-and
-
-\[
-\mathcal{L}\{e^x\}=\frac{1}{s-1}
-\]
-
-Hence,
-
-\[
-sU(s)-u(0)=\frac{1}{s-1}
-\]
-
-Therefore,
-
-\[
-U(s)=\frac{1}{s(s-1)}+\frac{u(0)}{s}
-\]
-
-Using partial fractions,
-
-\[
-\frac{1}{s(s-1)}=-\frac{1}{s}+\frac{1}{s-1}
-\]
-
-So,
-
-\[
-U(s)= -\frac{1}{s}+\frac{1}{s-1}+\frac{u(0)}{s}
-\]
-
-\[
-U(s)=\frac{u(0)-1}{s}+\frac{1}{s-1}
-\]
-
-Taking inverse Laplace transform,
-
-\[
-u(x)=u(0)-1+e^x
-\]
-
-Since \(u=e^y\), we get
-
-\[
-e^y=e^x+C
-\]
-
-where \(C=u(0)-1\) is an arbitrary constant.
-
-Taking natural logarithm,
-
-\[
-y=\ln(e^x+C)
-\]
+The nonlinear equation is first transformed using $u=e^y$. 
+\begin{align}
+\text{Given:}\quad&
+\frac{dy}{dx}
+&=e^{x-y}=e^xe^{-y},\\[0.04cm]
+\text{Let:}\quad&
+u
+&=e^y,\\[0.04cm]
+\text{Then:}\quad&
+\frac{du}{dx}
+&=e^y\frac{dy}{dx}=e^x,\\[0.04cm]
+\text{Laplace transform:}\quad&
+\mathcal{L}\left\{\frac{du}{dx}\right\}
+&=sU(s)-u(0),\\[0.04cm]
+&
+\mathcal{L}\{e^x\}
+&=\frac{1}{s-1},\\[0.04cm]
+\text{Hence:}\quad&
+sU(s)-u(0)
+&=\frac{1}{s-1},\\[0.04cm]
+\text{Therefore:}\quad&
+U(s)
+&=\frac{1}{s(s-1)}+\frac{u(0)}{s},\\[0.04cm]
+\text{Partial fractions:}\quad&
+\frac{1}{s(s-1)}
+&=-\frac{1}{s}+\frac{1}{s-1},\\[0.04cm]
+\text{Thus:}\quad&
+U(s)
+&=\frac{u(0)-1}{s}+\frac{1}{s-1},\\[0.04cm]
+\text{Inverse Laplace transform:}\quad&
+u(x)
+&=u(0)-1+e^x,\\[0.04cm]
+\text{Since }u=e^y:\quad&
+e^y
+&=e^x+C,\\[0.04cm]
+\text{Taking logarithm:}\quad&
+y
+&=\ln\brak{e^x+C}.
+\end{align}
 
 Hence, the correct solution is
+\begin{equation}
+y=\ln\brak{e^x+\text{Constant}}.
+\end{equation}
 
-\[
-\boxed{y=\ln(e^x+\text{Constant})}
-\]
-
-Therefore, the correct option is
-
-\[
-\boxed{\text{(A)}}
-\]
+Therefore, the correct option is (A).
 
 \CodeRef{codes/ce2q36/ce2q36.py}
 
-\vspace{1cm}
-% ============================================================
+% ===============================================================
 % Question 38 — Propped cantilever with support settlement
-% ============================================================
+% ===============================================================
 
 \item
-The figure shows a propped cantilever with uniform flexural rigidity $$EI$$ (in N.m$$^2$$)
-and subjected to a moment $$M$$ (in N.m). Consider forces and displacements in the
+The figure shows a propped cantilever with uniform flexural rigidity $EI$ (in N.m$^2$)
+and subjected to a moment $M$ (in N.m). Consider forces and displacements in the
 upward direction as positive.
 
-Find the upward reaction at the propped support $$B$$ (in N) when this support settles
-by $$(-\Delta)$$, given in metres.
+Find the upward reaction at the propped support $B$ (in N) when this support settles
+by $(-\Delta)$, given in metres.
 
-\hfill (GATE~CE2~2025)
+\hfill (CE2~2025)
 
-\begin{enumerate}[label=\alph*)]
-    \item $$\dfrac{3M}{2L}-\dfrac{6EI\Delta}{L^3}$$
-    \item $$\dfrac{8M}{3L}-\dfrac{2EI\Delta}{L^3}$$
-    \item $$\dfrac{3M}{2L}-\dfrac{3EI\Delta}{L^3}$$
-    \item $$\dfrac{M}{L}-\dfrac{8EI\Delta}{L^3}$$
+\begin{multicols}{2}\begin{enumerate}[label=\alph*)]
+    \item $\dfrac{3M}{2L}-\dfrac{6EI\Delta}{L^3}$
+    \vspace{0.5cm}
+    \item $\dfrac{8M}{3L}-\dfrac{2EI\Delta}{L^3}$
+    \vspace{0.5cm}
+    \item $\dfrac{3M}{2L}-\dfrac{3EI\Delta}{L^3}$
+    \vspace{0.5cm}
+    \item $\dfrac{M}{L}-\dfrac{8EI\Delta}{L^3}$
+    \vspace{0.5cm}
 \end{enumerate}
+\end{multicols}
 
 \Solution
-Treat the reaction at the prop $$B$$ as the redundant $$R_B$$. The basic determinate
-structure is a cantilever fixed at $$A$$ and free at $$B$$.
+Treat the reaction at the prop $B$ as the redundant $R_B$. The basic determinate
+structure is a cantilever fixed at $A$ and free at $B$. The compatibility and
+superposition relations are kept in one aligned block:
+\begin{align}
+\text{Support settlement:}\quad&
+\delta_B
+&=-\Delta,\\[0.04cm]
+\text{Due to }M:\quad&
+\delta_M
+&=-\frac{ML^2}{2EI},\\[0.04cm]
+\text{Due to }R_B:\quad&
+\delta_R
+&=\frac{R_BL^3}{3EI},\\[0.04cm]
+\text{Compatibility:}\quad&
+\delta_M+\delta_R
+&=-\Delta,\\[0.04cm]
+\text{Hence:}\quad&
+-\frac{ML^2}{2EI}+\frac{R_BL^3}{3EI}
+&=-\Delta,\\[0.04cm]
+\text{Multiplying by }\frac{3EI}{L^3}:\quad&
+-\frac{3M}{2L}+R_B
+&=-\frac{3EI\Delta}{L^3},\\[0.04cm]
+\text{Therefore:}\quad&
+R_B
+&=\frac{3M}{2L}-\frac{3EI\Delta}{L^3}.
+\end{align}
 
-Using compatibility, the net vertical deflection at $$B$$ must equal the imposed support
-settlement. Since upward displacement is taken positive and the support settles downward
-by $$(-\Delta)$$,
+Thus, the upward reaction at support $B$ is
+\begin{equation}
+R_B=\frac{3M}{2L}-\frac{3EI\Delta}{L^3}.
+\end{equation}
 
-$$
-\delta_B = -\Delta
-$$
-
-The end deflection at $$B$$ due to an end moment $$M$$ on a cantilever of length $$L$$ is
-
-$$
-\delta_M = -\frac{ML^2}{2EI}
-$$
-
-The end deflection at $$B$$ due to an upward redundant force $$R_B$$ applied at the free
-end of the cantilever is
-
-$$
-\delta_R = \frac{R_B L^3}{3EI}
-$$
-
-By superposition,
-
-$$
-\delta_M + \delta_R = -\Delta
-$$
-
-Hence,
-
-$$
--\frac{ML^2}{2EI} + \frac{R_B L^3}{3EI} = -\Delta
-$$
-
-Multiplying throughout by $$3EI/L^3$$,
-
-$$
--\frac{3M}{2L} + R_B = -\frac{3EI\Delta}{L^3}
-$$
-
-Therefore,
-
-$$
-R_B = \frac{3M}{2L} - \frac{3EI\Delta}{L^3}
-$$
-
-Thus, the upward reaction at support $$B$$ is
-
-$$
-\boxed{\frac{3M}{2L} - \frac{3EI\Delta}{L^3}}
-$$
-
-Hence, the correct option is
-
-$$
-\boxed{\text{(C)}}
-$$
+Hence, the correct option is (C).
 
 \CodeRef{codes/ce2q38/ce2q38.py}
 
-\vspace{1cm}
-\begin{figure}
-    \includegraphics[width = 1\columnwidth]{figs/cantilever_deflection.png}
-\end{figure}
-\begin{comment}
-% ============================================================
-% Question 39 — Maximum compressive stress
-% ============================================================
-
-\item
-Let the state of stress at a point in a body be the difference of two plane states of
-stress shown in the figure. Consider all the possible planes perpendicular to the
-\(x\)-\(y\) plane and passing through that point. The magnitude of the maximum
-compressive stress on any such plane is \(k\sigma_0\), where \(k\) is equal to
-\underline{\hspace{2cm}} (round off to one decimal place).
-
-\hfill (GATE~CE2~2025)
-
-
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\columnwidth]{figs/ce2q39.png}
-    \label{fig:ce2q5}
+    \includegraphics[width=0.95\columnwidth]{figs/cantilever_deflection.png}
+    \caption{Propped cantilever and support settlement.}
+    \label{fig:ce2q38}
 \end{figure}
 
-
-
-\Solution
-The required stress tensor is the difference of the two given plane stress states.
-
-For the first figure, the stress is a uniaxial tensile stress of magnitude \(3\sigma_0\)
-along the \(x\)-direction. Hence,
-
-\[
-[\sigma^{(1)}]
-=
-\begin{bmatrix}
-3\sigma_0 & 0\\
-0 & 0
-\end{bmatrix}
-\]
-
-For the second figure, the element is rotated by \(45^\circ\), and the uniaxial tensile
-stress \(3\sigma_0\) acts along that rotated axis. In its local principal coordinates,
-
-\[
-[\sigma']
-=
-\begin{bmatrix}
-3\sigma_0 & 0\\
-0 & 0
-\end{bmatrix}
-\]
-
-Transforming to the global \(x\)-\(y\) coordinates for \(\theta=45^\circ\),
-
-\[
-[\sigma^{(2)}]
-=
-\begin{bmatrix}
-3\sigma_0\cos^2 45^\circ & 3\sigma_0\sin45^\circ\cos45^\circ\\
-3\sigma_0\sin45^\circ\cos45^\circ & 3\sigma_0\sin^2 45^\circ
-\end{bmatrix}
-\]
-
-Using
-
-\[
-\cos^2 45^\circ=\sin^2 45^\circ=\frac{1}{2},
-\qquad
-\sin45^\circ\cos45^\circ=\frac{1}{2},
-\]
-
-we get
-
-\[
-[\sigma^{(2)}]
-=
-\begin{bmatrix}
-\frac{3\sigma_0}{2} & \frac{3\sigma_0}{2}\\
-\frac{3\sigma_0}{2} & \frac{3\sigma_0}{2}
-\end{bmatrix}
-\]
-
-Hence, the required resultant stress tensor is
-
-\[
-[\sigma]=[\sigma^{(1)}]-[\sigma^{(2)}]
-=
-\begin{bmatrix}
-\frac{3\sigma_0}{2} & -\frac{3\sigma_0}{2}\\
--\frac{3\sigma_0}{2} & -\frac{3\sigma_0}{2}
-\end{bmatrix}
-\]
-
-The principal stresses are the eigenvalues of this matrix. Therefore,
-
-\[
-\det\left(
-\begin{bmatrix}
-\frac{3\sigma_0}{2}-\lambda & -\frac{3\sigma_0}{2}\\
--\frac{3\sigma_0}{2} & -\frac{3\sigma_0}{2}-\lambda
-\end{bmatrix}
-\right)=0
-\]
-
-Expanding,
-
-\[
-\left(\frac{3\sigma_0}{2}-\lambda\right)
-\left(-\frac{3\sigma_0}{2}-\lambda\right)
--
-\left(\frac{3\sigma_0}{2}\right)^2=0
-\]
-
-\[
-\lambda^2-\frac{9\sigma_0^2}{2}=0
-\]
-
-Hence,
-
-\[
-\lambda=\pm \frac{3\sigma_0}{\sqrt{2}}
-\]
-
-The maximum compressive stress magnitude is therefore
-
-\[
-\frac{3\sigma_0}{\sqrt{2}}=2.121\sigma_0
-\]
-
-Thus,
-
-\[
-k=2.1
-\]
-
-\[
-\boxed{2.1}
-\]
-
-\CodeRef{codes/ce2q39/ce2q39.py}
-
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\columnwidth]{figs/stress_state_mohr.png}
-    \label{fig:ce2q5}
-\end{figure}
-
-
-\vspace{1cm}
-\end{comment}
 % ============================================================
 % Question 44 — Local extrema of polynomial
 % ============================================================
@@ -1052,147 +788,156 @@ k=2.1
 Consider the function given below and pick one or more CORRECT statement(s)
 from the following choices.
 
-\[
+\begin{equation}
 f(x)=x^3-\frac{15}{2}x^2+18x+20
-\]
+\end{equation}
 
-\hfill (GATE~CE2~2025)
+\hfill (CE2~2025)
 
-\begin{enumerate}[label=\alph*)]
+\begin{multicols}{2}\begin{enumerate}[label=\alph*)]
     \item \(f(x)\) has a local minimum at \(x=3\).
     \item \(f(x)\) has a local maximum at \(x=3\).
     \item \(f(x)\) has a local minimum at \(x=2\).
     \item \(f(x)\) has a local maximum at \(x=2\).
-\end{enumerate}
+\end{enumerate}\end{multicols}
 
 \Solution
 To determine the local extrema, we differentiate the function.
 
-\[
+\begin{equation}
 f'(x)=3x^2-15x+18
-\]
+\end{equation}
 
 Factorizing,
 
-\[
+\begin{equation}
 f'(x)=3(x^2-5x+6)=3(x-2)(x-3)
-\]
+\end{equation}
 
 Thus, the critical points are
 
-\[
+\begin{equation}
 x=2,\qquad x=3
-\]
+\end{equation}
 
 Now compute the second derivative:
 
-\[
+\begin{equation}
 f''(x)=6x-15
-\]
+\end{equation}
 
 At \(x=2\),
 
-\[
+\begin{equation}
 f''(2)=12-15=-3<0
-\]
+\end{equation}
 
 Hence, \(f(x)\) has a local maximum at \(x=2\).
 
 At \(x=3\),
 
-\[
+\begin{equation}
 f''(3)=18-15=3>0
-\]
+\end{equation}
 
 Hence, \(f(x)\) has a local minimum at \(x=3\).
 
 Therefore, the correct statements are
 
-\[
-\boxed{\text{(A) and (D)}}
-\]
+\begin{equation}
+\text{(A) and (D)}
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.86\columnwidth]{figs/cubic.png}
+    \caption{Graph of the cubic function in Problem 1.2.13.}
+    \label{fig:cubic}
+\end{figure}
 
 \CodeRef{codes/ce2q44/ce2q44.py}
 
 
-\vspace{1cm}
+
+\ProblemSpace
 % ============================================================
 % Question 45 — Eigenvalues of matrix
 % ============================================================
 
 \item
-Pick the CORRECT eigenvalue(s) of the matrix \([A]\) from the following choices.
+Pick the CORRECT eigenvalue(s) of the matrix $\vec{A}$ from the following choices.
 
-\[
-[A]=
-\begin{bmatrix}
+\begin{equation}
+\vec{A}=
+\begin{pmatrix}
 6 & 8\\
 4 & 2
-\end{bmatrix}
-\]
+\end{pmatrix}
+\end{equation}
 
-\hfill (GATE~CE2~2025)
+\hfill (CE2~2025)
 
-\begin{enumerate}[label=\alph*)]
+\begin{multicols}{4}\begin{enumerate}[label=\alph*)]
     \item \(10\)
     \item \(4\)
     \item \(-2\)
     \item \(-10\)
-\end{enumerate}
+\end{enumerate}\end{multicols}
 
 \Solution
 The eigenvalues are obtained from the characteristic equation
 
-\[
-\det(A-\lambda I)=0
-\]
+\begin{equation}
+\det(\vec{A}-\lambda I)=0
+\end{equation}
 
 Therefore,
 
-\[
+\begin{equation}
 \det
-\begin{bmatrix}
+\begin{pmatrix}
 6-\lambda & 8\\
 4 & 2-\lambda
-\end{bmatrix}=0
-\]
+\end{pmatrix}=0
+\end{equation}
 
 Expanding,
 
-\[
+\begin{equation}
 (6-\lambda)(2-\lambda)-32=0
-\]
+\end{equation}
 
-\[
+\begin{equation}
 12-8\lambda+\lambda^2-32=0
-\]
+\end{equation}
 
-\[
+\begin{equation}
 \lambda^2-8\lambda-20=0
-\]
+\end{equation}
 
 Factoring,
 
-\[
+\begin{equation}
 (\lambda-10)(\lambda+2)=0
-\]
+\end{equation}
 
 Hence, the eigenvalues are
 
-\[
+\begin{equation}
 \lambda=10,\qquad \lambda=-2
-\]
+\end{equation}
 
 So, the correct options are
 
-\[
-\boxed{\text{(A) and (C)}}
-\]
+\begin{equation}
+\text{(A) and (C)}
+\end{equation}
 
 \CodeRef{codes/ce2q45/ce2q45.py}
 
 
-\vspace{1cm}
+
+\ProblemSpace
 % ============================================================
 % Question 46 — Zero-force members in truss
 % ============================================================
@@ -1203,45 +948,46 @@ identified. Which of the following options is/are zero-force members?
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\columnwidth]{figs/ce2q46.png}
+    \includegraphics[width=1\columnwidth]{figs/ce2q46.png}
     \label{fig:ce2q46}
 \end{figure}
 
-\hfill (GATE~CE2~2025)
+\hfill (CE2~2025)
 
-\begin{enumerate}[label=\alph*)]
+\begin{multicols}{4}\begin{enumerate}[label=\alph*)]
     \item \(BC\)
     \item \(EG\)
     \item \(FI\)
     \item \(JK\)
-\end{enumerate}
+\end{enumerate}\end{multicols}
 
 \Solution
 We apply the standard zero-force member rules for pin-jointed trusses:
 
 \begin{enumerate}
     \item \textbf{At Joint C:} The bottom chord members $AC$ and $CE$ are collinear, and no external load acts at joint $C$ (the $60\text{ kN}$ load is applied at joint $B$ directly above). Therefore, by the zero-force member rule, member $BC$ carries zero force:
-    \[
-    BC = 0
-    \]
+    \begin{align}
+    BC &= 0
+    \end{align}
     
     \item \textbf{At Joint J:} The horizontal chord members meeting at joint $J$ are collinear, and no external load or support reaction is applied at joint $J$. Hence, member $JK$ carries zero force:
-    \[
-    JK = 0
-    \]
+    \begin{align}
+    JK &= 0
+    \end{align}
 \end{enumerate}
 
 Thus, among the choices provided, both $BC$ and $JK$ are zero-force members.
 
 Therefore, the correct options are:
 
-\[
-\boxed{\text{(A) and (D)}}
-\]
+\begin{equation}
+\text{(A) and (D)}
+\end{equation}
 
 \CodeRef{codes/ce2q46/ce2q46.py}
 
-\vspace{1cm}
+
+\ProblemSpace
 % ============================================================
 % Question 49 — Empirical formula from TOC, COD and TKN
 % ============================================================
@@ -1254,191 +1000,156 @@ Oxygen Demand (COD) and the Total Kjeldahl Nitrogen (TKN) are determined as
 \(600\) mg/l (as \(O_2\)) and \(140\) mg/l (as N), respectively.
 
 As per the reaction
-\[
+\begin{equation}
 C_aH_bO_cN_d + \left(\frac{4a+b-2c-3d}{4}\right)O_2
 \rightarrow aCO_2 + \frac{b-3d}{2}H_2O + dNH_3
-\]
+\end{equation}
 
 which of the following options is/are CORRECT?
 
-Atomic weights: \(C=12\), \(H=1\), \(O=16\), \(N=14\)
+Atomic weights: $C=12$, $H=1$, $O=16$, $N=14$
 
-\hfill (GATE~CE2~2025)
+\begin{table}[H]
+\centering
+\caption{Given data for the compound.}
+\begin{tabular}{@{}lc@{}}
+\hline
+\textbf{Quantity} & \textbf{Value} \\
+\hline
+Molecular weight & $187$ \\
+Solution concentration & $935$ mg/l \\
+TOC & $360$ mg/l as C \\
+COD & $600$ mg/l as $O_2$ \\
+TKN & $140$ mg/l as N \\
+\hline
+\end{tabular}
+\end{table}
 
-\begin{enumerate}[label=\alph*)]
+\hfill (CE2~2025)
+
+\begin{multicols}{4}\begin{enumerate}[label=\alph*)]
     \item \(a=6\)
     \item \(b=7\)
     \item \(c=5\)
     \item \(d=3\)
-\end{enumerate}
+\end{enumerate}\end{multicols}
 
 \Solution
 The concentration of the compound is \(935\) mg/l \(=0.935\) g/l. Since the molecular
 weight is \(187\), the molar concentration is
-\[
+\begin{equation}
 \frac{0.935}{187}=5\times 10^{-3}\ \text{mol/l}
-\]
+\end{equation}
 
 From TOC,
-\[
+\begin{equation}
 (5\times 10^{-3})(12a)=360\times 10^{-3}
-\]
-\[
+\end{equation}
+\begin{equation}
 0.06a=0.36
 \quad\Rightarrow\quad
 a=6
-\]
+\end{equation}
 
 From TKN,
-\[
+\begin{equation}
 (5\times 10^{-3})(14d)=140\times 10^{-3}
-\]
-\[
+\end{equation}
+\begin{equation}
 0.07d=0.14
 \quad\Rightarrow\quad
 d=2
-\]
+\end{equation}
 
 Hence, option (D) is false.
 
 Using molecular weight,
-\[
+\begin{equation}
 12a+b+16c+14d=187
-\]
+\end{equation}
 Substituting \(a=6\) and \(d=2\),
-\[
+\begin{equation}
 72+b+16c+28=187
-\]
-\[
+\end{equation}
+\begin{equation}
 b+16c=87
-\]
+\end{equation}
 
 From COD data, oxygen consumed is \(600\) mg/l \(=0.6\) g/l. Therefore, oxygen
 consumed per mole of compound is
-\[
+\begin{equation}
 \frac{0.6}{5\times 10^{-3}}=120\ \text{g/mol of } O_2
-\]
+\end{equation}
 Hence,
-\[
+\begin{equation}
 \text{moles of }O_2=\frac{120}{32}=3.75
-\]
+\end{equation}
 
 From the given reaction,
-\[
+\begin{equation}
 \frac{4a+b-2c-3d}{4}=3.75
-\]
+\end{equation}
 Substituting \(a=6\) and \(d=2\),
-\[
+\begin{equation}
 \frac{24+b-2c-6}{4}=3.75
-\]
-\[
+\end{equation}
+\begin{equation}
 18+b-2c=15
-\]
-\[
+\end{equation}
+\begin{equation}
 b-2c=-3
-\]
+\end{equation}
 
 Now write the two equations in matrix form:
-\[
-\myvec{
-1 & 16\\
-1 & -2
-}
-\myvec{
-b\\
-c
-}
+\begin{equation}
+\myvec{1&16\\1&-2}
+\myvec{b\\c}
 =
-\myvec{
-87\\
--3
-}
-\]
+\myvec{87\\-3}.
+\end{equation}
 
-Let
-\[
-\mathbf{A}=\myvec{1 & 16\\ 1 & -2},
-\qquad
-\vec{x}=\myvec{b\\c},
-\qquad
-\vec{y}=\myvec{87\\-3}
-\]
-so that
-\[
-\mathbf{A}\vec{x}=\vec{y}
-\]
-
-The determinant of \(\mathbf{A}\) is
-\[
-|\mathbf{A}|=(1)(-2)-(1)(16)=-18
-\]
-
-Thus,
-\[
-\mathbf{A}^{-1}
-=
-\frac{1}{-18}
-\myvec{
--2 & -16\\
--1 & 1
-}
-\]
-
-Hence,
-\[
-\vec{x}=\mathbf{A}^{-1}\vec{y}
-=
-\frac{1}{-18}
-\myvec{
--2 & -16\\
--1 & 1
-}
-\myvec{
-87\\
--3
-}
-\]
-
-\[
-\vec{x}
-=
-\frac{1}{-18}
-\myvec{
--174+48\\
--87-3
-}
-=
-\frac{1}{-18}
-\myvec{
--126\\
--90
-}
-=
-\myvec{
-7\\
-5
-}
-\]
+Using explicit row reduction,
+\begin{equation}
+\resizebox{0.95\linewidth}{!}{$
+\left[\begin{array}{cc|c}
+1&16&87\\
+1&-2&-3
+\end{array}\right]
+\xrightarrow{\;R_2\leftarrow R_2-R_1\;}
+\left[\begin{array}{cc|c}
+1&16&87\\
+0&-18&-90
+\end{array}\right]
+\xrightarrow{\;R_2\leftarrow-\frac{1}{18}R_2\;}
+\left[\begin{array}{cc|c}
+1&16&87\\
+0&1&5
+\end{array}\right]
+\xrightarrow{\;R_1\leftarrow R_1-16R_2\;}
+\left[\begin{array}{cc|c}
+1&0&7\\
+0&1&5
+\end{array}\right].$}
+\end{equation}
 
 Therefore,
-\[
-b=7,\qquad c=5
-\]
+\begin{align}
+b&=7, & c&=5,\\
+a&=6, & d&=2.
+\end{align}
 
 Thus,
-\[
-a=6,\qquad b=7,\qquad c=5,\qquad d=2
-\]
+\begin{equation}
+C_aH_bO_cN_d= C_6H_7O_5N_2.
+\end{equation}
 
-Therefore, the correct options are
-\[
-\boxed{\text{(A), (B) and (C)}}
-\]
+Therefore, the correct options are (A), (B) and (C).
 
 \CodeRef{codes/ce2q49/ce2q49.py}
 
-\vspace{1cm}
 
+
+\ProblemSpace
 % ============================================================
 % Question 51 — Standard deviation of discrete random variable
 % ============================================================
@@ -1448,68 +1159,73 @@ Consider a discrete random variable \(X\) whose probabilities are given below.
 The standard deviation of the random variable is \underline{\hspace{2cm}}
 (round off to one decimal place).
 
-\[
-\begin{array}{c|cccc}
-x_i & 1 & 2 & 4 & 8\\ \hline
-P(X=x_i) & 0.3 & 0.1 & 0.3 & 0.3
-\end{array}
-\]
+\begin{table}[H]
+\centering
+\caption{Probability distribution of $X$.}
+\begin{tabular}{@{}c|cccc@{}}
+\hline
+$x_i$ & $1$ & $2$ & $4$ & $8$\\ \hline
+$P(X=x_i)$ & $0.3$ & $0.1$ & $0.3$ & $0.3$\\
+\hline
+\end{tabular}
+\end{table}
 
-\hfill (GATE~CE2~2025)
+\hfill (CE2~2025)
 
 \Solution
 The mean is
 
-\[
+\begin{equation}
 \mu = E[X] = \sum x_i p_i
-\]
+\end{equation}
 
-\[
+\begin{equation}
 \mu = 1(0.3)+2(0.1)+4(0.3)+8(0.3)
-\]
+\end{equation}
 
-\[
+\begin{equation}
 \mu = 0.3+0.2+1.2+2.4=4.1
-\]
+\end{equation}
 
 Now,
 
-\[
+\begin{equation}
 E[X^2]=1^2(0.3)+2^2(0.1)+4^2(0.3)+8^2(0.3)
-\]
+\end{equation}
 
-\[
+\begin{equation}
 E[X^2]=0.3+0.4+4.8+19.2=24.7
-\]
+\end{equation}
 
 Hence the variance is
 
-\[
+\begin{equation}
 \sigma^2 = E[X^2]-\mu^2
-\]
+\end{equation}
 
-\[
+\begin{equation}
 \sigma^2 = 24.7-(4.1)^2 = 24.7-16.81 = 7.89
-\]
+\end{equation}
 
 Therefore, the standard deviation is
 
-\[
+\begin{equation}
 \sigma = \sqrt{7.89}=2.81
-\]
+\end{equation}
 
 Rounded off to one decimal place,
 
-\[
-\boxed{2.8}
-\]
+\begin{equation}
+2.8
+\end{equation}
 
-\CodeRef{codes/ce2q51/ce2q51.py}
+\CodeRef{codes/ce2q51/ce2q51.c}
 
 
-\vspace{1cm}
 
 \begin{comment}
+
+\ProblemSpace
 % ============================================================
 % Question 52 — Beam suspended by three steel rods
 % ============================================================
@@ -1523,442 +1239,105 @@ of steel as \(210\) GPa. The beam is subjected to uniformly distributed load of
 The axial force (in kN) in the centre rod \(CD\) is \underline{\hspace{2cm}}
 (round off to one decimal place).
 
-\hfill (GATE~CE2~2025)
+\hfill (CE2~2025)
 
 \Solution
 Let the axial forces in rods \(AB\), \(CD\), and \(EF\) be \(R_B\), \(R_D\), and \(R_F\),
 respectively. By symmetry,
-\[
+\begin{equation}
 R_B = R_F
-\]
+\end{equation}
 
 The total uniformly distributed load on the beam is
-\[
+\begin{equation}
 wL = 6.25\times 4 = 25 \text{ kN}
-\]
+\end{equation}
 Hence, from vertical equilibrium,
-\[
+\begin{equation}
 R_B + R_D + R_F = 25
-\]
+\end{equation}
 or
-\[
+\begin{equation}
 2R_B + R_D = 25
-\]
+\end{equation}
 
 The rods act as elastic supports. Their stiffness is
-\[
+\begin{equation}
 k=\frac{AE}{L_r}
-\]
+\end{equation}
 where \(L_r=1\) m \(=1000\) mm.
 
 For the side rods \((12\text{ mm diameter})\),
-\[
+\begin{equation}
 A_s=\frac{\pi}{4}(12)^2
-\]
-\[
+\end{equation}
+\begin{equation}
 k_s=\frac{A_sE}{L_r}
-\]
+\end{equation}
 
 For the centre rod \((30\text{ mm diameter})\),
-\[
+\begin{equation}
 A_c=\frac{\pi}{4}(30)^2
-\]
-\[
+\end{equation}
+\begin{equation}
 k_c=\frac{A_cE}{L_r}
-\]
+\end{equation}
 
 Thus,
-\[
+\begin{equation}
 k_s=\frac{\pi}{4}(12)^2\frac{210\times10^3}{1000}
 =23750.4\ \text{N/mm}
-\]
-\[
+\end{equation}
+\begin{equation}
 k_c=\frac{\pi}{4}(30)^2\frac{210\times10^3}{1000}
 =148440.3\ \text{N/mm}
-\]
+\end{equation}
 
 Let the vertical deflections of the beam at \(B\), \(D\), and \(F\) be \(\delta_B\), \(\delta_D\),
 and \(\delta_F\), respectively. Then,
-\[
+\begin{equation}
 \delta_B=\frac{R_B}{k_s},\qquad
 \delta_D=\frac{R_D}{k_c},\qquad
 \delta_F=\frac{R_F}{k_s}
-\]
+\end{equation}
 
 Since the system is symmetric,
-\[
+\begin{equation}
 \delta_B=\delta_F,\qquad R_B=R_F
-\]
+\end{equation}
 
 Now use beam flexibility coefficients for a simply supported beam of span \(4\) m,
 with support points at \(x=0,2,4\) m. The deflections at \(B\) and \(D\) due to the UDL
 and the point reactions satisfy the compatibility equations:
-\[
+\begin{equation}
 \delta_B = \delta_B^{(w)} - f_{BB}R_B - f_{BD}R_D - f_{BF}R_F
-\]
-\[
+\end{equation}
+\begin{equation}
 \delta_D = \delta_D^{(w)} - f_{DB}R_B - f_{DD}R_D - f_{DF}R_F
-\]
+\end{equation}
 
 Using symmetry \((R_B=R_F)\), these reduce to two equations in \(R_B\) and \(R_D\).
 Substituting the flexibility coefficients for the beam \((EI = 210\times10^3 \times 8\times10^7
 =1.68\times10^{13}\ \text{N\,mm}^2)\), and solving together with
-\[
+\begin{equation}
 2R_B+R_D=25
-\]
+\end{equation}
 gives
-\[
+\begin{equation}
 R_B \approx 4.25\ \text{kN},\qquad R_D \approx 16.5\ \text{kN}
-\]
+\end{equation}
 
 Therefore, the axial force in the centre rod \(CD\) is
-\[
-\boxed{16.5}
-\]
+\begin{equation}
+16.5
+\end{equation}
 
 \CodeRef{codes/ce2q52/ce2q52.py}
 
-\vspace{1cm}
-\end{comment}
-% ============================================================
-% Question 53 — Total float in network
-% ============================================================
 
-\item
-The figure shows a network diagram for a construction project. The activities
-A, B, C, D, E, and F are represented by arrows and their durations are shown in the
-figure.
 
-The total float available for the activity \(E\) in day(s) is equal to \underline{\hspace{2cm}}
-(round off to the nearest integer).
 
-\hfill (GATE~CE2~2025)
-
-\Solution
-From the network:
-
-\[
-A:1\to 2 = 3 \text{ days}
-\]
-\[
-B:2\to 4 = 5 \text{ days}
-\]
-\[
-C:1\to 3 = 5 \text{ days}
-\]
-\[
-D:3\to 4 = 2 \text{ days}
-\]
-\[
-E:4\to 5 = 4 \text{ days}
-\]
-\[
-F:3\to 5 = 8 \text{ days}
-\]
-
-\textbf{Forward pass:}
-
-Earliest event time at node \(1\):
-
-\[
-TE_1=0
-\]
-
-At node \(2\):
-
-\[
-TE_2=0+3=3
-\]
-
-At node \(3\):
-
-\[
-TE_3=0+5=5
-\]
-
-At node \(4\):
-
-\[
-TE_4=\max(TE_2+5,\;TE_3+2)=\max(3+5,\;5+2)=8
-\]
-
-At node \(5\):
-
-\[
-TE_5=\max(TE_4+4,\;TE_3+8)=\max(8+4,\;5+8)=13
-\]
-
-\textbf{Backward pass:}
-
-\[
-TL_5=13
-\]
-
-At node \(4\):
-
-\[
-TL_4 = TL_5-4 = 13-4 = 9
-\]
-
-At node \(3\):
-
-\[
-TL_3 = \min(TL_4-2,\;TL_5-8)=\min(9-2,\;13-8)=5
-\]
-
-At node \(2\):
-
-\[
-TL_2 = TL_4-5 = 9-5 = 4
-\]
-
-For activity \(E\) \((4\to 5)\), total float is
-
-\[
-TF_E = TL_5 - TE_4 - t_E
-\]
-
-\[
-TF_E = 13 - 8 - 4 = 1
-\]
-
-Therefore, the total float available for activity \(E\) is
-
-\[
-\boxed{1}
-\]
-
-\CodeRef{codes/ce2q53/ce2q53.py}
-
-
-\vspace{1cm}
-% ============================================================
-% Question 60 — Maximum water depth for gate
-% ============================================================
-
-\item
-The shaft of a \(6\) m wide gate in the figure will fail at a moment of \(3924\) kN.m
-about the hinge \(P\). The maximum value of water depth \(h\) (in m) that the gate can
-hold is \underline{\hspace{2cm}} (round off to the nearest integer).
-
-Note: Density of water \(=1000\) kg/m\(^3\), acceleration due to gravity \(=9.81\) m/s\(^2\).
-
-\hfill (GATE~CE2~2025)
-
-\Solution
-The inclined gate spans \(3\) m horizontally and \(4\) m vertically, so its length is
-
-\[
-L=\sqrt{3^2+4^2}=5 \text{ m}
-\]
-
-The width of gate is \(b=6\) m. Hence, area of the inclined gate is
-
-\[
-A = 5\times 6 = 30 \text{ m}^2
-\]
-
-Let the water depth above hinge level be \(h\). The top end of the gate is \(4\) m above
-the hinge, so the centroid of the inclined rectangular gate is at \(2\) m above hinge level.
-Hence its depth below free surface is
-
-\[
-\bar{y}=h-2
-\]
-
-The hydrostatic force on the inclined plane is
-
-\[
-F=\rho g A \bar{y}
-\]
-
-\[
-F = 1000\times 9.81\times 30\times (h-2)
-\]
-
-\[
-F = 294300(h-2) \text{ N}
-\]
-
-Since pressure varies linearly from bottom to top, and the top edge is at shallower depth,
-the resultant acts at a distance from hinge obtained from moment integration along the
-gate.
-
-Take coordinate \(s\) along the gate from hinge upward. Vertical elevation of a point is
-
-\[
-y = \frac{4}{5}s
-\]
-
-Hence pressure intensity at that point is proportional to
-
-\[
-p(s)=\rho g \left(h-\frac{4}{5}s\right)
-\]
-
-Elemental force on strip \(ds\) is
-
-\[
-dF = p(s)\,b\,ds = \rho g b \left(h-\frac{4}{5}s\right)ds
-\]
-
-Moment about hinge:
-
-\[
-M_P = \int_0^5 s\,dF
-\]
-
-\[
-M_P = \rho g b \int_0^5 s\left(h-\frac{4}{5}s\right)ds
-\]
-
-\[
-M_P = \rho g b \left[h\int_0^5 s\,ds - \frac{4}{5}\int_0^5 s^2\,ds\right]
-\]
-
-Now,
-
-\[
-\int_0^5 s\,ds = \frac{25}{2}
-\qquad \text{and} \qquad
-\int_0^5 s^2\,ds = \frac{125}{3}
-\]
-
-Therefore,
-
-\[
-M_P = \rho g b \left(\frac{25h}{2} - \frac{4}{5}\cdot \frac{125}{3}\right)
-\]
-
-\[
-M_P = \rho g b \left(\frac{25h}{2} - \frac{100}{3}\right)
-\]
-
-Substituting \(\rho=1000\), \(g=9.81\), \(b=6\),
-
-\[
-M_P = 1000\times 9.81\times 6 \left(\frac{25h}{2}-\frac{100}{3}\right)
-\]
-
-Failure occurs at
-
-\[
-M_P = 3924 \text{ kN.m} = 3.924\times 10^6 \text{ N.m}
-\]
-
-Thus,
-
-\[
-1000\times 9.81\times 6 \left(\frac{25h}{2}-\frac{100}{3}\right)=3.924\times 10^6
-\]
-
-\[
-58860\left(\frac{25h}{2}-\frac{100}{3}\right)=3.924\times 10^6
-\]
-
-\[
-\frac{25h}{2}-\frac{100}{3}=66.6667
-\]
-
-\[
-\frac{25h}{2}=100
-\]
-
-\[
-25h=200
-\]
-
-\[
-h=8
-\]
-
-Therefore, the maximum water depth is
-
-\[
-\boxed{8}
-\]
-
-\CodeRef{codes/ce2q60/ce2q60.py}
-
-
-\vspace{1cm}
-% ============================================================
-% Question 64 — Extra widening on horizontal curve
-% ============================================================
-
-\item
-On a two-lane highway, a horizontal curve of radius \(300\) m is provided. The design
-speed is \(80\) km/h.
-
-If the longest wheelbase of vehicle expected on this highway is \(7\) m, then the extra
-widening required (in m) is \underline{\hspace{2cm}} (round off to two decimal places).
-
-\hfill (GATE~CE2~2025)
-
-\Solution
-Extra widening on a horizontal curve is given by
-
-\[
-W_e = W_m + W_p
-\]
-
-where \(W_m\) is the mechanical widening and \(W_p\) is the psychological widening.
-
-For a two-lane road,
-
-\[
-W_m = \frac{n l^2}{2R}
-\]
-
-\[
-W_p = \frac{V}{9.5\sqrt{R}}
-\]
-
-Given:
-
-\[
-n=2,\qquad l=7 \text{ m},\qquad R=300 \text{ m},\qquad V=80 \text{ km/h}
-\]
-
-Now,
-
-\[
-W_m = \frac{2\times 7^2}{2\times 300}
-= \frac{49}{300}
-= 0.1633 \text{ m}
-\]
-
-Also,
-
-\[
-W_p = \frac{80}{9.5\sqrt{300}}
-\]
-
-\[
-\sqrt{300}=17.3205
-\]
-
-\[
-W_p = \frac{80}{9.5\times 17.3205}
-=0.4862 \text{ m}
-\]
-
-Hence,
-
-\[
-W_e = 0.1633+0.4862=0.6495 \text{ m}
-\]
-
-Rounded off to two decimal places,
-
-\[
-\boxed{0.65}
-\]
-
-\CodeRef{codes/ce2q64/ce2q64.py}
-
-
-\vspace{1cm}
+\ProblemSpace
 % ============================================================
 % Question 65 — Interior angle from fore bearings
 % ============================================================
@@ -1968,50 +1347,52 @@ If the Fore Bearing of the lines \(AB\) and \(BC\) are \(60^\circ\) and \(122^\c
 respectively, then the interior angle \(\angle ABC\) (in degrees) is
 \underline{\hspace{2cm}} (round off to the nearest integer).
 
-\hfill (GATE~CE2~2025)
+\hfill (CE2~2025)
 
 \Solution
 The fore bearing of line \(AB\) is
 
-\[
+\begin{equation}
 \text{FB}_{AB}=60^\circ
-\]
+\end{equation}
 
 Hence the back bearing of line \(BA\) is
 
-\[
+\begin{equation}
 \text{BB}_{BA}=60^\circ+180^\circ=240^\circ
-\]
+\end{equation}
 
 The fore bearing of line \(BC\) is
 
-\[
+\begin{equation}
 \text{FB}_{BC}=122^\circ
-\]
+\end{equation}
 
 The interior angle at \(B\), that is \(\angle ABC\), is the angle between the directions
 \(BA\) and \(BC\). Therefore,
 
-\[
+\begin{equation}
 \angle ABC = |240^\circ-122^\circ|=118^\circ
-\]
+\end{equation}
 
 Hence,
 
-\[
-\boxed{118^\circ}
-\]
+\begin{equation}
+118^\circ
+\end{equation}
 
 \CodeRef{codes/ce2q65/ce2q65.py}
 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\columnwidth]{figs/interior_angle.png}
-    \label{fig:ce2q5}
+    \includegraphics[width=1\columnwidth]{figs/interior_angle.png}
+    \label{fig:ce2q65}
 \end{figure}
 
 
 
-\end{enumerate}
 
+\end{comment}
+
+\end{enumerate}

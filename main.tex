@@ -1,12 +1,14 @@
 \documentclass[journal]{IEEEtran}
 \usepackage[a5paper, margin=10mm]{geometry}
-%\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+\usepackage{lmodern} % Modern Latin Modern font
 \usepackage{tfrupee} % Include tfrupee package
 
 
 \setlength{\headheight}{1cm} % Set the height of the header box
 \setlength{\headsep}{0mm}     % Set the distance between the header box and the top of the text
 
+\usepackage{setspace}
+\setstretch{1.35}
 
 %\usepackage[a5paper, top=10mm, bottom=10mm, left=10mm, right=10mm]{geometry}
 
@@ -21,6 +23,9 @@
     urlcolor=black % Changes text color instead of placing a box around it
 }
 \usepackage{amsfonts}
+\usepackage{multicol}
+\usepackage{microtype}
+\renewcommand{\familydefault}{\sfdefault}
 \makeindex
 
 \begin{document}
