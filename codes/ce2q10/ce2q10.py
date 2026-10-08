@@ -57,7 +57,7 @@ plt.title('Village Triangle PQR and Connecting Road', fontsize=10)
 plt.xlabel('X Coordinate (km)', fontsize=9)
 plt.ylabel('Y Coordinate (km)', fontsize=9)
 
-plt.savefig('figs/village_triangle.png', dpi=300, bbox_inches='tight')
+plt.savefig('../../figs/village_triangle.png', dpi=300, bbox_inches='tight')
 
 # subprocess.run(['termux-open', 'village_triangle.png'])
 

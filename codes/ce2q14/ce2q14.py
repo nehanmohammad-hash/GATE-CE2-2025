@@ -35,7 +35,7 @@ plt.ylim(-0.1, 1.6)
 plt.grid(True, linestyle='--', linewidth=0.5, alpha=0.6)
 plt.axhline(0, color='black', linewidth=0.8)
 
-plt.savefig('figs/influence_line_gi.png', dpi=300, bbox_inches='tight')
+plt.savefig('../../figs/influence_line_gi.png', dpi=300, bbox_inches='tight')
 
 # subprocess.run(['termux-open', 'influence_line_gi.png'])
 
