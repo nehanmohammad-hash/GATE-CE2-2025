@@ -4,16 +4,27 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import subprocess
+from funcs import *
+from params import *
 
 x = np.array([0, 6, 12, 18, 24, 30, 36])
 y = np.array([0, 0.33, 1.33, 1.00, 0.67, 0.33, 0])
 
 plt.figure(figsize=(9, 4))
-plt.plot(x, y, marker='o', color='red', linewidth=0.5, markersize=4)
+
+# Generate and plot line segments between consecutive joint coordinates using line_gen
+for i in range(len(x) - 1):
+    A = np.array([[x[i]], [y[i]]])
+    B = np.array([[x[i+1]], [y[i+1]]])
+    segment = line_gen(A, B)
+    plt.plot(segment[0, :], segment[1, :], color='red', linewidth=1.5)
+
+# Plot marker points at each joint
+plt.plot(x, y, marker='o', color='red', linestyle='None', markersize=4)
 
 joints = ['A', 'D', 'G', 'I', 'L', 'O', 'P']
 for xi, yi, joint in zip(x, y, joints):
-    plt.text(xi, yi + 0.08, f'{joint}\n({yi:.2f})' if yi > 0 else f'{joint}\n(0)', 
+    plt.text(xi, yi + 0.08, f'{joint}\n({yi:.2f})' if yi > 0 else f'{joint}\n(0)',
              ha='center', va='bottom', fontsize=8)
 
 plt.title('Influence Line Diagram for Member G-I', fontsize=10)
@@ -27,3 +38,4 @@ plt.axhline(0, color='black', linewidth=0.8)
 plt.savefig('figs/influence_line_gi.png', dpi=300, bbox_inches='tight')
 
 # subprocess.run(['termux-open', 'influence_line_gi.png'])
+
