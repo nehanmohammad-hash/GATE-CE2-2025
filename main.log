@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.9.24)  5 OCT 2026 10:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.9.24)  8 OCT 2026 11:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -140,41 +140,6 @@ Package: iftex 2024/12/12 v1.0g TeX engine tests
 \Gm@layouthoffset=\dimen178
 \Gm@layoutvoffset=\dimen179
 \Gm@dimlist=\toks19
-)
-(/usr/share/texmf/tex/latex/lm/lmodern.sty
-Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
-LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
-LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
-(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
-LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
-LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
-LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
-(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
-LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
-LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tfrupee/tfrupee.sty
 Package: tfrupee 2010/12/15 LaTeX Support for the TechFat Rupee symbols by Tech
@@ -390,7 +355,7 @@ Package: bm 2025/10/21 v1.2g Bold Symbol Support (DPC/FMi)
 \symboldoperators=\mathgroup5
 \symboldletters=\mathgroup6
 \symboldsymbols=\mathgroup7
-Package bm Info: No bold for \OMX/lmex/m/n, using \pmb.
+Package bm Info: No bold for \OMX/cmex/m/n, using \pmb.
 Package bm Info: No bold for \U/rsfs/m/n, using \pmb.
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
 )
@@ -1315,7 +1280,7 @@ Package chngcntr Info: \counterwithout already defined.
 \c@matchleft=\count402
 \c@matchright=\count403
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 24.
+Package hyperref Info: Option `colorlinks' set `true' on input line 22.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
@@ -1360,88 +1325,32 @@ LaTeX Info: Redefining \microtypesetup on input line 3065.
 
 Writing index file main.idx
 Package translations Info: No language package found. I am going to use `englis
-h' as default language. on input line 31.
-LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-31.
-(/usr/share/texmf/tex/latex/lm/ot1lmss.fd
-File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) (./main.aux)
+h' as default language. on input line 29.
+(./main.aux
+
+LaTeX Warning: Label `fig:ce2q14' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3
-1.
-
-(/usr/share/texmf/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <5> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 31.
-LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <5> not available
-(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 31.
-
-LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <7> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 31.
-LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <7> not available
-(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 31.
-
-LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <8> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 31.
-LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <8> not available
-(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 31.
-
-LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <9> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 31.
-LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <9> not available
-(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 31.
-
-LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <10> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 31.
-LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <10> not available
-(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 31.
-
-LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <11> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 31.
-LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <11> not available
-(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 31.
-
-LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <12> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 31.
-LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <12> not available
-(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 31.
-
-LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <17> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 31.
-LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <17> not available
-(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 31.
-
-LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <20> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 31.
-LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <20> not available
-(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 31.
-
-LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <24> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 31.
-LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <24> not available
-(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 31.
-
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
 
 -- Lines per column: 33 (approximate, difference = 10.20004pt).
 *geometry* driver: auto-detecting
@@ -1478,14 +1387,14 @@ LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <24> not available
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \celsius on input line 31.
-Package gensymb Info: Faking symbols for \degree and \celsius on input line 31.
+LaTeX Info: Redefining \celsius on input line 29.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 29.
 
 
 Package gensymb Warning: Not defining \perthousand.
 
-LaTeX Info: Redefining \ohm on input line 31.
-Package gensymb Info: Using \Omega for \ohm on input line 31.
+LaTeX Info: Redefining \ohm on input line 29.
+Package gensymb Info: Using \Omega for \ohm on input line 29.
 
 Package gensymb Warning: Not defining \micro.
 
@@ -1496,7 +1405,7 @@ File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 31.
+or `english'. on input line 29.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1520,20 +1429,20 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 31.
+Package hyperref Info: Link coloring ON on input line 29.
 
 (./main.out) (./main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
 
 \c@lstlisting=\count412
-LaTeX Info: Redefining \microtypecontext on input line 31.
-Package microtype Info: Applying patch `item' on input line 31.
-Package microtype Info: Applying patch `toc' on input line 31.
-Package microtype Info: Applying patch `eqnum' on input line 31.
-Package microtype Info: Applying patch `footnote' on input line 31.
-Package microtype Info: Applying patch `verbatim' on input line 31.
-LaTeX Info: Redefining \microtypesetup on input line 31.
+LaTeX Info: Redefining \microtypecontext on input line 29.
+Package microtype Info: Applying patch `item' on input line 29.
+Package microtype Info: Applying patch `toc' on input line 29.
+Package microtype Info: Applying patch `eqnum' on input line 29.
+Package microtype Info: Applying patch `footnote' on input line 29.
+Package microtype Info: Applying patch `verbatim' on input line 29.
+LaTeX Info: Redefining \microtypesetup on input line 29.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1544,47 +1453,18 @@ Package microtype Info: Patching command `\showhyphens'.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `lmss' (encoding: OT1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
+
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-ptm.cfg
+File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
+) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texm
+f-dist/fonts/enc/dvips/base/8r.enc}
 
 
-LaTeX Font Warning: Font shape `OT1/lmss/m/sc' in size <10> not available
-(Font)              Font shape `OT1/lmr/m/sc' tried instead on input line 58.
-
+] (./main.toc
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
-) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/
-enc/dvips/lm/lm-rm.enc}
-
-
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-rmsc.enc}] (./main.toc
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
-.
-
-(/usr/share/texmf/tex/latex/lm/omllmm.fd
-File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-2.
-
-(/usr/share/texmf/tex/latex/lm/omslmsy.fd
-File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-2.
-
-(/usr/share/texmf/tex/latex/lm/omxlmex.fd
-File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 2.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 2.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 2.
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 2.
 
 
@@ -1613,324 +1493,112 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
  [2]
 (./chapters/ce2-2025-formulae.tex [3
 
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/
-dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}] [4]
- [5] [6]) [7]
+] [4] [5] [6]) [7]
 (./chapters/ce2-2025-problems.tex
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 67.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 67.
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 8
+3.
 
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1.1}
-) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.73 \end{align}
-                
-LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
-102.
- (/usr/share/texmf/tex/latex/lm/ot1lmtt.fd
-File: ot1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [8{/usr/share/texmf/fonts/enc/dvips/lm/lm-rmtt.enc}]
-pdfTeX warning (ext4): destination with the same identifier (name{equation.2.1}
-) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.135 \begin{equation}
-                      
-pdfTeX warning (ext4): destination with the same identifier (name{equation.2.1}
-) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.135 \begin{equation}
-                      
-pdfTeX warning (ext4): destination with the same identifier (name{equation.2.1}
-) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.135 \begin{equation}
-                      
-pdfTeX warning (ext4): destination with the same identifier (name{equation.2.1}
-) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.135 \begin{equation}
-                       [9]
-<figs/piechart.png, id=192, 363.5181pt x 362.7954pt>
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+) [8] [9]
+<figs/piechart.png, id=193, 363.5181pt x 362.7954pt>
 File: figs/piechart.png Graphic file (type png)
 <use figs/piechart.png>
-Package pdftex.def Info: figs/piechart.png  used on input line 228.
+Package pdftex.def Info: figs/piechart.png  used on input line 205.
 (pdftex.def)             Requested size: 182.09764pt x 181.73492pt.
-
-pdfTeX warning (ext4): destination with the same identifier (name{equation.3.1}
-) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.261 \end{align}
-                  [10 <./figs/piechart.png>]
-pdfTeX warning (ext4): destination with the same identifier (name{equation.4.1}
-) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.306 \end{align}
-                 
-pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2}
-) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.306 \end{align}
-                  [11]
-pdfTeX warning (ext4): destination with the same identifier (name{equation.5.1}
-) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.349 \end{align}
-                 
-pdfTeX warning (ext4): destination with the same identifier (name{equation.5.2}
-) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.357 \end{align}
-                 
-<figs/village_triangle.png, id=222, 447.3513pt x 390.9807pt>
+ [10 <./figs/piechart.png>] [11]
+<figs/village_triangle.png, id=230, 447.3513pt x 390.9807pt>
 File: figs/village_triangle.png Graphic file (type png)
 <use figs/village_triangle.png>
-Package pdftex.def Info: figs/village_triangle.png  used on input line 370.
+Package pdftex.def Info: figs/village_triangle.png  used on input line 331.
 (pdftex.def)             Requested size: 291.35735pt x 254.64154pt.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 371.
  [12 <./figs/village_triangle.png>]
-pdfTeX warning (ext4): destination with the same identifier (name{equation.6.1}
-) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.392 \end{align}
-                 
-pdfTeX warning (ext4): destination with the same identifier (name{equation.6.2}
-) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.414 \end{align}
-                 
-pdfTeX warning (ext4): destination with the same identifier (name{equation.6.3}
-) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.414 \end{align}
-                 
-<figs/ce2q14.png, id=237, 677.53125pt x 277.035pt>
+<figs/ce2q14.png, id=244, 677.53125pt x 277.035pt>
 File: figs/ce2q14.png Graphic file (type png)
 <use figs/ce2q14.png>
-Package pdftex.def Info: figs/ce2q14.png  used on input line 468.
-(pdftex.def)             Requested size: 364.1953pt x 148.9203pt.
- [13]
-pdfTeX warning (ext4): destination with the same identifier (name{equation.8.1}
-) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.488 \end{align}
-                 
-pdfTeX warning (ext4): destination with the same identifier (name{equation.8.2}
-) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.494 \end{align}
-                 
-pdfTeX warning (ext4): destination with the same identifier (name{equation.8.3}
-) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.500 \end{align}
-                 
-pdfTeX warning (ext4): destination with the same identifier (name{equation.8.4}
-) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.506 \end{align}
-                  [14 <./figs/ce2q14.png>]
-<figs/influence_line_gi.png, id=263, 554.07pt x 287.3937pt>
-File: figs/influence_line_gi.png Graphic file (type png)
-<use figs/influence_line_gi.png>
-Package pdftex.def Info: figs/influence_line_gi.png  used on input line 535.
+Package pdftex.def Info: figs/ce2q14.png  used on input line 414.
+(pdftex.def)             Requested size: 236.72472pt x 96.7946pt.
+ [13] [14 <./figs/ce2q14.png>] (./tables/ce2q14/ce2q14.tex
+\gnumericTableWidth=\skip79
+\gnumericTableWidthComplete=\skip80
+\gnumericMultiRowLength=\skip81
+\gnumericColA=\skip82
+\gnumericColB=\skip83
+)
+<figs/influence_line_graph.png, id=275, 554.07pt x 287.3937pt>
+File: figs/influence_line_graph.png Graphic file (type png)
+<use figs/influence_line_graph.png>
+Package pdftex.def Info: figs/influence_line_graph.png  used on input line 466.
+
 (pdftex.def)             Requested size: 364.1953pt x 188.90422pt.
- [15 <./figs/influence_line_gi.png>]
-pdfTeX warning (ext4): destination with the same identifier (name{equation.9.1}
-) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.581 \end{align}
-                 
-pdfTeX warning (ext4): destination with the same identifier (name{equation.9.2}
-) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.590 \end{align}
-                 
-pdfTeX warning (ext4): destination with the same identifier (name{equation.10.1
-}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.624 \end{align}
-                 
-pdfTeX warning (ext4): destination with the same identifier (name{equation.11.1
-}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.648 \begin{equation}
-                      
-pdfTeX warning (ext4): destination with the same identifier (name{equation.11.1
-}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.648 \begin{equation}
-                      
-pdfTeX warning (ext4): destination with the same identifier (name{equation.11.1
-}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.648 \begin{equation}
-                      
-pdfTeX warning (ext4): destination with the same identifier (name{equation.11.1
-}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.648 \begin{equation}
-                       [16]
-pdfTeX warning (ext4): destination with the same identifier (name{equation.11.2
-}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.702 \end{align}
-                  [17]
-pdfTeX warning (ext4): destination with the same identifier (name{equation.12.1
-}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.765 \end{align}
-                 
-pdfTeX warning (ext4): destination with the same identifier (name{equation.12.2
-}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.765 \end{align}
-                 
-pdfTeX warning (ext4): destination with the same identifier (name{equation.12.3
-}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.765 \end{align}
-                 
-<figs/cantilever_deflection.png, id=314, 513.8397pt x 337.9827pt>
+ [15 <./figs/influence_line_graph.png>]
+[16] [17] [18]
+<figs/cantilever_deflection.png, id=345, 513.8397pt x 337.9827pt>
 File: figs/cantilever_deflection.png Graphic file (type png)
 <use figs/cantilever_deflection.png>
-Package pdftex.def Info: figs/cantilever_deflection.png  used on input line 778
+Package pdftex.def Info: figs/cantilever_deflection.png  used on input line 675
 .
 (pdftex.def)             Requested size: 345.98442pt x 227.58182pt.
- [18] [19 <./figs/cantilever_deflection.png>]
-<figs/cubic.png, id=344, 501.3129pt x 332.2011pt>
+ [19 <./figs/cantilever_deflection.png>]
+<figs/cubic.png, id=362, 501.3129pt x 332.2011pt>
 File: figs/cubic.png Graphic file (type png)
 <use figs/cubic.png>
-Package pdftex.def Info: figs/cubic.png  used on input line 853.
+Package pdftex.def Info: figs/cubic.png  used on input line 732.
 (pdftex.def)             Requested size: 313.20818pt x 207.55927pt.
-
-pdfTeX warning (ext4): destination with the same identifier (name{equation.14.1
-}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.870 \begin{equation}
-                      
-pdfTeX warning (ext4): destination with the same identifier (name{equation.14.1
-}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.870 \begin{equation}
-                      
-pdfTeX warning (ext4): destination with the same identifier (name{equation.14.1
-}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.870 \begin{equation}
-                      
-pdfTeX warning (ext4): destination with the same identifier (name{equation.14.1
-}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.870 \begin{equation}
-                       [20 <./figs/cubic.png>]
-pdfTeX warning (ext4): destination with the same identifier (name{equation.14.2
-}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.890 \begin{equation}
-                      
-pdfTeX warning (ext4): destination with the same identifier (name{equation.14.2
-}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.890 \begin{equation}
-                      
-pdfTeX warning (ext4): destination with the same identifier (name{equation.14.2
-}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.890 \begin{equation}
-                      
-pdfTeX warning (ext4): destination with the same identifier (name{equation.14.2
-}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.890 \begin{equation}
-                      
-<figs/ce2q46.png, id=356, 684.5575pt x 356.33125pt>
+ [20 <./figs/cubic.png>]
+<figs/ce2q46.png, id=375, 684.5575pt x 356.33125pt>
 File: figs/ce2q46.png Graphic file (type png)
 <use figs/ce2q46.png>
-Package pdftex.def Info: figs/ce2q46.png  used on input line 951.
+Package pdftex.def Info: figs/ce2q46.png  used on input line 790.
 (pdftex.def)             Requested size: 364.1953pt x 189.57779pt.
- [21] [22 <./figs/ce2q46.png>]
 
-LaTeX Font Warning: Font shape `OT1/lmss/m/sc' in size <8> not available
-(Font)              Font shape `OT1/lmr/m/sc' tried instead on input line 1014.
-
-
-[23] [24]) [25] (./main.aux)
+[21 <./figs/ce2q46.png>] (./tables/ce2q49/ce2q49.tex) [22] [23] [24] [25])
+[26] (./main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 2EE2393A477CABD51B51578E79DAB16C;313.
  ) 
 Here is how much of TeX's memory you used:
- 54899 strings out of 467533
- 1312544 string characters out of 5422138
- 1993505 words of memory out of 5000000
- 82525 multiletter control sequences out of 15000+600000
- 838844 words of font info for 282 fonts, out of 8000000 for 9000
+ 54777 strings out of 467533
+ 1309849 string characters out of 5422138
+ 1997500 words of memory out of 5000000
+ 82400 multiletter control sequences out of 15000+600000
+ 679081 words of font info for 255 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  109i,14n,118p,1194b,1436s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/ty
-pe1/public/lm/lmbx9.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></u
-sr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/p
-ublic/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/sha
-re/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/l
-m/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf
-/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr5.p
-fb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/typ
-e1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/sh
-are/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/l
-m/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texm
-f/fonts/type1/public/lm/lmss9.pfb></usr/share/texmf/fonts/type1/public/lm/lmssb
-x10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/texmf/f
-onts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.p
-fb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/ty
-pe1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb></usr
-/share/texmf/fonts/type1/public/lm/lmtt9.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/tfrupee/tfrupee.pfb>
-Output written on main.pdf (25 pages, 1086743 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/tfrupee/tfrupee.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/u
+crr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (26 pages, 922771 bytes).
 PDF statistics:
- 616 PDF objects out of 1000 (max. 8388607)
- 501 compressed objects within 6 object streams
- 273 named destinations out of 1000 (max. 500000)
- 49832 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 638 PDF objects out of 1000 (max. 8388607)
+ 528 compressed objects within 6 object streams
+ 306 named destinations out of 1000 (max. 500000)
+ 41640 words of extra memory for PDF output out of 42996 (max. 10000000)
 

@@ -9,5 +9,8 @@ v = sp.Function('v')(x, y)
 curl_z = sp.diff(v, x) - sp.diff(u, y)
 div_v = sp.diff(u, x) + sp.diff(v, y)
 
-print(f"z-component of Curl = {curl_z}")
-print(f"Divergence = {div_v}")
+
+print(f"z-component of Curl: ")
+sp.pprint(curl_z)
+print(f"\n\nDivergence = ")
+sp.pprint(div_v)
