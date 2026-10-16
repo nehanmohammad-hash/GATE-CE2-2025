@@ -274,8 +274,8 @@ mixture be $z$. Since $\text{SP}=z(1+p)$,
 Let $x$ kg of variety $P$ and $y$ kg of variety $Q$ be mixed. Equating
 the total cost to the cost of the mixture gives
 \begin{align}
-    xc_P+yc_Q&=(x+y)z,\\
-    x(z-c_P)&=y(c_Q-z),\\
+    xc_P+yc_Q&=\brak{x+y}z,\\
+    x\brak{z-c_P}&=y\brak{c_Q-z},\\
     \frac{x}{y}&=\frac{c_Q-z}{z-c_P}\\
     &=\frac{200-\frac{1600}{9}}{\frac{1600}{9}-160}
      =\frac54.
@@ -312,7 +312,7 @@ $h_a$. The semi-perimeter of triangle $PQR$ is
 Using Heron's formula, the area is
 \begin{align}
     \Delta
-    &=\sqrt{21(21-14)(21-15)(21-13)} \\
+    &=\sqrt{21\brak{21-14}\brak{21-15}\brak{21-13}} \\
     &=\sqrt{21\times7\times6\times8} \\
     &=84\,\text{km}^2.
 \end{align}
@@ -375,25 +375,25 @@ Thus, option (A) is correct.
 
 \ProblemSpace
 \item
-Integration of $\ln(x)$ with respect to $x$, i.e.,
-$\int\ln(x)\,dx=$\underline{\hspace{3cm}}
+Integration of $\ln\brak{x}$ with respect to $x$, i.e.,
+$\int\ln\brak{x}\,dx=$\underline{\hspace{3cm}}
 
 \hfill (CE2~2025)
 
 \begin{multicols}{2}\begin{enumerate}[label=\alph*)]
-    \item $x\ln(x)-x+C$
-    \item $x-\ln(x)+C$
-    \item $x\ln(x)+x+C$
-    \item $\ln(x)-x+C$
+    \item $x\ln\brak{x}-x+C$
+    \item $x-\ln\brak{x}+C$
+    \item $x\ln\brak{x}+x+C$
+    \item $\ln\brak{x}-x+C$
 \end{enumerate}\end{multicols}
 
 \Solution
-Using integration by parts with $u=\ln(x)$ and $dv=dx$,
+Using integration by parts with $u=\ln\brak{x}$ and $dv=dx$,
 \begin{align}
-    \int\ln(x)\,dx
-    &=x\ln(x)-\int x\cdot\frac1x\,dx \\
-    &=x\ln(x)-\int1\,dx \\
-    &=x\ln(x)-x+C.
+    \int\ln\brak{x}\,dx
+    &=x\ln\brak{x}-\int x\cdot\frac1x\,dx \\
+    &=x\ln\brak{x}-\int1\,dx \\
+    &=x\ln\brak{x}-x+C.
 \end{align}
 
 Thus, option (A) is correct.
@@ -411,7 +411,7 @@ options.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.65\columnwidth]{figs/ce2q14.png}
+    \includegraphics[width=0.99\columnwidth]{figs/ce2q14.png}
     \caption{Pin-jointed truss for Q14.}
     \label{fig:ce2q14}
 \end{figure}
@@ -436,21 +436,24 @@ Member $G-I$ is a bottom-chord member situated between joint $G$ (at coordinate 
 \begin{enumerate}
     \item \textbf{When the unit load acts to the right of the section ($x \ge x_H$):}\\
     Isolating the portion of the truss to the right of the section and taking moments about joint $H$:
-    $$\sum M_H = 0 \implies F_{GI} \cdot h - R_P \cdot (L - x_H) = 0$$
-    $$\implies F_{GI} = \left(\frac{L - x_H}{h}\right) R_P = \left(\frac{L - x_H}{h \cdot L}\right) x$$
+    $$\sum M_H = 0 \implies F_{GI} \cdot h - R_P \cdot \brak{L - x_H} = 0$$
+    $$\implies F_{GI} = \brak{\frac{L - x_H}{h}} R_P = \brak{\frac{L - x_H}{h \cdot L}} x$$
 
     \item \textbf{When the unit load acts to the left of the section ($x \le x_G$):}\\
     Isolating the portion of the truss to the left of the section and taking moments about joint $H$:
-    $$\sum M_H = 0 \implies R_A \cdot x_H - 1 \cdot (x_H - x) - F_{GI} \cdot h = 0$$
-    $$\implies F_{GI} = \frac{R_A \cdot x_H - (x_H - x)}{h}$$
+    $$\sum M_H = 0 \implies R_A \cdot x_H - 1 \cdot \brak{x_H - x} - F_{GI} \cdot h = 0$$
+    $$\implies F_{GI} = \frac{R_A \cdot x_H - \brak{x_H - x}}{h}$$
 \end{enumerate}
 
 \subsection*{3. General Expression for Joint Positions}
 For each bottom-chord joint located at position $x_i$ ($i \in \{A, D, G, I, L, O, P\}$), substitute $x = x_i$ into the respective segment's algebraic equation above to obtain the analytical expression for the influence ordinate.
-
-\begin{center}
-\input{tables/ce2q14/ce2q14.tex}
-\end{center}
+\setcounter{table}{-1}
+\begin{table}[H]
+	\centering
+	\input{tables/ce2q14/ce2q14.tex}
+	\caption{Tensile values at joints}
+	\label{tab:tensileValuesAtLoad}
+\end{table}
 
 \CodeRef{tables/ce2q14/ce2q14.tex}
 
@@ -465,7 +468,7 @@ with its peak at $G$.
     \centering
     \includegraphics[width=1\columnwidth]{figs/influence_line_graph.png}
     \caption{Influence line graph}
-    \label{fig:ce2q14}
+    \label{fig:ce2q14_influence}
 \end{figure}
 
 
@@ -477,7 +480,7 @@ Hence, the correct option is (B).
 
 \ProblemSpace
 \item
-Consider a velocity vector $\vec{V}$ in $(x,y,z)$ coordinates given by
+Consider a velocity vector $\vec{V}$ in $\brak{x,y,z}$ coordinates given by
 $\vec{V}=u\vec{x}+v\vec{y}$. Pick one or more CORRECT statement(s)
 from the choices given below.
 
@@ -486,13 +489,13 @@ from the choices given below.
 \begin{enumerate}[label=\alph*)]
     \item $z$-component of Curl of velocity:
           $\nabla\times\vec{V}
-          =\left(\frac{\partial v}{\partial x}
-          -\frac{\partial u}{\partial y}\right)\vec{z}$
+          =\brak{\frac{\partial v}{\partial x}
+          -\frac{\partial u}{\partial y}}\vec{z}$
 	  \vspace{0.55cm}
     \item $z$-component of Curl of velocity:
           $\nabla\times\vec{V}
-          =\left(\frac{\partial u}{\partial x}
-          -\frac{\partial v}{\partial y}\right)\vec{z}$
+          =\brak{\frac{\partial u}{\partial x}
+          -\frac{\partial v}{\partial y}}\vec{z}$
 	  \vspace{0.55cm}
     \item Divergence of velocity:
           $\nabla\cdot\vec{V}
@@ -682,22 +685,22 @@ Hence, the correct option is (C).
 Consider the function given below and pick one or more CORRECT statement(s)
 from the following choices.
 \begin{equation}
-f(x)=x^3-\frac{15}{2}x^2+18x+20.
+f\brak{x}=x^3-\frac{15}{2}x^2+18x+20.
 \end{equation}
 
 \hfill (CE2~2025)
 
 \begin{multicols}{4}\begin{enumerate}[label=\alph*)]
-    \item $f(x)$ has a local minimum at $x=3$.
-    \item $f(x)$ has a local maximum at $x=3$.
-    \item $f(x)$ has a local minimum at $x=2$.
-    \item $f(x)$ has a local maximum at $x=2$.
+    \item $f\brak{x}$ has a local minimum at $x=3$.
+    \item $f\brak{x}$ has a local maximum at $x=3$.
+    \item $f\brak{x}$ has a local minimum at $x=2$.
+    \item $f\brak{x}$ has a local maximum at $x=2$.
 \end{enumerate}\end{multicols}
 
 \Solution
-The critical points are obtained from $f'(x)=0$:
+The critical points are obtained from $f'\brak{x}=0$:
 \begin{align}
-f'(x)
+f'\brak{x}
 &=3x^2-15x+18\\
 &=3(x^2-5x+6)\\
 &=3(x-2)(x-3).
@@ -710,7 +713,7 @@ x=2,\qquad x=3.
 
 The second derivative is
 \begin{equation}
-f''(x)=6x-15.
+f''\brak{x}=6x-15.
 \end{equation}
 
 At $x=2$,
@@ -741,10 +744,10 @@ Therefore, the correct statements are (A) and (D).
 Pick the CORRECT eigen value(s) of the matrix $\vec{A}$ from the following choices.
 \begin{equation}
 \vec{A}=
-\begin{bmatrix}
+\myvec{
 6&8\\
 4&2
-\end{bmatrix}.
+}.
 \end{equation}
 
 \hfill (CE2~2025)
@@ -761,14 +764,14 @@ The eigenvalues satisfy the characteristic equation
 \begin{align}
 \det(\vec{A}-\lambda I)&=0\\
 \det
-\begin{bmatrix}
+\myvec{
 6-\lambda&8\\
 4&2-\lambda
-\end{bmatrix}
+}
 &=0\\
-(6-\lambda)(2-\lambda)-32&=0\\
+\brak{6-\lambda}\brak{2-\lambda}-32&=0\\
 \lambda^2-8\lambda-20&=0\\
-(\lambda-10)(\lambda+2)&=0.
+\brak{\lambda-10}\brak{\lambda+2}&=0.
 \end{align}
 
 Hence,
@@ -788,6 +791,7 @@ identified. Which of the following options is/are zero-force members?
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\columnwidth]{figs/ce2q46.png}
+    \caption{Truss diagram for identifying zero-force members in Q46.}
     \label{fig:ce2q46}
 \end{figure}
 
@@ -832,17 +836,20 @@ Oxygen Demand (COD) and the Total Kjeldahl Nitrogen (TKN) are determined as
 As per the reaction
 \begin{equation}
 C_aH_bO_cN_d+
-\left(\frac{4a+b-2c-3d}{4}\right)O_2
+\brak{\frac{4a+b-2c-3d}{4}}O_2
 \rightarrow
 aCO_2+\frac{b-3d}{2}H_2O+dNH_3,
 \end{equation}
 which of the following options is/are CORRECT?
 
 Atomic weights: $C=12$, $H=1$, $O=16$, $N=14$
-
-\begin{center}
-\input{tables/ce2q49/ce2q49.tex}
-\end{center}
+\setcounter{table}{0}
+\begin{table}[H]
+	\centering
+	\input{tables/ce2q49/ce2q49.tex}
+	\caption{Given Values}
+	\label{tab:Given_values}
+\end{table}
 
 \CodeRef{tables/ce2q49/ce2q49.tex}
 
@@ -869,14 +876,14 @@ C_m
 
 From the TOC data,
 \begin{align}
-(5\times10^{-3})(12a)&=360\times10^{-3},\\
+\brak{5\times10^{-3}}\brak{12a}&=360\times10^{-3},\\
 0.06a&=0.36,\\
 a&=6.
 \end{align}
 
 From the TKN data,
 \begin{align}
-(5\times10^{-3})(14d)&=140\times10^{-3},\\
+\brak{5\times10^{-3}}\brak{14d}&=140\times10^{-3},\\
 0.07d&=0.14,\\
 d&=2.
 \end{align}
@@ -912,17 +919,17 @@ b-2c&=-3.
 
 Thus,
 \begin{equation}
-\begin{bmatrix}
+\myvec{
 1&16\\
 1&-2
-\end{bmatrix}
-\begin{bmatrix}
+}
+\myvec{
 b\\c
-\end{bmatrix}
+}
 =
-\begin{bmatrix}
+\myvec{
 87\\-3
-\end{bmatrix}.
+}.
 \end{equation}
 
 Row reduction gives
@@ -945,16 +952,13 @@ Therefore, the correct options are (A), (B), and (C).
 Consider a discrete random variable \(X\) whose probabilities are given below.
 The standard deviation of the random variable is \underline{\hspace{2cm}}
 (round off to one decimal place).
-
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-\(x_i\) & 1 & 2 & 4 & 8 \\
-\hline
-\(P(X = x_i)\) & 0.3 & 0.1 & 0.3 & 0.3 \\
-\hline
-\end{tabular}
-\end{center}
+\setcounter{table}{1}
+\begin{table}[H]
+	\centering
+	\input{tables/ce2q51/ce2q51.tex}
+	\caption{Probability table}
+	\label{tab:Probability_table}
+\end{table}
 
 \CodeRef{tables/ce2q51/ce2q51.tex}
 
@@ -1004,9 +1008,9 @@ Let $x_i$ denote the occurrence time of event $i$ and define
 \begin{equation}
 \vec{x}
 =
-\begin{bmatrix}
+\myvec{
 x_1&x_2&x_3&x_4&x_5
-\end{bmatrix}^{\top}.
+}^{\top}.
 \end{equation}
 
 For an activity from event $i$ to event $j$ with duration $d_{ij}$,
@@ -1033,20 +1037,20 @@ where
 \begin{equation}
 \vec{B}
 =
-\begin{bmatrix}
+\myvec{
 -1&1&0&0&0\\
 -1&0&1&0&0\\
 0&-1&0&1&0\\
 0&0&-1&1&0\\
 0&0&0&-1&1\\
 0&0&-1&0&1
-\end{bmatrix},
+},
 \qquad
 \vec{d}
 =
-\begin{bmatrix}
+\myvec{
 3&5&5&2&4&8
-\end{bmatrix}^{\top}.
+}^{\top}.
 \end{equation}
 
 The project starts at event 1, hence $x_1=0$.
@@ -1066,9 +1070,9 @@ The optimal solution is
 \begin{equation}
 \vec{x}^{\,E}
 =
-\begin{bmatrix}
+\myvec{
 0&3&5&8&13
-\end{bmatrix}^{\top},
+}^{\top},
 \end{equation}
 so that $E_4=8$ and $T=E_5=13$ days.
 
@@ -1097,3 +1101,4 @@ Hence, the total float available for activity $E$ is
 \CodeRef{codes/ce2q53/ce2q53.py}
 
 \end{enumerate}
+
