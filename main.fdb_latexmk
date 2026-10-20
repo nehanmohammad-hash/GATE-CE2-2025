@@ -1,11 +1,11 @@
 # Fdb version 4
-["makeindex main.idx"] 1792475493.34271 "main.idx" "main.ind" "main" 1792500379.96199 0
-  "main.idx" 1792500377.56777 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex main.idx"] 1792475493.34271 "main.idx" "main.ind" "main" 1792501575.28021 0
+  "main.idx" 1792501572.91326 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "main.ilg"
   "main.ind"
   (rewritten before read)
-["pdflatex"] 1792500374.84392 "main.tex" "main.pdf" "main" 1792500379.96279 0
+["pdflatex"] 1792501570.14569 "main.tex" "main.pdf" "main" 1792501575.28088 0
   "/data/data/com.termux/files/usr/share/texlive/2026.0/texmf-dist/web2c/texmf.cnf" 1789653563 43838 788b409ca7f6d70214933fbc221adf76 ""
   "/data/data/com.termux/files/usr/share/texlive/2026/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/data/data/com.termux/files/usr/share/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -328,8 +328,8 @@
   "EE26BTECH11208/chapters/ag-2025-formulae.tex" 1792461602.10545 2587 99e97e9b9a60ebb795b0d8b5ec38f279 ""
   "EE26BTECH11213/chapters/bt-2025-formulae.tex" 1792479377.39219 13977 26a968d69988b10ebe3ced857e58ab4c ""
   "EE26BTECH11213/figs/pmf.pdf" 1789963435.73156 14801 9c395bd184699a448a18e853fa57091e ""
-  "chapters/ce2-2025-formulae.tex" 1792500366.82777 8843 83b39ad20a917e841f7ac8054f475d16 ""
-  "chapters/ce2-2025-problems.tex" 1792499910.89177 22344 d04c16e60a106ffdde5212ec6fb75d79 ""
+  "chapters/ce2-2025-formulae.tex" 1792501322.64126 8843 83b39ad20a917e841f7ac8054f475d16 ""
+  "chapters/ce2-2025-problems.tex" 1792501562.72526 21752 7fc0ad52ea1835ca6515775aa6afe4e8 ""
   "figs/ce2q46.png" 1792475424.98019 39423 4c7c7e49a15cd4537782d013a29b2998 ""
   "figs/cubic.png" 1792475424.98819 113708 591c9cb5d81d340fc5fe18e379b6de68 ""
   "figs/logo.jpg" 1788410424.0421 382648 cd8c4760ef18efd0782613502d16e226 ""
@@ -337,11 +337,11 @@
   "figs/village_triangle.png" 1792475425.02419 152640 6d70639e7d673b3436b5e2d71bdb9c20 ""
   "gvv-book.sty" 1791362530.90641 2390 7e3aba23f6a80eaa09e6b6d2efe20895 ""
   "gvv.sty" 1792477383.78419 4675 9132118916cd21f1281f3274cc94528d ""
-  "main.aux" 1792500379.67977 13777 fd9f9a9493059835c97b6293a246e076 "pdflatex"
+  "main.aux" 1792501575.01726 13777 71e64c2cae8c23990594d818508da151 "pdflatex"
   "main.ind" 1792475493.41219 0 d41d8cd98f00b204e9800998ecf8427e "makeindex main.idx"
-  "main.out" 1792500379.67977 847 e8b3629efce14ba5456259a6eb6f48f7 "pdflatex"
+  "main.out" 1792501575.01726 847 e8b3629efce14ba5456259a6eb6f48f7 "pdflatex"
   "main.tex" 1792477393.14819 4110 bfa0ffd39648a57099005a85e2e7a29e ""
-  "main.toc" 1792500379.68377 636 399841e490179617307ac871610994e2 "pdflatex"
+  "main.toc" 1792501575.02126 636 399841e490179617307ac871610994e2 "pdflatex"
   "tables/ce2q49/ce2q49.tex" 1792475425.06419 9818 b80f90e2d391afe2d595cb9297be40fb ""
   "tables/ce2q51/ce2q51.tex" 1792475425.07219 10337 bef8e2bfea62c99acbe25b8bc1f85ea3 ""
   (generated)

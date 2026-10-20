@@ -389,53 +389,31 @@ and
 Other statements are incorrect.
 
 %\CodeRef{codes/ce2q22/ce2q22.py}
-
-
 \item
 Pick the CORRECT solution for the following differential equation
+\hfill (CE2~2025)
 \begin{align}
 \frac{dy}{dx}=e^{x-y}.
 \end{align}
-\hfill (CE2~2025)
-
+%
 \begin{multicols}{2}\begin{enumerate}
     \item $y=\ln\brak{e^x+\text{Constant}}$
     \item $\ln(y)=x+\text{Constant}$
     \item $\ln(y)=\ln\brak{e^x}+\text{Constant}$
     \item $y=x+\text{Constant}$
 \end{enumerate}\end{multicols}
-
+%
 \solution
-The nonlinear equation is transformed using $u=e^y$.
+Substituting $u=e^y$ and simplifying,
 \begin{align}
-\text{Given:}\qquad
-\frac{dy}{dx}
-&=e^{x-y}=e^xe^{-y},\\
-\text{Let:}\qquad
-u&=e^y,\\
-\text{}\qquad
-\frac{du}{dx}&=e^y\frac{dy}{dx}=e^x,\\
-\text{Laplace transform:}\qquad
-\mathcal{L}\left\{\frac{du}{dx}\right\}&=sU(s)-u(0),\\
-\mathcal{L}\{e^x\}&=\frac{1}{s-1},\\
-\text{}\qquad
-sU(s)-u(0)&=\frac{1}{s-1},\\
-\text{}\qquad
-U(s)&=\frac{1}{s(s-1)}+\frac{u(0)}{s},\\
+\frac{du}{dx}&=e^x
+\\
+\implies e^y&=e^x+C,
+\\
+\text{or, }y&=\ln\brak{e^x+C}.
 \end{align}
-\begin{align}
-\text{Partial fractions:}\qquad
-\frac{1}{s(s-1)}&=-\frac{1}{s}+\frac{1}{s-1},\\
-\text{}\qquad
-U(s)&=\frac{u(0)-1}{s}+\frac{1}{s-1},\\
-\text{Inverse Laplace:}\qquad
-u(x)&=u(0)-1+e^x,\\
-\text{Since }u=e^y:\qquad
-e^y&=e^x+C,\\
-\text{Taking Log:}\qquad
-y&=\ln\brak{e^x+C}.
-\end{align}
-
+%
+\iffalse
 Hence, the correct solution is
 \begin{align}
 y=\ln\brak{e^x+\text{Constant}}.
@@ -445,7 +423,6 @@ Therefore, the correct option is (A).
 
 \CodeRef{codes/ce2q36/ce2q36.py}
 
-\iffalse
 \item
 The figure shows a propped cantilever with uniform flexural rigidity $EI$
 (in N.m$^2$) and subjected to a moment $M$ (in N.m). Consider forces and

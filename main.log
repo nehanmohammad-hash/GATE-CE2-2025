@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Termux) (preloaded format=pdflatex 2026.5.4)  20 OCT 2026 18:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Termux) (preloaded format=pdflatex 2026.5.4)  20 OCT 2026 18:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2215,143 +2215,143 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.10.1
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.398 \end{align}
+l.396 \end{align}
                   [27]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.10.2
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.425 \end{align}
+l.414 \end{align}
                  
 pdfTeX warning (ext4): destination with the same identifier (name{equation.11.1
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.506 \end{align}
-                  [28]
+l.483 \end{align}
+                 
 pdfTeX warning (ext4): destination with the same identifier (name{equation.11.2
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.523 \end{align}
+l.500 \end{align}
                  
 pdfTeX warning (ext4): destination with the same identifier (name{equation.11.3
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.523 \end{align}
+l.500 \end{align}
                  
 pdfTeX warning (ext4): destination with the same identifier (name{equation.11.4
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.523 \end{align}
+l.500 \end{align}
                  
-<figs/cubic.png, id=661, 501.3129pt x 332.2011pt>
+<figs/cubic.png, id=635, 501.3129pt x 332.2011pt>
 File: figs/cubic.png Graphic file (type png)
 <use figs/cubic.png>
-Package pdftex.def Info: figs/cubic.png  used on input line 551.
+Package pdftex.def Info: figs/cubic.png  used on input line 528.
 (pdftex.def)             Requested size: 313.20818pt x 207.55927pt.
 
 pdfTeX warning (ext4): destination with the same identifier (name{figure.11.1})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.552     \caption{Graph of the cubic function.}
+l.529     \caption{Graph of the cubic function.}
                                                 
+Underfull \vbox (badness 7081) has occurred while \output is active []
+
+[28]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.12.1
+}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.544 \end{align}
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{equation.12.2
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.567 \end{align}
                  
-Underfull \vbox (badness 2644) has occurred while \output is active []
-
-[29 <./figs/cubic.png>]
-pdfTeX warning (ext4): destination with the same identifier (name{equation.12.2
-}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.590 \end{align}
-                 
 pdfTeX warning (ext4): destination with the same identifier (name{equation.12.3
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.590 \end{align}
+l.567 \end{align}
                  
 pdfTeX warning (ext4): destination with the same identifier (name{equation.12.4
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.590 \end{align}
+l.567 \end{align}
                  
 pdfTeX warning (ext4): destination with the same identifier (name{equation.12.5
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.590 \end{align}
+l.567 \end{align}
                  
-<figs/ce2q46.png, id=671, 574.5465pt x 321.3606pt>
+<figs/ce2q46.png, id=655, 574.5465pt x 321.3606pt>
 File: figs/ce2q46.png Graphic file (type png)
 <use figs/ce2q46.png>
-Package pdftex.def Info: figs/ce2q46.png  used on input line 608.
+Package pdftex.def Info: figs/ce2q46.png  used on input line 585.
 (pdftex.def)             Requested size: 364.1953pt x 203.70865pt.
-[30 <./figs/ce2q46.png>]
+[29 <./figs/cubic.png>]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.13.1
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.628     \end{align}
+l.605     \end{align}
                      
 pdfTeX warning (ext4): destination with the same identifier (name{equation.13.2
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.633     \end{align}
+l.610     \end{align}
                      
 pdfTeX warning (ext4): destination with the same identifier (name{equation.14.1
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.656 \end{align}
-                  (./tables/ce2q49/ce2q49.tex
+l.633 \end{align}
+                  [30 <./figs/ce2q46.png>] (./tables/ce2q49/ce2q49.tex
 \gnumericTableWidth=\skip78
 \gnumericTableWidthComplete=\skip79
 \gnumericMultiRowLength=\skip80
 \gnumericColA=\skip81
 \gnumericColB=\skip82
-) [31]
+)
 pdfTeX warning (ext4): destination with the same identifier (name{equation.14.2
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.683 \end{align}
+l.660 \end{align}
                  
 pdfTeX warning (ext4): destination with the same identifier (name{equation.14.3
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.688 \end{align}
+l.665 \end{align}
                  
 pdfTeX warning (ext4): destination with the same identifier (name{equation.14.4
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.695 \end{align}
+l.672 \end{align}
                  
 pdfTeX warning (ext4): destination with the same identifier (name{equation.14.5
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.695 \end{align}
+l.672 \end{align}
                  
 pdfTeX warning (ext4): destination with the same identifier (name{equation.14.6
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.695 \end{align}
-                  [32] (./tables/ce2q51/ce2q51.tex
+l.672 \end{align}
+                  [31] (./tables/ce2q51/ce2q51.tex
 \gnumericColC=\skip83
 \gnumericColD=\skip84
 \gnumericColE=\skip85
@@ -2361,64 +2361,64 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has
 <to be read again> 
                    \relax 
 l.225 \end{longtable}
-                     )
+                     ) [32]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.15.1
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.785 \end{align}
+l.762 \end{align}
                  
 pdfTeX warning (ext4): destination with the same identifier (name{equation.15.2
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.785 \end{align}
+l.762 \end{align}
                  
 pdfTeX warning (ext4): destination with the same identifier (name{equation.15.3
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.792 \end{align}
+l.769 \end{align}
                  
 pdfTeX warning (ext4): destination with the same identifier (name{equation.15.4
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.792 \end{align}
+l.769 \end{align}
                  
 pdfTeX warning (ext4): destination with the same identifier (name{equation.15.5
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.798 \end{align}
+l.775 \end{align}
                  
 pdfTeX warning (ext4): destination with the same identifier (name{equation.15.6
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.803 \end{align}
-                  [33]
+l.780 \end{align}
+                 
 pdfTeX warning (ext4): destination with the same identifier (name{equation.16.1
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.825 \end{align}
+l.802 \end{align}
                  
 pdfTeX warning (ext4): destination with the same identifier (name{equation.16.2
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.831 \end{align}
+l.808 \end{align}
                  
 pdfTeX warning (ext4): destination with the same identifier (name{equation.16.3
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.841 \end{align}
+l.818 \end{align}
                  
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[34]) [35] (./main.aux)
+[33]) [34] (./main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
@@ -2427,8 +2427,8 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: E8B3629EFCE14BA5456259A6EB6F48F7;847.
  ) 
 Here is how much of TeX's memory you used:
- 53910 strings out of 467349
- 1316957 string characters out of 5401406
+ 53898 strings out of 467349
+ 1316801 string characters out of 5401406
  1945441 words of memory out of 5000000
  81776 multiletter control sequences out of 15000+600000
  669966 words of font info for 133 fonts, out of 8000000 for 9000
@@ -2462,10 +2462,10 @@ sr/share/texlive/2026/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></data/data
 a.pfb></data/data/com.termux/files/usr/share/texlive/2026/texmf-dist/fonts/type
 1/urw/times/utmr8a.pfb></data/data/com.termux/files/usr/share/texlive/2026/texm
 f-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (35 pages, 1099371 bytes).
+Output written on main.pdf (34 pages, 1096589 bytes).
 PDF statistics:
- 926 PDF objects out of 1000 (max. 8388607)
- 782 compressed objects within 8 object streams
- 418 named destinations out of 1000 (max. 500000)
+ 909 PDF objects out of 1000 (max. 8388607)
+ 766 compressed objects within 8 object streams
+ 406 named destinations out of 1000 (max. 500000)
  220 words of extra memory for PDF output out of 10000 (max. 10000000)
 
