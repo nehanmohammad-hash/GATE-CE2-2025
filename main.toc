@@ -4,6 +4,6 @@
 \contentsline {subsection}{\numberline {2.1}Formulae}{16}{subsection.2.1}%
 \contentsline {section}{\numberline {3}AG 2025}{21}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Formulae}{21}{subsection.3.1}%
-\contentsline {section}{\numberline {4}GATE CE-2 2025}{22}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Formulae}{22}{subsection.4.1}%
+\contentsline {section}{\numberline {4}GATE CE-2 2025}{23}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Formulae}{23}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Problems}{23}{subsection.4.2}%

@@ -478,63 +478,45 @@ Hence, the correct option is (C).
 \item
 Consider the function given below and pick one or more CORRECT statement(s)
 from the following choices.
+\hfill (CE2~2025)
 \begin{align}
 f\brak{x}=x^3-\frac{15}{2}x^2+18x+20.
 \end{align}
-\hfill (CE2~2025)
-
-\begin{multicols}{4}\begin{enumerate}
+%
+\begin{enumerate}
     \item $f\brak{x}$ has a local minimum at $x=3$.
     \item $f\brak{x}$ has a local maximum at $x=3$.
     \item $f\brak{x}$ has a local minimum at $x=2$.
     \item $f\brak{x}$ has a local maximum at $x=2$.
-\end{enumerate}\end{multicols}
-
+\end{enumerate}
+%
 \solution
-The critical points are obtained from $f'\brak{x}=0$:
 \begin{align}
 f'\brak{x}
 &=3x^2-15x+18\\
-&=3(x^2-5x+6)\\
 &=3(x-2)(x-3).
+\\
+	f''\brak{x}&=6x-15.
+	\\
+f''(2)&=12-15=-3<0,
+\\
+f''(3)&=18-15=3>0,
 \end{align}
-
-Hence,
-\begin{align}
-x=2,\qquad x=3.
-\end{align}
-
-The second derivative is
-\begin{align}
-f''\brak{x}=6x-15.
-\end{align}
-
-At $x=2$,
-\begin{align}
-f''(2)=12-15=-3<0,
-\end{align}
-so $x=2$ is a local maximum.
-
-At $x=3$,
-\begin{align}
-f''(3)=18-15=3>0,
-\end{align}
-so $x=3$ is a local minimum.
-
-Therefore, the correct statements are (A) and (D).
-
+So $x=2$ is a local maximum.
+and $x=3$ is a local minimum.
+The following code verifies the result and generates
+    \figref{fig:cubic}.
+\CodeRef{codes/ce2q44/ce2q44.py}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.86\columnwidth]{figs/cubic.png}
     \caption{Graph of the cubic function.}
     \label{fig:cubic}
 \end{figure}
-
-\CodeRef{codes/ce2q44/ce2q44.py}
-
-
+%
 \item
 Pick the CORRECT eigen value(s) of the matrix $\vec{A}$ from the following choices.
+\hfill (CE2~2025)
 \begin{align}
 \vec{A}=
 \myvec{
@@ -542,40 +524,35 @@ Pick the CORRECT eigen value(s) of the matrix $\vec{A}$ from the following choic
 4&2
 }.
 \end{align}
-\hfill (CE2~2025)
-
+%
 \begin{multicols}{4}\begin{enumerate}
     \item $10$
     \item $4$
     \item $-2$
     \item $-10$
 \end{enumerate}\end{multicols}
-
+%
 \solution
-The eigenvalues satisfy the characteristic equation
+From 
+	\eqref{eq:EE26BTECH11213-char_poly_det},
 \begin{align}
-\det(\vec{A}-\lambda I)&=0\\
 \det
 \myvec{
 6-\lambda&8\\
 4&2-\lambda
 }
 &=0\\
-\brak{6-\lambda}\brak{2-\lambda}-32&=0\\
-\lambda^2-8\lambda-20&=0\\
+\implies
 \brak{\lambda-10}\brak{\lambda+2}&=0.
 \end{align}
-
-Hence,
+Hence, the eigenvalues are 
 \begin{align}
-\lambda=10,\qquad \lambda=-2.
+\lambda=10,-2.
 \end{align}
-
-So, the correct options are (A) and (C).
-
+See
 \CodeRef{codes/ce2q45/ce2q45.py}
-
-
+%
+\iffalse
 \item
 In the pin-jointed truss shown in the figure, the members that carry zero force are
 identified. Which of the following options is/are zero-force members?
@@ -615,7 +592,6 @@ Thus, among the choices provided, both $BC$ and $JK$ are zero-force members.
 Therefore, the correct options are (A) and (D).
 
 \CodeRef{codes/ce2q46/ce2q46.py}
-
 
 \item
 A compound has a general formula \(C_aH_bO_cN_d\) and molecular weight 187.
@@ -737,12 +713,14 @@ Therefore, the correct options are (A), (B), and (C).
 
 \CodeRef{codes/ce2q49/ce2q49.py}
 
+\fi
 
 \item
-Consider a discrete random variable \(X\) whose probabilities are given below.
+Consider a discrete random variable $X$ whose probabilities are given below.
 The standard deviation of the random variable is \underline{\hspace{2cm}}
-(round off to one decimal place).
-\setcounter{table}{1}
+.
+\hfill (CE2~2025)
+%\setcounter{table}{1}
 \begin{table}[H]
 	\centering
 	\input{tables/ce2q51/ce2q51.tex}
@@ -750,38 +728,28 @@ The standard deviation of the random variable is \underline{\hspace{2cm}}
 	\label{tab:Probability_table}
 \end{table}
 
-\CodeRef{tables/ce2q51/ce2q51.tex}
-\hfill (CE2~2025)
-
+%\CodeRef{tables/ce2q51/ce2q51.tex}
+%
 \solution
-The mean is
+		From \eqref{eq:discrete_mean},
 \begin{align}
-\mu
-&=E[X]=\sum_i x_i p_i\\
-&=1(0.3)+2(0.1)+4(0.3)+8(0.3)=4.1.
-\end{align}
-
-The second moment is
-\begin{align}
-E[X^2]
-&=\sum_i x_i^2p_i\\
+	\mean{X}&=1(0.3)+2(0.1)+4(0.3)+8(0.3)=4.1.
+	\\
+\mean{X^2}
 &=1^2(0.3)+2^2(0.1)+4^2(0.3)+8^2(0.3)=24.7.
 \end{align}
-
-Hence,
+Hence, from 
+	\eqref{eq:discrete_variance},
 \begin{align}
 \sigma^2
-&=E[X^2]-\mu^2=24.7-(4.1)^2=7.89,
-\end{align}
-and therefore
-\begin{align}
+24.7-(4.1)^2=7.89,
+\implies 
 \sigma
 &=\sqrt{7.89}\approx2.8.
 \end{align}
-
+The following code verifies the result.
 \CodeRef{codes/ce2q51/ce2q51.py}
-
-
+%
 \item
 The figure shows a network diagram for a construction project. The activities
 $A$, $B$, $C$, $D$, $E$, and $F$ are represented by arrows and their durations
