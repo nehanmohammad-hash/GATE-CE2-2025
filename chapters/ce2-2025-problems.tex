@@ -98,14 +98,6 @@ Using row operations,
 0&0&1&2&100\\
 0&0&0&-5&-200
 }
-\\
-\myvec{
-1&0&0&1&50\\
-0&1&0&-2&-50\\
-0&0&1&2&100\\
-0&0&0&-5&-200
-}
-\\
 \xrightarrow{\substack{R_4\leftarrow-\frac15R_4\\R_1\leftarrow R_1-R_4\\R_2\leftarrow R_2+2R_4\\R_3\leftarrow R_3-2R_4}}
 \myvec{
 1&0&0&0&10\\
@@ -114,37 +106,29 @@ Using row operations,
 0&0&0&1&40
 }.
 \end{align*}
-
+%
 Hence,
 \begin{align}
 V&=10, & Y&=30, & R&=20, & G&=40.
 \end{align}
-The total number of balls is
-\begin{align}
-T&=V+Y+R+G=100,\\
-V&=10\%, & R&=20\%, & Y&=30\%, & G&=40\%.
-\end{align}
-
-Hence, option (A) correctly represents the balls in the bag.
-
+%
+The following code generates
+    \figref{fig:ce2q5_pie}.
+\CodeRef{codes/ce2q5/ce2q5.py}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\columnwidth]{figs/piechart.png}
     \caption{Pie chart representing ball distribution.}
     \label{fig:ce2q5_pie}
 \end{figure}
-
-\CodeRef{codes/ce2q5/ce2q5.py}
-
-
 \item
 Consider a five-digit number PQRST that has distinct digits
 $P$, $Q$, $R$, $S$, and $T$, and satisfies the following conditions:
 $P<Q$, $S>P>T$, and $R<T$. If integers 1 through 5 are used to
 construct such a number, the value of $P$ is:
 \hfill (CE2~2025)
-
-\begin{multicols}{4}\begin{enumerate}[label=\alph*)]
+%
+\begin{multicols}{4}\begin{enumerate}
     \item 1
     \item 2
     \item 3
@@ -152,26 +136,9 @@ construct such a number, the value of $P$ is:
 \end{enumerate}\end{multicols}
 
 \solution
-Combining the inequalities gives
-\begin{align}
-    R<T<P<Q, \qquad T<P<S.
-\end{align}
-
-Since $R<T<P$, the digit $P$ must be greater than at least two
-other distinct digits, namely 1 and 2. Hence $P\neq1,2$.
-
-Also, $P<Q$ and $P<S$, so $P$ cannot be the maximum digit 5.
-Therefore, the only remaining possibility is $P=3$.
-
-For $P=3$, the smaller digits $\{1,2\}$ can be assigned to
-$R$ and $T$, while the larger digits $\{4,5\}$ can be assigned
-to $Q$ and $S$. Hence all the inequalities are satisfied.
-
-Thus, option (C) is correct.
-
+Using the following code, $P=3$.
 \CodeRef{codes/ce2q8/ce2q8.c}
-
-
+%
 \item
 A business person buys potatoes of two different varieties $P$ and
 $Q$, mixes them in a certain ratio and sells them at \rupee 192 per kg.
@@ -179,38 +146,18 @@ The cost of variety $P$ is \rupee 800 for $5$ kg. The cost of variety
 $Q$ is \rupee 800 for $4$ kg. If the person gets $8\%$ profit, what is
 the $P:Q$ ratio (by weight)?
 \hfill (CE2~2025)
-
-\begin{multicols}{4}\begin{enumerate}[label=\alph*)]
+%
+\begin{multicols}{4}\begin{enumerate}
     \item $5:4$
     \item $3:4$
     \item $3:2$
     \item $1:1$
 \end{enumerate}\end{multicols}
-
+%
 \solution
-Let the profit percentage be $p=0.08$. Let the cost price of the
-mixture be $z$. Since $\text{SP}=z(1+p)$,
-\begin{align}
-    z&=\frac{192}{1.08}=\frac{1600}{9}\,\text{\rupee/kg},\\
-    c_P&=\frac{800}{5}=160\,\text{\rupee/kg}, &
-    c_Q&=\frac{800}{4}=200\,\text{\rupee/kg}.
-\end{align}
-
-Let $x$ kg of variety $P$ and $y$ kg of variety $Q$ be mixed. Equating
-the total cost to the cost of the mixture gives
-\begin{align}
-    xc_P+yc_Q&=\brak{x+y}z,\\
-    x\brak{z-c_P}&=y\brak{c_Q-z},\\
-    \frac{x}{y}&=\frac{c_Q-z}{z-c_P}\\
-    &=\frac{200-\frac{1600}{9}}{\frac{1600}{9}-160}
-     =\frac54.
-\end{align}
-
-Thus, the required ratio is $5:4$, making option (A) correct.
-
+From the following code, the required ratio is $5:4$.
 \CodeRef{codes/ce2q9/ce2q9.c}
-
-
+%
 \item
 Three villages $P$, $Q$, and $R$ are located in such a way that the
 distance $PQ=13$ km, $QR=14$ km, and $RP=15$ km. A straight road
@@ -218,48 +165,25 @@ joins $Q$ and $R$. It is proposed to connect $P$ to this road $QR$
 by constructing another road. What is the minimum possible length
 (in km) of this connecting road?
 \hfill (CE2~2025)
-
+%
 \begin{multicols}{4}\begin{enumerate}[label=\alph*)]
     \item 10.5
     \item 11.0
     \item 12.0
     \item 12.5
 \end{enumerate}\end{multicols}
-
+%
 \solution
-The minimum distance from vertex $P$ to line $QR$ is the altitude
-$h_a$. The semi-perimeter of triangle $PQR$ is
-\begin{align}
-    s=\frac{13+14+15}{2}=21.
-\end{align}
-
-Using Heron's formula, the area is
-\begin{align}
-    \Delta
-    &=\sqrt{21\brak{21-14}\brak{21-15}\brak{21-13}} \\
-    &=\sqrt{21\times7\times6\times8} \\
-    &=84\,\text{km}^2.
-\end{align}
-
-Taking $QR=14$ km as the base,
-\begin{align}
-    h_a=\frac{2\Delta}{14}
-       =\frac{2\times84}{14}
-       =12\,\text{km}.
-\end{align}
-
-Thus, option (C) is correct.
-
+The following code
+\CodeRef{codes/ce2q10/ce2q10.py}
+generates
+    \figref{fig:ce2q10}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\columnwidth]{figs/village_triangle.png}
     \caption{Triangle $PQR$ geometry and altitude from $P$ to $QR$.}
     \label{fig:ce2q10}
 \end{figure}
-
-\CodeRef{codes/ce2q10/ce2q10.py}
-
-
 \item
 For the matrix $[\vec{A}]$ given below, the transpose is:
 \begin{align}

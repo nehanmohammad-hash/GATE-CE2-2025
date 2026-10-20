@@ -643,8 +643,6 @@ INPUT ./figs/piechart.png
 INPUT ./figs/piechart.png
 INPUT ./figs/piechart.png
 INPUT ./figs/piechart.png
-INPUT /data/data/com.termux/files/usr/share/texlive/2026/texmf-dist/fonts/tfm/public/tfrupee/tfrupee.tfm
-INPUT /data/data/com.termux/files/usr/share/texlive/2026/texmf-dist/fonts/tfm/public/tfrupee/tfrupee.tfm
 INPUT ./figs/village_triangle.png
 INPUT ./figs/village_triangle.png
 INPUT ./figs/village_triangle.png
