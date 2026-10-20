@@ -1,11 +1,11 @@
 # Fdb version 4
-["makeindex main.idx"] 1792475493.34271 "main.idx" "main.ind" "main" 1792479766.18266 0
-  "main.idx" 1792479763.08419 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex main.idx"] 1792475493.34271 "main.idx" "main.ind" "main" 1792479898.50939 0
+  "main.idx" 1792479895.32819 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "main.ilg"
   "main.ind"
   (rewritten before read)
-["pdflatex"] 1792479760.33637 "main.tex" "main.pdf" "main" 1792479766.18339 0
+["pdflatex"] 1792479892.29688 "main.tex" "main.pdf" "main" 1792479898.51018 0
   "/data/data/com.termux/files/usr/share/texlive/2026.0/texmf-dist/web2c/texmf.cnf" 1789653563 43838 788b409ca7f6d70214933fbc221adf76 ""
   "/data/data/com.termux/files/usr/share/texlive/2026/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/data/data/com.termux/files/usr/share/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -329,7 +329,7 @@
   "EE26BTECH11213/chapters/bt-2025-formulae.tex" 1792479377.39219 13977 26a968d69988b10ebe3ced857e58ab4c ""
   "EE26BTECH11213/figs/pmf.pdf" 1789963435.73156 14801 9c395bd184699a448a18e853fa57091e ""
   "chapters/ce2-2025-formulae.tex" 1792479465.68419 9325 22159d0f89e520ebfb70218f5355f7f1 ""
-  "chapters/ce2-2025-problems.tex" 1792479752.22419 23163 3d652f84ca2c80673fd0572d741c4f52 ""
+  "chapters/ce2-2025-problems.tex" 1792479889.36819 22998 399a8963dac599f297d1042dc9a0a606 ""
   "figs/cantilever_deflection.png" 1792475424.96419 119183 9d6d17f0a4fafa049fe5fd08ab89f260 ""
   "figs/ce2q14.png" 1792475424.97219 96293 4912d11990ec7876d54e0d0d2cf5c2ce ""
   "figs/ce2q46.png" 1792475424.98019 39423 4c7c7e49a15cd4537782d013a29b2998 ""
@@ -340,11 +340,11 @@
   "figs/village_triangle.png" 1792475425.02419 152640 6d70639e7d673b3436b5e2d71bdb9c20 ""
   "gvv-book.sty" 1791362530.90641 2390 7e3aba23f6a80eaa09e6b6d2efe20895 ""
   "gvv.sty" 1792477383.78419 4675 9132118916cd21f1281f3274cc94528d ""
-  "main.aux" 1792479765.90019 16415 98d42e5237ad363eb3089f8d9f2db5c4 "pdflatex"
+  "main.aux" 1792479898.21619 16415 98d42e5237ad363eb3089f8d9f2db5c4 "pdflatex"
   "main.ind" 1792475493.41219 0 d41d8cd98f00b204e9800998ecf8427e "makeindex main.idx"
-  "main.out" 1792479765.90419 847 e8b3629efce14ba5456259a6eb6f48f7 "pdflatex"
+  "main.out" 1792479898.22019 847 e8b3629efce14ba5456259a6eb6f48f7 "pdflatex"
   "main.tex" 1792477393.14819 4110 bfa0ffd39648a57099005a85e2e7a29e ""
-  "main.toc" 1792479765.90419 636 fd50e3f2631b7093eb5f49f1d64786a1 "pdflatex"
+  "main.toc" 1792479898.22019 636 fd50e3f2631b7093eb5f49f1d64786a1 "pdflatex"
   "tables/ce2q14/ce2q14.tex" 1792475425.05619 10136 7c89b5b8b58be7b6eec3f9399027fb92 ""
   "tables/ce2q49/ce2q49.tex" 1792475425.06419 9818 b80f90e2d391afe2d595cb9297be40fb ""
   "tables/ce2q51/ce2q51.tex" 1792475425.07219 10337 bef8e2bfea62c99acbe25b8bc1f85ea3 ""
