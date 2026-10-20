@@ -1,5 +1,6 @@
 \begin{enumerate}[label=\thesubsection.\arabic*, ref=\thesubsection.\theenumi,itemsep=0pt]
 
+\iffalse
 \item The normal form of the equation of a line is 
 \begin{align}
 	\vec{n}^{\top}
@@ -39,34 +40,34 @@ s = \frac{a + b + c}{2} \label{eq:semi_perimeter}
 \Delta = \frac{1}{2} \times b \times h \label{eq:triangle_area_base_alt}
 \end{align}
 \end{itemize}
-
-\item Integration by Parts
-\begin{itemize}
-\item Indefinite Integral Formula: For differentiable functions $u\brak{x}$ and $v\brak{x}$, the integration by parts formula is:
+\fi
+%
+\item (Integration by Parts)
+For differentiable functions $u\brak{x}$ and $v\brak{x}$, the integration by parts formula is:
 \begin{align}
-\int u \, dv = u v - \int v \, du \label{eq:integration_by_parts}
+\int u \, dv = u v - \int v \, du 
+\label{eq:integration_by_parts}
 \end{align}
-Expressed explicitly in terms of $x$:
+%
+\item Let
 \begin{align}
-\int u\brak{x} v'\brak{x} \, dx = u\brak{x}v\brak{x} - \int v\brak{x}u'\brak{x} \, dx
+	\vec{V}&=\myvec{u \\ v}, \nabla = \myvec{\frac{\partial }{\partial x} \\[1ex] \frac{\partial }{\partial y}},
+	\\
 \end{align}
-\end{itemize}
-
-\item Vector Calculus: Curl and Divergence of Velocity Vector
-\begin{itemize}
-\item Two-Dimensional Velocity Field: For a 2D velocity vector $\vec{V} = u\hat{i} + v\hat{j}$, where $u$ and $v$ are scalar components along $x$ and $y$:
-\begin{enumerate}
-    \item $z$-Component of Curl:
-    \begin{align}
-    \brak{\nabla \times \vec{V}}_z = \frac{\partial v}{\partial x} - \frac{\partial u}{\partial y} \label{eq:curl_z_component}
-    \end{align}
-    \item Divergence of Velocity Vector:
-    \begin{align}
-    \nabla \cdot \vec{V} = \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} \label{eq:divergence_velocity}
-    \end{align}
-\end{enumerate}
-\end{itemize}
-
+The curl and divergence of $\vec{V}$ are then defined respectively as
+\begin{align}
+	\label{eq:curl}
+    \nabla\times\vec{V}
+    &=\brak{\frac{\partial v}{\partial x}
+    -\frac{\partial u}{\partial y}}\vec{e}_3
+    \\
+    \nabla\cdot\vec{V}
+    &=\frac{\partial u}{\partial x}
+     +\frac{\partial v}{\partial y}.
+	\label{eq:div}
+\end{align}
+%
+\iffalse
 \item Laplace Transform
 \begin{itemize}
 \item Unilateral Definition: For causal signals starting at $t = 0$:
@@ -178,16 +179,20 @@ with $n$ as the number of lanes, $l$ as the wheelbase of the longest vehicle, $R
     \item Infinitely Many Solutions: $\text{rank}\brak{\vec{A}} = \text{rank}\brak{\sbrak{\vec{A} \mid \vec{b}}} < n$
 \end{enumerate}
 \end{itemize}
-
-\item Probability and Random Variables
-\begin{itemize}
-\item Mutually Exclusive Events: $\Pr\brak{A \cap B} = 0$ and $\Pr\brak{A \cup B} = \Pr\brak{A} + \Pr\brak{B}$.
-\item Conditional Probability: $\Pr\brak{A \mid B} = \frac{\Pr\brak{A \cap B}}{\Pr\brak{B}}$ (with $\Pr\brak{B} > 0$). If $B \subset A$, $\Pr\brak{A \mid B} = 1$.
+\fi
+%
+\item	If $B \subset A, AB = 1$. 
+	\label{eq:subset}
+\item (Conditional Probability) 
+\begin{align}
+	\Pr\brak{A \mid B} = \frac{\Pr\brak{A \cap B}}{\Pr\brak{B}}, \quad \Pr\brak{B} > 0. 
+	\label{eq:cond-prob}
+\end{align}
+	
 \item Mean and Variance of Discrete Random Variables:
 \begin{align}
 \mu &= E[X] = \sum x_i p_i \label{eq:discrete_mean} \\
 \sigma^2 &= E[X^2] - \left(E[X]\right)^2 = \sum x_i^2 p_i - \mu^2 \label{eq:discrete_variance}
 \end{align}
-\end{itemize}
 
 \end{enumerate}

@@ -226,21 +226,24 @@ $\int\ln\brak{x}\,dx=$\underline{\hspace{3cm}}
     \item $x\ln\brak{x}+x+C$
     \item $\ln\brak{x}-x+C$
 \end{enumerate}\end{multicols}
-
+%
 \solution
-Using integration by parts with $u=\ln\brak{x}$ and $dv=dx$,
+From \eqref{eq:integration_by_parts},
+letting
 \begin{align}
+	u&=\ln\brak{x}, dv=dx,
+\\
+	du &= \frac{1}{x}, v = x
+\\
+\implies
     \int\ln\brak{x}\,dx
-    &=x\ln\brak{x}-\int x\cdot\frac1x\,dx \\
-    &=x\ln\brak{x}-\int1\,dx \\
+    &=x\ln\brak{x} -\int1\,dx \\
     &=x\ln\brak{x}-x+C.
 \end{align}
-
-Thus, option (A) is correct.
-
-\CodeRef{codes/ce2q12/ce2q12.py}
-\vspace{2.45cm}
-
+\iffalse
+See
+%\CodeRef{codes/ce2q12/ce2q12.py}
+%
 \item
 Consider the pin-jointed truss shown in the figure. Influence line is drawn for
 the axial force in the member $G-I$, when a unit load travels on the bottom
@@ -317,7 +320,7 @@ Hence, the correct option is (B).
 
 \vspace{2cm}
 
-
+\fi
 \item
 Consider a velocity vector $\vec{V}$ in $\brak{x,y,z}$ coordinates given by
 $\vec{V}=u\vec{x}+v\vec{y}$. Pick one or more CORRECT statement(s)
@@ -325,88 +328,67 @@ from the choices given below.
 \hfill (CE2~2025)
 
 \begin{enumerate}
+%\begin{enumerate}[itemsep=1ex]
     \item $z$-component of Curl of velocity:
           $\nabla\times\vec{V}
           =\brak{\frac{\partial v}{\partial x}
           -\frac{\partial u}{\partial y}}\vec{z}$
-	  \vspace{0.55cm}
     \item $z$-component of Curl of velocity:
           $\nabla\times\vec{V}
           =\brak{\frac{\partial u}{\partial x}
           -\frac{\partial v}{\partial y}}\vec{z}$
-	  \vspace{0.55cm}
     \item Divergence of velocity:
           $\nabla\cdot\vec{V}
           =\frac{\partial u}{\partial x}
           +\frac{\partial v}{\partial y}$
-	  \vspace{0.55cm}
     \item Divergence of velocity:
           $\nabla\cdot\vec{V}
           =\frac{\partial u}{\partial y}
           +\frac{\partial v}{\partial x}$
-	  \vspace{0.55cm}
 \end{enumerate}
-
+%
 \solution
-For a two-dimensional velocity field
-$\vec{V}=u\vec{x}+v\vec{y}$, the $z$-component of curl is
-\begin{align}
-    (\nabla\times\vec{V})_z
-    =\frac{\partial v}{\partial x}
-     -\frac{\partial u}{\partial y}.
-\end{align}
-
-Thus, statement (A) is correct.
-
-The divergence is
-\begin{align}
-    \nabla\cdot\vec{V}
-    =\frac{\partial u}{\partial x}
-     +\frac{\partial v}{\partial y}.
-\end{align}
-
-Thus, statement (C) is correct.
-
-Therefore, the correct statements are (A) and (C).
-
-\CodeRef{codes/ce2q21/ce2q21.py}
-
-
+See
+	\eqref{eq:curl}
+	and
+	\eqref{eq:div}.
+%
 \item
 Given that $A$ and $B$ are not null sets, which of the following
 statements regarding probability is/are CORRECT?
 \hfill (CE2~2025)
-
+%
 \begin{enumerate}
     \item $\Pr(A\cap B)=\Pr(A)\Pr(B)$ if $A$ and $B$ are mutually exclusive.
     \item Conditional probability, $\Pr(A\mid B)=1$ if $B\subset A$.
     \item $\Pr(A\cup B)=\Pr(A)+\Pr(B)$, if $A$ and $B$ are mutually exclusive.
     \item $\Pr(A\cap B)=0$, if $A$ and $B$ are independent.
 \end{enumerate}
-
+%
 \solution
-Since $B\subset A$,
+\begin{enumerate}
+	\item Since $B\subset A$, from 
+		Definition
+	\eqref{eq:subset}
+and
+	\eqref{eq:cond-prob},
 \begin{align}
-    A\cap B &= B, \\
+    AB &= B, \\
     \Pr(A\mid B)
-    &=\frac{\Pr(A\cap B)}{\Pr(B)}
+    &=\frac{\Pr(A B)}{\Pr(B)}
      =\frac{\Pr(B)}{\Pr(B)}=1.
 \end{align}
-
-Hence, statement (B) is correct.
-
-For mutually exclusive events,
+%
+\item 
+	From \eqref{eq:EE26BTECH11202-Prob_3},
 \begin{align}
-    \Pr(A\cap B)&=0, \\
-    \Pr(A\cup B)&=\Pr(A)+\Pr(B).
+    \Pr(A+B)=\Pr(A)+\Pr(B).
 \end{align}
+%Therefore, the correct statements are (B) and (C).
+\end{enumerate}
+Other statements are incorrect.
 
-Hence, statement (C) is correct. Statements (A) and (D) are
-incorrect for non-null sets.
-
-Therefore, the correct statements are (B) and (C).
-
-\CodeRef{codes/ce2q22/ce2q22.py}
+%\CodeRef{codes/ce2q22/ce2q22.py}
 
 
 \item
@@ -463,7 +445,7 @@ Therefore, the correct option is (A).
 
 \CodeRef{codes/ce2q36/ce2q36.py}
 
-
+\iffalse
 \item
 The figure shows a propped cantilever with uniform flexural rigidity $EI$
 (in N.m$^2$) and subjected to a moment $M$ (in N.m). Consider forces and
@@ -514,8 +496,8 @@ Hence, the correct option is (C).
     \caption{Propped cantilever and support settlement.}
     \label{fig:ce2q38}
 \end{figure}
-
-
+\fi
+%
 \item
 Consider the function given below and pick one or more CORRECT statement(s)
 from the following choices.
