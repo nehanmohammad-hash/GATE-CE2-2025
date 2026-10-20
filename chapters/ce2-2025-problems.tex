@@ -185,9 +185,9 @@ generates
     \label{fig:ce2q10}
 \end{figure}
 \item
-For the matrix $[\vec{A}]$ given below, the transpose is
+For the matrix $\vec{A}$ given below, the transpose is
 \begin{align}
-    [\vec{A}]
+    \vec{A}
     =\myvec{
         2 & 3 & 4 \\
         1 & 4 & 5 \\
@@ -202,25 +202,19 @@ For the matrix $[\vec{A}]$ given below, the transpose is
     \item $\myvec{4&2&3\\5&1&4\\2&4&3}$
     \item $\myvec{2&3&4\\1&4&5\\4&3&2}$
 \end{enumerate}\end{multicols}
-
+%
 \solution
-The transpose operation interchanges rows and columns. Therefore,
+Using the following code,
 \begin{align}
-    [\vec{A}^{\top}]_{ij}
-    &= [\vec{A}]_{ji}, \\
     \vec{A}^{\top}
-    &= \myvec{
+    = \myvec{
         2 & 1 & 4 \\
         3 & 4 & 3 \\
         4 & 5 & 2
     }.
 \end{align}
-
-Thus, option (A) is correct.
-
 \CodeRef{codes/ce2q11/ce2q11.py}
-
-
+%
 \item
 Integration of $\ln\brak{x}$ with respect to $x$, i.e.,
 $\int\ln\brak{x}\,dx=$\underline{\hspace{3cm}}
