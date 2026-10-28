@@ -833,6 +833,52 @@ The forward-time optimization problem is:
 \end{aligned}
 \end{align}
 
+Substituting $x_1 = 0$ and $x_5 = x_5^{\,E}$ into the matrix system $\vec{B}\vec{x} \ge \vec{d}$ yields:
+\begin{align}
+\myvec{
+-1 & 1 & 0 & 0 & 0 \\
+-1 & 0 & 1 & 0 & 0 \\
+0 & -1 & 0 & 1 & 0 \\
+0 & 0 & -1 & 1 & 0 \\
+0 & 0 & 0 & -1 & 1 \\
+0 & 0 & -1 & 0 & 1
+}
+\myvec{
+0 \\
+x_2 \\
+x_3 \\
+x_4 \\
+x_5^{\,E}
+}
+&\ge
+\myvec{
+3 \\
+5 \\
+5 \\
+2 \\
+4 \\
+8
+}
+\implies 
+\myvec{
+x_2 - 0 \\
+x_3 - 0 \\
+x_4 - x_2 \\
+x_4 - x_3 \\
+x_5^{\,E} - x_4 \\
+x_5^{\,E} - x_3
+}
+\ge
+\myvec{
+3 \\
+5 \\
+5 \\
+2 \\
+4 \\
+8
+}.
+\end{align}
+
 The optimal solution is
 \begin{align}
 \vec{x}^{\,E}
