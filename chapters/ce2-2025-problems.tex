@@ -750,6 +750,8 @@ Hence, from
 The following code verifies the result.
 \CodeRef{codes/ce2q51/ce2q51.py}
 %
+
+
 \item
 The figure shows a network diagram for a construction project. The activities
 $A$, $B$, $C$, $D$, $E$, and $F$ are represented by arrows and their durations
@@ -767,7 +769,7 @@ The total float available for the activity $E$ in day(s) is equal to
 \end{figure}
 
 \solution
-Let $x_i$ denote the occurrence time of event $i$ and define
+Let $x_i$ denote the occurrence time of milestone $i$. Define the state vector as
 \begin{align}
 \vec{x}
 =
@@ -776,13 +778,13 @@ x_1&x_2&x_3&x_4&x_5
 }^{\top}.
 \end{align}
 
-For an activity from event $i$ to event $j$ with duration $d_{ij}$,
+For an activity from milestone $i$ to milestone $j$ with duration $d_{ij}$,
 the precedence constraint is
 \begin{align}
 x_j-x_i\ge d_{ij}.
 \end{align}
 
-For the given network,
+For the given network, the constraints are:
 \begin{align}
 x_2-x_1&\ge3, &
 x_3-x_1&\ge5,\\
@@ -816,9 +818,11 @@ where
 }^{\top}.
 \end{align}
 
-The project starts at event 1, hence $x_1=0$.
+The project starts at milestone 1, hence $x_1=0$.
 
-The forward-time optimization problem is therefore
+We perform the forward pass. Here, $x_i^{\,E}$ denotes the earliest time to reach milestone $i$ (the earliest possible time a milestone can be attained based on prerequisite activities).
+
+The forward-time optimization problem is:
 \begin{align}
 \begin{aligned}
 \underset{\vec{x}}{\operatorname{minimize}}\quad
@@ -837,9 +841,9 @@ The optimal solution is
 0&3&5&8&13
 }^{\top},
 \end{align}
-so that $E_4=8$ and $T=E_5=13$ days.
+so that $x_4^E=8$ (the earliest time to reach milestone 4) and total project duration $T = x_5^E = 13$ days.
 
-For the backward pass, the latest feasible occurrence time of event 4 is
+For the backward pass, the latest time to reach milestone 4 (denoted as $x_4^{\,L}$, defined as the latest time a milestone can be attained without delaying project completion) is:
 \begin{align}
 x_4^{\,L}=9.
 \end{align}
@@ -847,21 +851,16 @@ x_4^{\,L}=9.
 For activity $E:4\rightarrow5$, with duration $d_E=4$ days,
 the latest start time is
 \begin{align}
-LST_E=L_5-d_E=13-4=9.
+LST_E=x_5^L-d_E=13-4=9.
 \end{align}
 
-Therefore, the total float is
+Therefore, the float (defined as the amount of time an activity can be delayed without extending the total project duration) is:
 \begin{align}
 TF_E
-&=LST_E-EST_E=9-8=1\text{ day}.
+&=LST_E-x_4^E=9-8=1\text{ day}.
 \end{align}
 
-Hence, the total float available for activity $E$ is
-\begin{align}
-\boxed{1}.
-\end{align}
 
 \CodeRef{codes/ce2q53/ce2q53.py}
-
 \end{enumerate}
 
