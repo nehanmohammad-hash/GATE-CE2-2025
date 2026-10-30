@@ -889,21 +889,55 @@ The optimal solution is
 \end{align}
 so that $x_4^E=8$ (the earliest time to reach milestone 4) and total project duration $T = x_5^E = 13$ days.
 
-For the backward pass, the latest time to reach milestone 4 (denoted as $x_4^{\,L}$, defined as the latest time a milestone can be attained without delaying project completion) is:
+
+Working backwards, the latest permissible time for a milestone
+is determined by the minimum of the latest permissible times
+imposed by its outgoing activities. Therefore,
+
+\[
+x_i^L=\min_{j\in S(i)}(x_j^L-d_{ij}),
+\]
+
+where $S(i)$ denotes the set of successor milestones of
+milestone $i$.
+
+For milestone 4, there is only one outgoing activity,
+namely E ($4\rightarrow5$), with a duration of 4 days.
+Consequently,
+
+\begin{align}
+x_4^L &= x_5^L-d_E\\
+      &=13-4\\
+      &=\boxed{9}.
+\end{align}
+
+Similarly, for the remaining milestones:
+
+\begin{align*}
+x_3^L &= \min(x_4^L-2,\;x_5^L-8)\\
+      &=\min(7,5)=5,\\[6pt]
+x_2^L &=x_4^L-5=9-5=4,\\[6pt]
+x_1^L &=\min(x_2^L-3,\;x_3^L-5)\\
+      &=\min(1,0)=0.
+\end{align*}
+
+Hence, the latest milestone times are
+
+\begin{align}
+\mathbf{x}^L=(0,\;4,\;5,\;9,\;13)^T.
+\end{align}
+
+
+For the backward pass, the latest time to reach milestone 4 is:
 \begin{align}
 x_4^{\,L}=9.
 \end{align}
 
-For activity $E:4\rightarrow5$, with duration $d_E=4$ days,
-the latest start time is
-\begin{align}
-LST_E=x_5^L-d_E=13-4=9.
-\end{align}
 
 Therefore, the float (defined as the amount of time an activity can be delayed without extending the total project duration) is:
 \begin{align}
 TF_E
-&=LST_E-x_4^E=9-8=1\text{ day}.
+&=x_4^L-x_4^E=9-8=1\text{ day}.
 \end{align}
 
 
